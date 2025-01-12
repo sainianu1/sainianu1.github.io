@@ -17,6 +17,12 @@
 
 ___
 
+### Featured Projects
+
+- [Metal Mario: Autonomous Robot Car](MetalMario/)
+
+
+
 #### Here are some of my technical skills!
 
 
