@@ -8,7 +8,7 @@
 #### Hey! My name is Anubhav and I'm a **4th Year Engineering Physics Undergad** at UBC. My passions involve both hardware and software design and I am keen on working in fields like robotics, AI, aerospace, and automotive development.
 
 ---
-## Resume
+## Here is a link to my Resume:
 <div style="text-align: center; margin-top: 20px;">
   <a href="docs/assets/Resume - Anubhav Saini.pdf" target="_blank" style="color: black; text-decoration: none; font-size: 0.9em;">
     📄 <strong> My Resume</strong>
@@ -17,12 +17,12 @@
 
 ___
 
-### Here are some of my Featured Projects:
+## Here are some of my Featured Projects:
 
 <div style="text-align: center; margin-bottom: 20px;">
   <a href="/MetalMario/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 200px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="margin: 0;">Metal Mario: Autonomous Robot Car</h3>
+    <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
   </a>
 </div>
 
