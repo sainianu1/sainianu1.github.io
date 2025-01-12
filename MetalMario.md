@@ -22,22 +22,13 @@ An **autonomous robotic car** built from scratch to **speedily navigate** a Mari
 
 ---
 
-Electrical:
-Analog Circuit Design and Construction
-Noise control and RC filtering
-Compartmentalization and Debugging Techniques
-Integration and testing of a variety of sensors
-
-Software: 
-PID Control
-Embedded Systems- PlatformIO
-
 ## Skills Applied
-| Category       | Skills                                                             |
-|----------------|-------------------------------------------------------------------|
-| **Design**     | Analog Circuit design, Sensor Systems Design   |
-| **Software**   | C/C++, PID Control Embedded Systems- PlatformIO, real-time data acquisition |
-| **Electrical** | Rotary Encoder design, noise reduction techniques, RC Filtering, Compartmentalization    |
+
+| **Category**    | **Skills**                                                                 |
+|------------------|---------------------------------------------------------------------------|
+| **Design**       | Analog Circuit Design, Sensor Systems Design                            |
+| **Software**     | C/C++, PID Control, Embedded Systems (PlatformIO), Real-Time Data Acquisition |
+| **Electrical**   | Rotary Encoder Design, Noise Reduction Techniques, RC Filtering, Compartmentalization |
 
 ---
 
