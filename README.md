@@ -21,13 +21,9 @@ ___
 
 <div style="text-align: center; margin-bottom: 20px;">
   <a href="/MetalMario/" style="text-decoration: none; color: black;">
-    <img src="assets/images/project1.jpg" alt="Metal Mario: Autonomous Robot Car" style="width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 200px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="margin: 0;">Metal Mario: Autonomous Robot Car</h3>
   </a>
 </div>
-
-
-
-- [Metal Mario: Autonomous Robot Car](MetalMario/)
 
 ---
