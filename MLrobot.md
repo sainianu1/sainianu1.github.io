@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Machine Learning Robot
+title: Machine Learning Robot Detective
 permalink: /MLrobot/
 ---
 
-# Machine Learning Detective Robot
+# Machine Learning Robot Detective
 
 
 ## Overview
