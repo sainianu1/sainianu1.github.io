@@ -19,7 +19,14 @@ ___
 
 ## Here are some of my Featured Projects:
 
-<div style="text-align: left; margin-bottom: 20px;">
+<div style="text-align: middle; margin-bottom: 20px;">
+  <a href="/SarcoPCB/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/MarioKart.png" alt="Motor Control PCB" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Motor Control PCB</h3>
+  </a>
+</div>
+
+<div style="text-align: middle; margin-bottom: 20px;">
   <a href="/UasBuckConvertor/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Buck Convertor Circuit</h3>
@@ -27,14 +34,14 @@ ___
 </div>
 
 
-<div style="text-align: right; margin-bottom: 20px;">
+<div style="text-align: middle; margin-bottom: 20px;">
   <a href="/MetalMario/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
   </a>
 </div>
 
-<div style="text-align: left; margin-bottom: 20px;">
+<div style="text-align: middle; margin-bottom: 20px;">
   <a href="/UASantenna/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="UAS Antenna Tracker" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">UAS Antenna Tracker</h3>
@@ -42,7 +49,7 @@ ___
 </div>
 
 
-<div style="text-align: right; margin-bottom: 20px;">
+<div style="text-align: middle; margin-bottom: 20px;">
   <a href="/MLrobot/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="Machine Learning Robot Detective" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Machine Learning Robot Detective</h3>
