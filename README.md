@@ -9,7 +9,6 @@
 
 ---
 ## Resume
-
 <div style="text-align: center; margin-top: 20px;">
   <a href="docs/assets/Resume - Anubhav Saini.pdf" target="_blank" style="color: black; text-decoration: none; font-size: 0.9em;">
     📄 <strong> My Resume</strong>
