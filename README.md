@@ -1,5 +1,3 @@
-# sainianu1.github.io
+# Anubhav Saini
 
-#Anubhav Saini
-
-##4th Year Engineering Physics at UBC
+## 4th Year Engineering Physics at UBC
