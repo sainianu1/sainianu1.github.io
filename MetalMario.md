@@ -4,7 +4,7 @@ title: Metal Mario
 permalink: /MetalMario/
 ---
 
-# Metal Mario: [Autonomous Robot Car]
+# Metal Mario Autonomous Robot Car
 
 
 ## Overview
