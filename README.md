@@ -20,7 +20,7 @@ ___
 ## Here are some of my Featured Projects:
 
 <div style="text-align: left; margin-bottom: 20px;">
-  <a href="/UASbuck/" style="text-decoration: none; color: black;">
+  <a href="/UasBuckConv/" style="text-decoration: none; color: black;">
     <img src="docs/assets/MarioKart.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Buck Convertor Circuit</h3>
   </a>
