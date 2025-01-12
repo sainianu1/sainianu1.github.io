@@ -1,10 +1,18 @@
-## 4th Year Engineering Physics at UBC
+## Anubhav Saini
 
-#### Hey! My name is Anubhav and I'm a **4th Year Engineering Physics Undergad** at UBC.
-#### My passions involve both hardware and software design and I am keen on working in fields like robotics, aerospace, and automotive.
+### Hey! My name is Anubhav and I'm a **4th Year Engineering Physics Undergad** at UBC.
+### My passions involve both hardware and software design and I am keen on working in fields like robotics, aerospace, and automotive.
 
-#### **Software:** Python, Java, C/C++, CNNs, Tensorflow, ROS, OpenCV, Linux, Assembly
-#### **Electrical:** Systems Design, PCB Design, Sensor Design, Altium, Microcontrollers (STM32, Arduino), I2C, SPI, CAN
+### Here are some of my technical skills!
+#### Software
+- **Programming Languages:** Python, Java, C/C++, Assembly
+- **Frameworks and Tools:** CNNs, TensorFlow, ROS, OpenCV
+- **Operating Systems:** Linux
 
-## Here are some projects that are part of my Engineering Project Portfolio!
+#### Electrical
+- **Design:** Systems Design, PCB Design, Sensor Design
+- **Tools:** Altium Designer
+- **Microcontrollers:** STM32, Arduino
+- **Communication Protocols:** I2C, SPI, CAN
 
+---
