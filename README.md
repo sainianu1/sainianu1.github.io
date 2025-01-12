@@ -12,21 +12,24 @@
 ## Resume
 
 <div style="text-align: center; margin-top: 20px;">
-  <a href="docs/assets/Resume - Anubhav Saini.pdf" target="_blank" style="text-decoration: none; font-size: 1.2em;">
-    📄 <strong>View My Resume</strong>
+  <a href="docs/assets/Resume - Anubhav Saini.pdf" target="_blank" style="color: blue; text-decoration: none; font-size: 1.2em;">
+    📄 <strong> My Resume</strong>
   </a>
 </div>
 
-
+___
 
 #### Here are some of my technical skills!
 
+
 #### Software
+
 - **Programming Languages:** Python, Java, C/C++, Assembly
 - **Frameworks and Tools:** CNNs, TensorFlow, ROS, OpenCV
 - **Operating Systems:** Linux
 
 #### Electrical
+
 - **Design:** Systems Design, PCB Design, Sensor Design
 - **Tools:** Altium Designer
 - **Microcontrollers:** STM32, Arduino
