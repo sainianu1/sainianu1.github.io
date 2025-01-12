@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sarcomere Dynamics Magnetic Force Sensor
-permalink: /SarcoPCB/
+permalink: /SarcoSensor/
 ---
 
 # Fingertip Magnetic Force Sensor
