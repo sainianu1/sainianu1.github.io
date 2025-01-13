@@ -45,10 +45,31 @@ This involved collecting raw Magnetic field data in all three directions at:
 
 I followed this by ensuring running a clustering K-Means algorithm to see if the collected data really emerged as consistent different states.
 
+---
+## Normal Force Mapping
+
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/MarioKart.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+  <img src="docs/assets/Normal Force Mapping1.png" alt="Mario" style="width: 500px; border-radius: 10px;">
 </div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="docs/assets/Normal Force Mapping2.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+</div>
+
+
+---
+## Shear Force Mapping
+
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="docs/assets/Shear Mapping.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="docs/assets/Normal Force Mapping2.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+</div>
+
 
 ---
 
