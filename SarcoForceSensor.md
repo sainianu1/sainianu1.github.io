@@ -49,11 +49,11 @@ I followed this by ensuring running a clustering K-Means algorithm to see if the
 ## Normal Force Mapping
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Mario" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
 </div>
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Mario" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Normal Mapping 2" style="width: 500px; border-radius: 10px;">
 </div>
 
 
@@ -62,13 +62,8 @@ I followed this by ensuring running a clustering K-Means algorithm to see if the
 
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/Shear Mapping.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/Shear Mapping.png' | relative_url }}" alt="Shear Mapping" style="width: 500px; border-radius: 10px;">
 </div>
-
-<div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/Normal Force Mapping2.png" alt="Mario" style="width: 500px; border-radius: 10px;">
-</div>
-
 
 ---
 
