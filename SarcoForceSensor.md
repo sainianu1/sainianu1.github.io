@@ -15,6 +15,11 @@ permalink: /SarcoSensor/
   <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Mario Kart 3" style="width: 30%; max-width: 200px; border-radius: 10px;">
 </div>
 
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Force Sensor" style="width: 500px; border-radius: 10px;">
+</div>
+
+
 
 Working recently at Sarcomere Dynamics, I was tasked with developing a **Fingertip Force Sensor**. The setup was a small permanent magnet being placed in a malleable rubber casing above a tri-axis Magnetic Field sensor (MLX90393). As the rubber was compressed, the magnet moved and shifted orientation resulting in a different Magnetic Field output. We required an accurate reading of the normal force being applied and needed to identify the direction of shearing, which we were unable to get.
 
