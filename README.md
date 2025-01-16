@@ -21,7 +21,7 @@ ___
 
 <div style="text-align: left; margin-bottom: 20px;">
   <a href="/SarcoSensor/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="Fingertip Magnetic Force Sensor" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <img src="docs/assets/force sensor4.png" alt="Fingertip Magnetic Force Sensor" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Fingertip Magnetic Force Sensor</h3>
   </a>
 </div>
