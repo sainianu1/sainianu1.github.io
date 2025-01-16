@@ -5,15 +5,14 @@ permalink: /SarcoSensor/
 ---
 
 # Fingertip Magnetic Force Sensor
-# Metal Mario Autonomous Robot Car
 
 ## Project Overview
 
 
 <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Metal Mario" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor2.png' | relative_url }}" alt="Mario Kart 2" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Mario Kart 3" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Force Sensor 1" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor2.png' | relative_url }}" alt="Force Sensor 2" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Force Sensor 3" style="width: 200px; border-radius: 10px;">
 </div>
 
 
