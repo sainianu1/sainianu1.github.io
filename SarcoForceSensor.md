@@ -8,8 +8,11 @@ permalink: /SarcoSensor/
 # Metal Mario Autonomous Robot Car
 
 ## Project Overview
-<div style="text-align: center; margin-bottom: 20px;">
-  <img src="docs/assets/MarioKart.png" alt="Metal Mario" style="width: 400px; border-radius: 10px; margin-bottom: 10px;">
+
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Metal Mario" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor2.png' | relative_url }}" alt="Mario Kart 2" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Mario Kart 3" style="width: 200px; border-radius: 10px;">
 </div>
 
 
