@@ -48,13 +48,12 @@ I followed this by ensuring running a clustering K-Means algorithm to see if the
 ---
 ## Normal Force Mapping
 
-
 <div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/Normal Force Mapping1.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Mario" style="width: 500px; border-radius: 10px;">
 </div>
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/Normal Force Mapping2.png" alt="Mario" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Mario" style="width: 500px; border-radius: 10px;">
 </div>
 
 
