@@ -9,10 +9,10 @@ permalink: /SarcoSensor/
 
 ## Project Overview
 
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Force Sensor1" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor2.png' | relative_url }}" alt="Force Sensor2" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Force Sensor3" style="width: 200px; border-radius: 10px;">
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Metal Mario" style="width: 30%; max-width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Mario Kart 2" style="width: 30%; max-width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/force sensor1.png' | relative_url }}" alt="Mario Kart 3" style="width: 30%; max-width: 200px; border-radius: 10px;">
 </div>
 
 
