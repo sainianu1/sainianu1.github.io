@@ -17,7 +17,8 @@
 
 ___
 
-## Here are some of my Featured Projects:
+## Please scroll down to see some of my Featured Projects:
+#### Click on any Project Title or Icon to get a detailed insight onto my experiences!
 
 <div style="text-align: left; margin-bottom: 20px;">
   <a href="/SarcoSensor/" style="text-decoration: none; color: black;">
