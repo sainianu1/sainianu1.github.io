@@ -51,7 +51,7 @@ ___
 
 <div style="text-align: left; margin-bottom: 20px;">
   <a href="/UASantenna/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="UAS Antenna Tracker" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <img src="docs/assets/UasAntenna.png" alt="UAS Antenna Tracker" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">UAS Antenna Tracker</h3>
   </a>
 </div>
@@ -59,7 +59,7 @@ ___
 
 <div style="text-align: right; margin-bottom: 20px;">
   <a href="/MLrobot/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="Machine Learning Robot Detective" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <img src="docs/assets/MLRobot.png" alt="Machine Learning Robot Detective" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Machine Learning Robot Detective</h3>
   </a>
 </div>
