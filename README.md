@@ -29,7 +29,7 @@ ___
 
 <div style="text-align: right; margin-bottom: 20px;">
   <a href="/SarcoPCB/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="Motor Control PCB" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <img src="docs/assets/MotorControlPCB.png" alt="Motor Control PCB" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Motor Control PCB</h3>
   </a>
 </div>
