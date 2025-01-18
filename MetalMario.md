@@ -7,9 +7,11 @@ permalink: /MetalMario/
 # Metal Mario Autonomous Robot Car
 
 ## Project Overview
-<div style="text-align: center; margin-bottom: 20px;">
-  <img src="docs/assets/MarioKart.png" alt="Metal Mario" style="width: 400px; border-radius: 10px; margin-bottom: 10px;">
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
+
 
 An **autonomous robotic car** built from scratch to **speedily navigate** a Mario Kart-themed obstacle course.
 
@@ -44,10 +46,6 @@ An **autonomous robotic car** built from scratch to **speedily navigate** a Mari
 - Developed robust recalibration procedures (using a variety of sensor data) to constantly reposition onto optimized path, especially after jumps and obstacle enounters
 
 - Built a mechanically robust chassis which was capable of jumping off of a 1.5-foot ramp onto a rocky surface
-
-<div style="text-align: center; margin: 20px 0;">
-  <img src="docs/assets/MarioKart.png" alt="Mario" style="width: 500px; border-radius: 10px;">
-</div>
 
 ---
 
