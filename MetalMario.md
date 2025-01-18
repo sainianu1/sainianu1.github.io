@@ -9,7 +9,7 @@ permalink: /MetalMario/
 ## Project Overview
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/MarioKart3.png' | relative_url }}" alt="MarioKart1" style="width: 400px; border-radius: 10px;">
 </div>
 
 
@@ -47,6 +47,11 @@ An **autonomous robotic car** built from scratch to **speedily navigate** a Mari
 
 - Built a mechanically robust chassis which was capable of jumping off of a 1.5-foot ramp onto a rocky surface
 
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/MarioKart4.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+</div>
+
+
 ---
 
 ## Challenges Faced
@@ -61,7 +66,9 @@ An **autonomous robotic car** built from scratch to **speedily navigate** a Mari
 
 ---
 
-## More Details
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/MarioKart2.png' | relative_url }}" alt="MarioKart1" style="width: 300px; border-radius: 10px;">
+</div>
 
 ---
 
