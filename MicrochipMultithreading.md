@@ -13,8 +13,9 @@ permalink: /MicrochipMultithread/
 </div>
 
 
-Formulated and deployed **Multi-threaded testing procedure** to reduce testing time by **more than 40%** 
-**Reduced power consumption by 15% **via systematic voltage/temperature regularization scheme
+I formulated and deployed a **Multi-threaded testing procedure** to reduce testing time of SERDES Chips at Microchip Technology by **more than 40%**
+
+**Reduced power consumption by 15%** via systematic voltage/temperature regularization scheme
 
 ---
 
