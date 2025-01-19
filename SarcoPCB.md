@@ -10,7 +10,7 @@ permalink: /SarcoPCB/
 ## Project Overview
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
 
 I designed a **Brushless DC Motor Control PCB** on Altium Designer
@@ -49,13 +49,12 @@ I designed a **Brushless DC Motor Control PCB** on Altium Designer
 ---
 ## PCB
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+  <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="Force Sensor 1" style="width: 300px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/pcbBack.png' | relative_url }}" alt="Force Sensor 2" style="width: 300px; border-radius: 10px;">
 </div>
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/pcbBack.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
 <div style="text-align: center; margin: 20px 0;">
     <img src="{{ '/docs/assets/pcbBack2.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
