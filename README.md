@@ -28,6 +28,20 @@ ___
   </a>
 </div>
 
+<div style="text-align: right; margin-bottom: 20px;">
+  <a href="/MetalMario/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
+  </a>
+</div>
+
+<div style="text-align: left; margin-bottom: 20px;">
+  <a href="/MLrobot/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/MLRobot.png" alt="Machine Learning Robot Detective" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Machine Learning Robot Detective</h3>
+  </a>
+</div>
+
 
 <div style="text-align: right; margin-bottom: 20px;">
   <a href="/SarcoPCB/" style="text-decoration: none; color: black;">
@@ -36,36 +50,20 @@ ___
   </a>
 </div>
 
-
 <div style="text-align: left; margin-bottom: 20px;">
+  <a href="/MicrochipMultithread/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/MicrochipLab.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Multithreaded Test Routine</h3>
+  </a>
+</div>
+
+<div style="text-align: right; margin-bottom: 20px;">
   <a href="/UasBuckConvertor/" style="text-decoration: none; color: black;">
     <img src="docs/assets/UASBuck.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
     <h3 style="color:black; margin: 0; font-size:0.9em">Buck Convertor Circuit</h3>
   </a>
 </div>
 
-<div style="text-align: right; margin-bottom: 20px;">
-  <a href="/MicrochipMultithread/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/UASBuck.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="color:black; margin: 0; font-size:0.9em">Multithreaded Test Routine</h3>
-  </a>
-</div>
-
-
-<div style="text-align: left; margin-bottom: 20px;">
-  <a href="/MetalMario/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
-  </a>
-</div>
-
-
-<div style="text-align: right; margin-bottom: 20px;">
-  <a href="/MLrobot/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MLRobot.png" alt="Machine Learning Robot Detective" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="color:black; margin: 0; font-size:0.9em">Machine Learning Robot Detective</h3>
-  </a>
-</div>
 
 
 <div style="text-align: left; margin-bottom: 20px;">
