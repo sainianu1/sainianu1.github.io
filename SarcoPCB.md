@@ -4,8 +4,7 @@ title: Sarcomere Dynamics Motor Control PCB
 permalink: /SarcoPCB/
 ---
 
-# Brushless DC Motor Control PCB
-
+# Motor Control PCB
 
 ## Project Overview
 
@@ -13,7 +12,7 @@ permalink: /SarcoPCB/
     <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
 
-I designed a **Brushless DC Motor Control PCB** on Altium Designer
+I designed a **Motor Control PCB** on Altium Designer to allow for the control of a DC Brushless motor based on input data from a Magnetometer.
 
 ---
 
@@ -29,9 +28,8 @@ I designed a **Brushless DC Motor Control PCB** on Altium Designer
 
 | **Category**    | **Skills**                                                                 |
 |------------------|---------------------------------------------------------------------------|
-| **Design**       | Analog Circuit Design, Sensor Systems Design                            |
-| **Software**     | C/C++, PID Control, Embedded Systems (PlatformIO), Real-Time Data Acquisition |
-| **Electrical**   | Rotary Encoder Design, Noise Reduction Techniques, RC Filtering, Compartmentalization |
+| **Communication** | I2C, SPI, CAN Hardware                            |
+| **Electrical**    | Multi-Layer PCB Design, Sensor Integration |
 
 ---
 
