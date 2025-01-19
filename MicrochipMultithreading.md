@@ -9,17 +9,12 @@ permalink: /MicrochipMultithread/
 ## Project Overview
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart3.png' | relative_url }}" alt="MarioKart1" style="width: 400px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/MCLabSetup.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
 
 
-An **autonomous robotic car** built from scratch to **speedily navigate** a Mario Kart-themed obstacle course.
-
----
-
-## Key Features
-- Formulated and deployed Multi-threaded testing procedure to reduce testing time by more than 40%. 
-- Reduced power consumption by 15% via systematic voltage/temperature regularization scheme.
+Formulated and deployed **Multi-threaded testing procedure** to reduce testing time by **more than 40%** 
+**Reduced power consumption by 15% **via systematic voltage/temperature regularization scheme
 
 ---
 
@@ -27,21 +22,21 @@ An **autonomous robotic car** built from scratch to **speedily navigate** a Mari
 
 | **Category**    | **Skills**                                                                 |
 |------------------|---------------------------------------------------------------------------|
-| **Design**       | Analog Circuit Design, Sensor Systems Design                            |
-| **Software**     | C/C++, PID Control, Embedded Systems (PlatformIO), Real-Time Data Acquisition |
+| **Design**       | Validation Systems Design                            |
+| **Software**     | Python, Multithreading                                 |
 
 ---
 
 ## Project Workings
 chips being tested for different levels of serialization/deserialization accuracy while being operated at 5 VT corners
 
-High Volt, Low Temp
-High Volt, High Temp
-Low Volt, Low Temp
-Low Volt, High Temp
-Nominal Volt, Nominal Temp
+- High Volt, Low Temp
+- High Volt, High Temp
+- Low Volt, Low Temp
+- Low Volt, High Temp
+- Nominal Volt, Nominal Temp
 
-We 8 different AC Tests and 5 different DC tests for each chip
+We had 8 different AC Tests and 5 different DC tests for each chip
 
 - had to initialize chip at different characterization modes
 - modes also depended on AC/DC tests
@@ -83,19 +78,11 @@ procedures:
 ---
 
 ## Challenges Faced
-- Minimizing noise interference in the circuit.
 - Ensuring reliable recalibration for repeatable repositioning.
 
 ---
 
 ## Lessons Learned
-- **System integration:** Combining hardware and software to achieve precision results.
-- **Error mitigation:** Identifying and reducing sources of error in real-world measurements.
-
----
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart2.png' | relative_url }}" alt="MarioKart1" style="width: 300px; border-radius: 10px;">
-</div>
+- **System integration:** Combining multiple different devices to emulate a real-life data transmission 
 
 ---
