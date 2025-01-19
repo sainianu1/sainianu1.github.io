@@ -18,7 +18,7 @@
 ___
 
 ## Please scroll down to see some of my Featured Projects:
-## 
+
 #### Click on any project's title or icon to get a detailed description!
 
 <div style="text-align: left; margin-bottom: 20px;">
@@ -36,6 +36,7 @@ ___
   </a>
 </div>
 
+
 <div style="text-align: left; margin-bottom: 20px;">
   <a href="/UasBuckConvertor/" style="text-decoration: none; color: black;">
     <img src="docs/assets/UASBuck.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
@@ -43,18 +44,18 @@ ___
   </a>
 </div>
 
-
 <div style="text-align: right; margin-bottom: 20px;">
-  <a href="/MetalMario/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
+  <a href="/MicrochipMultithread/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/UASBuck.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Multithreaded Test Routine</h3>
   </a>
 </div>
 
+
 <div style="text-align: left; margin-bottom: 20px;">
-  <a href="/UASantenna/" style="text-decoration: none; color: black;">
-    <img src="docs/assets/UasAntenna.png" alt="UAS Antenna Tracker" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
-    <h3 style="color:black; margin: 0; font-size:0.9em">UAS Antenna Tracker</h3>
+  <a href="/MetalMario/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/MarioKart.png" alt="Metal Mario: Autonomous Robot Car" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">Metal Mario: Autonomous Robot Car</h3>
   </a>
 </div>
 
@@ -65,6 +66,15 @@ ___
     <h3 style="color:black; margin: 0; font-size:0.9em">Machine Learning Robot Detective</h3>
   </a>
 </div>
+
+
+<div style="text-align: left; margin-bottom: 20px;">
+  <a href="/UASantenna/" style="text-decoration: none; color: black;">
+    <img src="docs/assets/UasAntenna.png" alt="UAS Antenna Tracker" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
+    <h3 style="color:black; margin: 0; font-size:0.9em">UAS Antenna Tracker</h3>
+  </a>
+</div>
+
 
 
 ---
