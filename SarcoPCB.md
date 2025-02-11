@@ -42,6 +42,18 @@ I designed a **Motor Control PCB** on Altium Designer to allow for the control o
     <img src="{{ '/docs/assets/STM32.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
 
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+</div>
+
 
 
 ---
