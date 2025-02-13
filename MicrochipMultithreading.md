@@ -53,9 +53,7 @@ things to configure for each test:
 - dcsu inputs
 - some other params
 
-i realized that configuring the bert input and other params for each of the 8 AC and DC tests respectively 
-
-was possible if i took master control of the temp and voltage settings (most important was temp)
+i realized that configuring the bert input and other params for each of the 8 AC and DC tests respectively was possible if i took master control of the temp and voltage settings (most important was temp)
 - as chip was set to run at (low, nom, high) voltage modes respectively while i could operate it at whatever voltage i initialized it at 
 therefore, i would run all 8 AC tests and 5 DC tests while maintaining a single VT corner
 
@@ -75,15 +73,5 @@ procedures:
 - then they would compare these raw results with the required ranges/yields for the test to pass
 - if this was met, the test would be labelled pass/fail
 
-
----
-
-## Challenges Faced
-- Ensuring reliable recalibration for repeatable repositioning.
-
----
-
-## Lessons Learned
-- **System integration:** Combining multiple different devices to emulate a real-life data transmission 
 
 ---
