@@ -9,7 +9,7 @@ permalink: /MLrobot/
 ## Project Overview
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
 </div>
 
 
