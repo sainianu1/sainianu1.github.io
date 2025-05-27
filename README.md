@@ -57,7 +57,7 @@ ___
   </a>
 </div>
 
-<!---
+
 <div style="text-align: right; margin-bottom: 20px;">
   <a href="/UasBuckConvertor/" style="text-decoration: none; color: black;">
     <img src="docs/assets/UASBuck.png" alt="Buck Convertor Circuit" style="color:black; width: 300px; border-radius: 10px; margin-bottom: 10px;">
@@ -65,7 +65,7 @@ ___
   </a>
 </div>
 
-
+<!---
 
 <div style="text-align: left; margin-bottom: 20px;">
   <a href="/UASantenna/" style="text-decoration: none; color: black;">
