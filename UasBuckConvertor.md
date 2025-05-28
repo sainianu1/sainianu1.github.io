@@ -51,9 +51,6 @@ description
 
 ## PCB Choices and Why
 
-placement of buck's low side components:
-- the inductor, output capacitor and diode were placed in close proximity to each other for a minimal sized output current loop
-
 routing:
 - routed bootstrap capacitor so that its trace was as short as possible for minimal inductance
 
