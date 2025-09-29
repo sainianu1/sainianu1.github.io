@@ -64,6 +64,9 @@ Designed Arlo’s brand-new consumer product: a security camera with an embedded
 ---
 
 ## GPIO Safety Circuitry
+<div style="text-align: center; margin: 20px 0;">
+    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Arlo 4" style="width: 500px; border-radius: 10px;">
+</div>
 
 
 ---
