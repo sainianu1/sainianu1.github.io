@@ -18,16 +18,14 @@ permalink: /ArloCamera/
 
 
 
-Working recently at Sarcomere Dynamics, I was tasked with developing a **Fingertip Force Sensor**. The setup was a small permanent magnet being placed in a malleable rubber casing above a tri-axis Magnetic Field sensor (MLX90393). As the rubber was compressed, the magnet moved and shifted orientation resulting in a different Magnetic Field output. We required an accurate reading of the normal force being applied and needed to identify the direction of shearing, which we were unable to get.
-
+Designed Arlo’s brand-new consumer product: a security camera with an embedded solar panel. 
 
 ---
 
 ## Key Features
-- Data Collection/Repeatability
-- Normal Force Mapping
-- Shear Direction Mapping
-- Calibration Scheme
+- Power Circuitry Design
+- Power Supply Switching
+- Hardware Design + Testing
 
 ---
 
@@ -35,58 +33,38 @@ Working recently at Sarcomere Dynamics, I was tasked with developing a **Fingert
 
 | **Category**    | **Skills**                                                                 |
 |------------------|---------------------------------------------------------------------------|
-| **Mathematics**  | Linear Algebra, Pseudoinverse Matrices                            |
-| **Software**     | Python, Embedded Systems (PlatformIO), Real-Time Data Acquisition, Sensor Firmware |
+| **Hardware**  | Power Management, Power Supply Parallelization, Battery Charging                            |
+| **EE**     | Switching Circuitry Design, MOSFETS, Diode-Oring |
 
 ---
 
-## Configuring Data Repeatability
-My first steps were to ensure sensor output repeatability both in the Normal and Shear Directions. 
+## Key Steps
+- undertook extensive power testing and competitive benchmarking to develop a simple, robust, and low-cost power system architecture, which allows for the parallelization of either an external power source (power adapter or external solar panels) with the embedded solar panel
 
-This involved collecting raw Magnetic field data in all three directions at:
-- different applied forces (systematically increasing) 
-- in 4 directions (+x,-x,+y,-y) and simply normal 
-- essentially established different “states”  (ie 4N force in +x direction)
+- built analog power control circuitry for robust switching between multiple power sources for brand new camera system while incurring minimal losses (tested in LTSpice)
 
-I followed this by ensuring running a clustering K-Means algorithm to see if the collected data really emerged as consistent different states.
-
-Once I had the repeatability ensured, I opted for:
-- one of either z-magnitude or xyz-magnitude for the normal force applied
--  a 2-D vector mapping approach for the shear in the x,y directions 
+- ensured that the design provides efficient battery charging, negligible flow back current from external power sources into the embedded solar panel and includes augmented hardware control to isolate the embedded solar panel from the charging system 
 
 
 
 ---
-## Normal Force Mapping
+## Front End Power Circuitry Design
 
 <div style="text-align: center; margin: 20px 0;">
     <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
 </div>
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Normal Mapping 2" style="width: 500px; border-radius: 10px;">
-</div>
-
-
-
-Obtaining the z-output (ie normal force) was simple and was very accurate with either approach.
-
 ---
-## Shear Force Mapping
+## Operation Modes
 
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Shear Mapping.png' | relative_url }}" alt="Shear Mapping" style="width: 500px; border-radius: 10px;">
-</div>
-
-To establish the shear direction output, I first obtained the average 2D vectors that the raw sensor output  gave for shear in each of the 4 directions.  I then used linear algebra (pseudo-inverse matrices) to map these raw data vectors to the desired unit direction vectors. 
-
+**1- Default: USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) ON for the corner case for charging dead battery. This is HW controlled.
+2- USB_C IN: Plug in “USB_C IN”, USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) OFF. This is HW controlled.
+3- Higher Input Selection: Choosing higher voltage input between USB_C and Embed SP. This is FW controlled.
+**
 ---
 
-## Forethought
+## GPIO Safety Circuitry
 
-For this problem, I believe that my solution was accurate, consistent, and repeatabile. Simply put, I was able to test the force sending system and it provided consistently accurate results. 
-
-Another key reason for this being an optimal solution was that it was computationally light. In fact, the reason that I opted for linear algebraic mapping was that a simple matrix multiplication was required to give the directional output.
 
 ---
