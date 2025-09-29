@@ -58,10 +58,10 @@ Designed Arlo’s brand-new consumer product: a security camera with an embedded
 ## Operation Modes
 
 
-**1- Default: USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) ON for the corner case for charging dead battery. This is HW controlled.
+1- Default: USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) ON for the corner case for charging dead battery. This is HW controlled.
 2- USB_C IN: Plug in “USB_C IN”, USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) OFF. This is HW controlled.
 3- Higher Input Selection: Choosing higher voltage input between USB_C and Embed SP. This is FW controlled.
-**
+
 ---
 
 ## GPIO Safety Circuitry
