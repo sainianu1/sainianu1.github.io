@@ -47,10 +47,10 @@ Designed Arlo’s brand-new consumer product: a security camera with an embedded
 
 
 ---
-## Front End Power Circuitry Design
+## Embedded Solar Panel Power Circuitry Design
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
 </div>
 
 ---
