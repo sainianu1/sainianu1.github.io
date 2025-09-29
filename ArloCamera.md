@@ -10,8 +10,8 @@ permalink: /ArloCamera/
 
 
 <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Force Sensor 1" style="width: 300px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Force Sensor 2" style="width: 300px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo 1" style="width: 300px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Arlo 2" style="width: 300px; border-radius: 10px;">
 </div>
 
 
@@ -50,7 +50,7 @@ Designed Arlo’s brand-new consumer product: a security camera with an embedded
 ## Embedded Solar Panel Power Circuitry Design
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
+    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Arlo 3" style="width: 500px; border-radius: 10px;">
 </div>
 
 ---
