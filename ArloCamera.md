@@ -10,9 +10,8 @@ permalink: /ArloCamera/
 
 
 <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Force Sensor 1" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor5.png' | relative_url }}" alt="Force Sensor 2" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Force Sensor 3" style="width: 200px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Force Sensor 1" style="width: 300px; border-radius: 10px;">
+  <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Force Sensor 2" style="width: 300px; border-radius: 10px;">
 </div>
 
 
