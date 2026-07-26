@@ -3,7 +3,7 @@ layout: project
 title: Fingertip Magnetic Force Sensor
 heading: Fingertip Magnetic Force Sensor
 permalink: /SarcoSensor/
-cover: /docs/assets/force%20sensor4.png
+cover: /docs/assets/force sensor4.png
 eyebrow: Sensing · Embedded
 summary: Mapped normal force and shear from a tri-axis magnetometer inside a soft fingertip — high accuracy, low cost.
 tags:
