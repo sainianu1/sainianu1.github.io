@@ -1,81 +1,87 @@
 ---
 layout: project
-title: Arlo Camera Power Circuitry Design
-heading: Arlo Camera Power Circuitry
+title: Arlo Solar Camera — Power Architecture & Hardware Validation
+heading: Solar Camera Power & HW Validation
 permalink: /ArloCamera/
 cover: /docs/assets/USB_PowerCircuitry.png
-eyebrow: Industry · Power Electronics
-summary: Power architecture for a solar-powered security camera — supply switching, battery charging, and validation under real load.
+eyebrow: Arlo Technologies · Hardware Engineering Intern
+role: Hardware Engineering Intern · Arlo Technologies
+timeline: May 2025 — Present · Vancouver, BC
+summary: Led R&D for a new solar-powered security camera — power architecture, multi-source switching, RF coexistence debug, and hardware test coverage that moved yield and validation metrics in the right direction.
 tags:
-  - Power
-  - MOSFETs
-  - Battery
-  - LTSpice
+  - Power Architecture
+  - MOSFET Switching
+  - RF Debug
+  - Validation
+metrics:
+  - value: "<1%"
+    label: "PIR yield loss (from 30%)"
+  - value: "100%"
+    label: "ALS hardware test coverage"
+  - value: "R&D lead"
+    label: "Solar camera power system"
 ---
 
-# Arlo Camera Power Circuitry Design
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+Arlo was developing a new consumer security camera with an **embedded solar panel** alongside USB-C / external supply paths. The product needed a power architecture that could:
 
+- Parallelize external power with the embedded solar panel without back-feeding the panel
+- Charge the battery efficiently across dead-battery and normal operating corner cases
+- Survive real RF environments (2.4 GHz Wi‑Fi) without breaking motion detection
+- Be validated with enough hardware test coverage to catch coexistence issues early
 
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo 1" style="width: 500px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Arlo 2" style="width: 300px; border-radius: 10px;">
+<p class="section-label">Impact</p>
+## Results that mattered
+
+<div class="callout">
+  <strong>PIR / RF coexistence:</strong> Investigated and eliminated PIR noise induced by 2.4 GHz Wi‑Fi radiation, cutting yield loss from <strong>30% to less than 1%</strong> and restoring reliable motion detection across idle, streaming, and recording states.
 </div>
 
+- **Led power-system R&D** for the solar camera: architecture definition, Boost / charger / fuel-gauge IC selection, competitive benchmarking, and voltage / power / battery charge–discharge validation.
+- Expanded Ambient Light Sensor hardware test coverage from **70% → 100%** and built a coexistence test suite around it.
+- Modified in-development hardware (separated PSUs on interconnected PCBs) to capture clean power-consumption and efficiency data across multiple ICs.
 
-
-
-Designed Arlo’s brand-new consumer product: a security camera with an embedded solar panel. 
-
----
-
-## Key Features
-- Power Circuitry Design
-- Power Supply Switching
-- Hardware Design + Testing
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **Hardware**  | Power Management, Power Supply Parallelization, Battery Charging                            |
-| **EE**     | Switching Circuitry Design, MOSFETS, Diode-Oring |
-
----
-
-## Key Steps
-- undertook extensive power testing and competitive benchmarking to develop a simple, robust, and low-cost power system architecture, which allows for the parallelization of either an external power source (power adapter or external solar panels) with the embedded solar panel
-
-- built analog power control circuitry for robust switching between multiple power sources for brand new camera system while incurring minimal losses (tested in LTSpice)
-
-- ensured that the design provides efficient battery charging, negligible flow back current from external power sources into the embedded solar panel and includes augmented hardware control to isolate the embedded solar panel from the charging system 
-
-
-
----
-## Embedded Solar Panel Power Circuitry Design
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Arlo 3" style="width: 500px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="USB and solar power switching circuitry">
+    <figcaption>Multi-source power switching</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Embedded solar panel power circuitry">
+    <figcaption>Embedded solar panel path</figcaption>
+  </figure>
 </div>
 
----
-## Operation Modes
+<p class="section-label">Design</p>
+## Power architecture
 
+Built analog power-control circuitry for robust switching between multiple sources with minimal loss (validated in **LTSpice**), including:
 
-- Default: USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) ON for the corner case for charging dead battery. This is HW controlled.
-- USB_C IN: Plug in “USB_C IN”, USB_C switch (Q1+Q2) ON and Embed SP switch (Q4+Q5) OFF. This is HW controlled.
-- Higher Input Selection: Choosing higher voltage input between USB_C and Embed SP. This is FW controlled.
+- Parallelization of external adapter / external solar with the embedded solar panel
+- Efficient battery charging with negligible reverse current into the embedded panel
+- Hardware-controlled isolation of the embedded solar panel from the charging path when required
 
----
+### Operating modes
 
-## GPIO Safety Circuitry
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="Arlo 4" style="width: 500px; border-radius: 10px;">
+- **Default (dead battery):** USB‑C switch (Q1+Q2) ON and embedded SP switch (Q4+Q5) ON — hardware controlled so a depleted pack can still recover.
+- **USB‑C present:** USB‑C path ON, embedded SP path OFF — hardware controlled when USB‑C is plugged in.
+- **Higher-input selection:** Firmware chooses the higher voltage between USB‑C and embedded solar when both are available.
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="GPIO and ADC protection circuitry">
+    <figcaption>GPIO / ADC protection</figcaption>
+  </figure>
 </div>
 
+<p class="section-label">Skills</p>
+## Tools & techniques
 
----
+| Area | What I used |
+|------|-------------|
+| Power | Multi-input architecture, MOSFET switching, diode-ORing, battery charging |
+| Debug | PIR / RF coexistence, Wi‑Fi aggressor analysis, yield root-cause |
+| Validation | Voltage / power / charge–discharge sweeps, ALS coexistence suite, LTSpice |
+| Product HW | PSU isolation mods for accurate IC efficiency measurement |

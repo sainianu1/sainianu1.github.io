@@ -2,7 +2,7 @@
 layout: home
 title: Hardware Engineer
 body_class: is-home
-description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design, embedded systems, robotics, and power electronics.
+description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Engineering Intern at Arlo. PCB design, embedded systems, robotics, and power electronics.
 ---
 
 <section class="hero" id="top">
@@ -13,11 +13,11 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
   <div class="hero__grid" aria-hidden="true"></div>
 
   <div class="container hero__content">
-    <p class="eyebrow reveal">Engineering Physics · UBC · Hardware</p>
+    <p class="eyebrow reveal">5th Year Engineering Physics · UBC · Hardware</p>
     <h1 class="reveal reveal-delay-1">Anubhav Saini</h1>
     <p class="lede reveal reveal-delay-2">
-      I design and validate real hardware — power systems, motor control PCBs,
-      sensors, and embedded firmware that ship from the bench to the product.
+      Hardware Engineering Intern at Arlo. I take systems from architecture and schematic
+      through layout, bring-up, and measured validation — power, sensing, motor control, and test.
     </p>
     <div class="btn-row reveal reveal-delay-3">
       <a class="btn btn--primary" href="#work">View work</a>
@@ -30,11 +30,11 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
       </div>
       <div>
         Previously
-        <strong>Sarcomere · Microchip</strong>
+        <strong>Sarcomere · Microchip · Cloverdale</strong>
       </div>
       <div>
-        Focus
-        <strong>PCB · Power · Embedded</strong>
+        Graduating
+        <strong>May 2027</strong>
       </div>
     </div>
   </div>
@@ -44,8 +44,8 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Selected work</p>
-      <h2>Projects that prove I can build</h2>
-      <p class="lede">From consumer camera power architecture to fingertip force sensing and autonomous robots — click through for schematics, boards, and results.</p>
+      <h2>Projects with measurable impact</h2>
+      <p class="lede">Consumer camera power systems, force sensing, motor-control PCBs, and mixed-signal test — click through for architecture, boards, and results.</p>
     </div>
 
     <div class="project-mosaic">
@@ -54,13 +54,13 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
           <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo camera power circuitry">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">01 / Industry</span>
-          <h3>Arlo Camera Power Circuitry</h3>
-          <p>Power architecture for a solar-powered security camera — supply switching, battery charging, and validation under real load.</p>
+          <span class="project-tile__index">01 / Arlo Technologies</span>
+          <h3>Solar Camera Power &amp; HW Validation</h3>
+          <p>Led power architecture for a new solar-powered camera, cut PIR yield loss from 30% to &lt;1%, and expanded ALS test coverage to 100%.</p>
           <ul class="tag-row">
             <li>Power</li>
-            <li>MOSFETs</li>
-            <li>Battery</li>
+            <li>RF Debug</li>
+            <li>Validation</li>
           </ul>
           <span class="project-tile__cta">Open project</span>
         </div>
@@ -71,13 +71,13 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
           <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">02 / Sensing</span>
+          <span class="project-tile__index">02 / Sarcomere Dynamics</span>
           <h3>Fingertip Magnetic Force Sensor</h3>
-          <p>Mapped normal force and shear from a tri-axis magnetometer inside a soft fingertip — high accuracy, low cost.</p>
+          <p>Built a magnet + MLX90393 force pipeline that outputs normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
           <ul class="tag-row">
             <li>Sensors</li>
-            <li>Python</li>
             <li>Firmware</li>
+            <li>Python</li>
           </ul>
           <span class="project-tile__cta">Open project</span>
         </div>
@@ -88,9 +88,9 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
           <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Motor control PCB">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">03 / PCB</span>
-          <h3>Motor Control PCB</h3>
-          <p>Altium-designed BLDC motor driver board with STM32, SPI, I2C, and CAN — layout through bring-up.</p>
+          <span class="project-tile__index">03 / Sarcomere Dynamics</span>
+          <h3>BLDC Motor Control PCB</h3>
+          <p>Altium multi-layer board with STM32F412, motor driver, magnetometer, and CAN — designed for a scalable robot-arm ECU network.</p>
           <ul class="tag-row">
             <li>Altium</li>
             <li>STM32</li>
@@ -108,7 +108,7 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
           <div class="project-tile__body">
             <span class="project-tile__index">04 / Robotics</span>
             <h3>Metal Mario</h3>
-            <p>Autonomous robot car with IMU fusion, rotary encoding, and PID control on a Mario Kart course.</p>
+            <p>STM32 autonomous race car with IMU + encoder localization (&gt;85% accuracy) and PID path following — fastest lap by 4 seconds.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -118,9 +118,9 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
             <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="Machine learning robot detective">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">05 / ML + HW</span>
-            <h3>ML Robot Detective</h3>
-            <p>Vision-driven robot that classifies and acts on what it sees — embedded ML meets mechanical systems.</p>
+            <span class="project-tile__index">05 / ML + Robotics</span>
+            <h3>ML Detective Robot</h3>
+            <p>ROS/Gazebo autonomous car with CNN character recognition at &gt;98% accuracy and publisher/subscriber control loops.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -132,9 +132,9 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
             <img src="{{ '/docs/assets/MicrochipLab.png' | relative_url }}" alt="Multithreaded test routine lab setup">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">06 / Test Eng</span>
-            <h3>Multithreaded Test Routine</h3>
-            <p>Python + firmware test flow that cut SERDES pad validation time by more than 40%.</p>
+            <span class="project-tile__index">06 / Microchip</span>
+            <h3>SERDES Multithreaded Test</h3>
+            <p>Python + firmware characterization flow that cut SERDES I3C pad test time by &gt;40% and power by 15% across VT corners.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -144,9 +144,9 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
             <img src="{{ '/docs/assets/UASBuck.png' | relative_url }}" alt="Buck converter circuit">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">07 / Power</span>
-            <h3>Buck Converter Circuit</h3>
-            <p>Designed, simulated, and built a buck converter — from schematic through measured regulation.</p>
+            <span class="project-tile__index">07 / UBC UAS</span>
+            <h3>60V → 5V Buck Converter</h3>
+            <p>Central power stage for uncrewed aircraft — TPS54560-based Altium design stepping 60V down to 5V / 5A.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -164,12 +164,12 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
       <p class="eyebrow">About</p>
       <h2>Built for the hardware loop</h2>
       <p>
-        I'm a 4th-year Engineering Physics student at UBC specializing in electrical engineering and robotics.
-        I care about the full loop: schematic → layout → bring-up → measurement → iterate.
+        I'm a 5th-year Engineering Physics student at UBC (graduating May 2027), specializing in electrical engineering and robotics.
+        Right now I'm a Hardware Engineering Intern at Arlo Technologies in Vancouver.
       </p>
       <p class="muted">
-        Internships at Arlo, Sarcomere Dynamics, and Microchip taught me how to debug noisy sensors,
-        ship motor-control boards, and write test firmware that actually saves time on the line.
+        Across Arlo, Sarcomere Dynamics, Microchip, and Cloverdale Robotics I've owned power architecture,
+        sensor firmware, motor-control PCBs, and mixed-signal characterization — always with hard numbers attached.
       </p>
       <dl class="skill-bands">
         <div class="skill-band">
@@ -178,11 +178,11 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
         </div>
         <div class="skill-band">
           <dt>Software</dt>
-          <dd>C/C++, Python, embedded firmware, PlatformIO, MATLAB, ROS, OpenCV, TensorFlow</dd>
+          <dd>C/C++, Python, embedded firmware, PlatformIO, MATLAB, ROS, OpenCV, TensorFlow, Linux</dd>
         </div>
         <div class="skill-band">
           <dt>Interests</dt>
-          <dd>Robotics · Aerospace · Automotive · Consumer electronics · AI on the edge</dd>
+          <dd>Robotics · Aerospace · Automotive · Consumer electronics · Edge AI</dd>
         </div>
       </dl>
     </div>
@@ -195,7 +195,7 @@ description: Anubhav Saini — Engineering Physics at UBC. Hardware, PCB design,
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Let's build something that works on the bench.</h2>
-        <p class="lede">Open to hardware, firmware, and robotics roles — internship or full-time conversations welcome.</p>
+        <p class="lede">Open to hardware, firmware, and robotics full-time roles and conversations for 2027.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:sainianubhav01@gmail.com"><span>Email</span><span>→</span></a>

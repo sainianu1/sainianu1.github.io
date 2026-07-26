@@ -1,83 +1,81 @@
 ---
 layout: project
-title: Metal Mario Autonomous Robot Car
+title: Metal Mario — Autonomous Robot Race Car
 heading: Metal Mario
 permalink: /MetalMario/
 cover: /docs/assets/MarioKart.png
-eyebrow: Robotics · Controls
-summary: Autonomous robot car with IMU fusion, rotary encoding, and PID control on a Mario Kart course.
+eyebrow: Personal / Course Project · Robotics & Controls
+role: Embedded systems · sensor fusion · PID
+timeline: UBC Engineering Physics
+summary: Autonomous STM32 race car built from scratch — IMU + magnetometer orientation, custom rotary encoder localization (>85% accuracy), and PID path following that won fastest lap by 4 seconds.
 tags:
+  - STM32
   - PID
   - IMU
-  - C/C++
-  - Embedded
+  - Analog Design
+metrics:
+  - value: ">85%"
+    label: "Localization accuracy"
+  - value: "−4s"
+    label: "Fastest lap margin"
+  - value: "1.5 ft"
+    label: "Ramp jump survived"
 ---
 
-# Metal Mario Autonomous Robot Car
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+Build an **autonomous robot car** that can blast a Mario Kart–style obstacle course: sense orientation and position in real time, stay on an optimal path through jumps and rough terrain, and do it faster than the field.
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart3.png' | relative_url }}" alt="MarioKart1" style="width: 400px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/MarioKart3.png' | relative_url }}" alt="Metal Mario robot car on course">
+    <figcaption>On-course hardware</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="Metal Mario chassis">
+    <figcaption>Chassis + electronics</figcaption>
+  </figure>
 </div>
 
+<p class="section-label">System</p>
+## What I built
 
-An **autonomous robotic car** built from scratch to **speedily navigate** a Mario Kart-themed obstacle course.
+- **Orientation stack:** IMU (accel + gyro) fused with a magnetometer for real-time heading
+- **Custom rotary encoder:** counted wheel rotations to continuously estimate global position on the track map
+- **STM32 integration:** all sensors + control loops on one embedded target (PlatformIO / C/C++)
+- **PID path follower:** optimal path programmed onto the MCU; PID kept the car on that trajectory using live pose
+- **Recalibration:** multi-sensor re-lock after jumps and obstacle hits so pose errors didn’t compound
+- **Mechanical robustness:** chassis survived a **1.5 ft** ramp jump onto a rocky surface
 
----
-
-## Key Features
-- multi-sensor input
-- a global location tracking scheme
-- internal PID control
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **Design**       | Analog Circuit Design, Sensor Systems Design                            |
-| **Software**     | C/C++, PID Control, Embedded Systems (PlatformIO), Real-Time Data Acquisition |
-| **Electrical**   | Rotary Encoder Design, Noise Reduction Techniques, RC Filtering, Compartmentalization |
-
----
-
-## Project Workings
-- Coupled an inertial measurement unit (accelerometer and gyroscope) with a magnetometer to obtain real-time directional orientation of the car. 
-
-- Built a rotary encoder to count wheel spins in known directions, allowing continuous mapping of the car’s global location.
-
-- Employed STM32 to integrate all sensors and circuitry. Developed a path following PID algorithm.
-
-- Coded the optimal path onto the STM32 microprocessor, and utilizing the car’s global position on this preset map, applied PID  to ensure that the path was followed. 
-
-- Developed robust recalibration procedures (using a variety of sensor data) to constantly reposition onto optimized path, especially after jumps and obstacle enounters
-
-- Built a mechanically robust chassis which was capable of jumping off of a 1.5-foot ramp onto a rocky surface
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart4.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+<div class="callout">
+  <strong>Outcome:</strong> real-time orientation + global location with <strong>&gt;85% accuracy</strong>, and autonomous navigation that delivered the <strong>fastest lap by 4 seconds</strong>.
 </div>
 
-
----
-
-## Challenges Faced
-- Minimizing noise interference in the circuit.
-- Ensuring reliable recalibration for repeatable repositioning.
-
----
-
-## Lessons Learned
-- **System integration:** Combining hardware and software to achieve precision results.
-- **Error mitigation:** Identifying and reducing sources of error in real-world measurements.
-
----
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MarioKart2.png' | relative_url }}" alt="MarioKart1" style="width: 300px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/MarioKart4.png' | relative_url }}" alt="Metal Mario electronics detail">
+    <figcaption>Sensor / control electronics</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/MarioKart2.png' | relative_url }}" alt="Metal Mario close-up">
+    <figcaption>Close-up assembly</figcaption>
+  </figure>
 </div>
 
----
+<p class="section-label">Hard parts</p>
+## Challenges & how I handled them
 
+- **Noise:** RC filtering, compartmentalized grounding / layout discipline, and careful analog front-end choices around the encoder and IMU
+- **Pose drift after jumps:** scheduled recalibration using redundant sensor cues instead of trusting a single dead-reckoning stream
+- **Debug speed:** separated electrical, firmware, and software failure modes so bring-up stayed systematic
+
+<p class="section-label">Skills</p>
+## Tools & techniques
+
+| Area | What I used |
+|------|-------------|
+| Embedded | C/C++, STM32, PlatformIO, real-time acquisition |
+| Controls | PID path following, recalibration state logic |
+| Sensing | IMU + magnetometer, custom rotary encoder |
+| Circuits | Analog design, RC filtering, noise reduction |

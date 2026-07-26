@@ -1,57 +1,35 @@
 ---
 layout: project
-title: UAS Antenna Tracker
+title: UAS Antenna Tracking System
 heading: UAS Antenna Tracker
 permalink: /UASantenna/
 cover: /docs/assets/UasAntenna.png
-eyebrow: RF · Systems
-summary: Antenna tracking system for high-bandwidth video downlink from an unmanned aircraft.
+eyebrow: UBC Uncrewed Aircraft Systems · RF / Systems
+role: Electrical · UBC UAS
+timeline: Team project
+summary: Antenna tracking system for high-bandwidth video downlink from an unmanned aircraft — up to 200 Mbps at a nominal 750 m link.
 tags:
   - RF
   - Tracking
   - Systems
+metrics:
+  - value: "200 Mbps"
+    label: "Video downlink target"
+  - value: "750 m"
+    label: "Nominal range"
 ---
 
-# UAS: Antenna Tracking System
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+UBC UAS needed a ground-side **antenna tracking system** that could maintain a high-rate video link with an airborne platform — targeting up to **200 Mbps** at a nominal distance of **750 m**.
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/UasAntenna.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
+<figure>
+  <img src="{{ '/docs/assets/UasAntenna.png' | relative_url }}" alt="UAS antenna tracking system">
+  <figcaption>Antenna tracker hardware</figcaption>
+</figure>
 
-An **Antenna Tracking System** designed to receive and transmit video data at speeds of up to **200 Mbps** from an unmanned aircraft at nominal distance of 750 m
----
+<p class="section-label">Scope</p>
+## Role in the stack
 
-## Key Features
-- multi-sensor input
-- a global location tracking scheme
-- internal PID control
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **Design**       | Antenna Theory, Real-Time Data Acquisition                           |
-| **Electrical**   | PCB Design, Servo Motor Control, Sensor Integration |
-
----
-
-## Project Workings
-- Calculated the losses in signal strength due to the transmitter, receiver, and medium and designed the optimal antenna arrangement
-
-- A lightweight isotropic antenna on the drone to allow for maximal transmission of data in all directions regardless of drone location/ orientation in reference to the ground
-
-- A directional antenna with high gain placed on the ground module
-
-- Designing a Antenna PCB to integrate all of the motors and sensors on the physical device.
-
----
-
-## Challenges Faced
-- Maximizing gain at large distances
-- Obtaining high data transmission speeds 
-
----
+This project sits alongside the UAS buck converter as part of the team's electrical / RF system. The tracker keeps the air-to-ground video pipe locked while the aircraft moves through its mission envelope — pointing, RF chain, and link reliability under motion.

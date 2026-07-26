@@ -4,98 +4,87 @@ title: Fingertip Magnetic Force Sensor
 heading: Fingertip Magnetic Force Sensor
 permalink: /SarcoSensor/
 cover: /docs/assets/force sensor4.png
-eyebrow: Sensing · Embedded
-summary: Mapped normal force and shear from a tri-axis magnetometer inside a soft fingertip — high accuracy, low cost.
+eyebrow: Sarcomere Dynamics · Electrical Engineering Intern
+role: Electrical Engineering Intern · Sarcomere Dynamics
+timeline: Sep 2024 — Dec 2024 · Vancouver, BC
+summary: In-house magnet-based fingertip force sensor — normal force and shear direction from a tri-axis magnetometer, more than 90% accurate and 5–10× cheaper than catalog alternatives.
 tags:
-  - Sensors
-  - Python
+  - MLX90393
   - Firmware
+  - Python
   - Linear Algebra
+metrics:
+  - value: ">90%"
+    label: "Force / shear accuracy"
+  - value: "5–10×"
+    label: "Cheaper than off-the-shelf"
+  - value: "O(1)"
+    label: "Matrix multiply at runtime"
 ---
 
-# Fingertip Magnetic Force Sensor
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+At Sarcomere Dynamics I owned firmware and signal mapping for a **fingertip force sensor**: a permanent magnet seated in a soft rubber tip above a tri-axis magnetic sensor (**MLX90393**). Compression moves and tilts the magnet, changing the field vector.
 
+The product needed:
 
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Force Sensor 1" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor5.png' | relative_url }}" alt="Force Sensor 2" style="width: 200px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Force Sensor 3" style="width: 200px; border-radius: 10px;">
+- Accurate **normal force**
+- Reliable **shear direction** (+x / −x / +y / −y)
+- Something cheap enough to scale — commercial force sensors were **5–10×** more expensive
+- A runtime mapping light enough for embedded use
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Assembled fingertip force sensor">
+    <figcaption>Sensor assembly</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/force sensor5.png' | relative_url }}" alt="Force sensor soft tip">
+    <figcaption>Soft tip + magnet</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/force sensor3.png' | relative_url }}" alt="Force sensor internals">
+    <figcaption>Sensing stack</figcaption>
+  </figure>
 </div>
 
+<p class="section-label">Approach</p>
+## What I built
 
+### 1. Prove the data is repeatable
+Collected raw Bx/By/Bz across systematically increasing forces and four shear directions (plus pure normal). Treated each condition as a state (e.g. 4 N in +x) and validated separability with **k-means clustering** before trusting any mapping.
 
+### 2. Normal force
+Mapped force from **z-magnitude** or **xyz-magnitude**. Both tracked applied load cleanly once repeatability was established.
 
-Working recently at Sarcomere Dynamics, I was tasked with developing a **Fingertip Force Sensor**. The setup was a small permanent magnet being placed in a malleable rubber casing above a tri-axis Magnetic Field sensor (MLX90393). As the rubber was compressed, the magnet moved and shifted orientation resulting in a different Magnetic Field output. We required an accurate reading of the normal force being applied and needed to identify the direction of shearing, which we were unable to get.
+### 3. Shear direction
+Averaged the 2D (x, y) field vectors for each shear class, then used a **pseudoinverse** to learn a linear map from raw vectors → unit direction vectors. Runtime cost collapses to a single matrix multiply — ideal for firmware.
 
-
----
-
-## Key Features
-- Data Collection/Repeatability
-- Normal Force Mapping
-- Shear Direction Mapping
-- Calibration Scheme
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **Mathematics**  | Linear Algebra, Pseudoinverse Matrices                            |
-| **Software**     | Python, Embedded Systems (PlatformIO), Real-Time Data Acquisition, Sensor Firmware |
-
----
-
-## Configuring Data Repeatability
-My first steps were to ensure sensor output repeatability both in the Normal and Shear Directions. 
-
-This involved collecting raw Magnetic field data in all three directions at:
-- different applied forces (systematically increasing) 
-- in 4 directions (+x,-x,+y,-y) and simply normal 
-- essentially established different “states”  (ie 4N force in +x direction)
-
-I followed this by ensuring running a clustering K-Means algorithm to see if the collected data really emerged as consistent different states.
-
-Once I had the repeatability ensured, I opted for:
-- one of either z-magnitude or xyz-magnitude for the normal force applied
--  a 2-D vector mapping approach for the shear in the x,y directions 
-
-
-
----
-## Normal Force Mapping
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Normal Mapping 1" style="width: 500px; border-radius: 10px;">
+<div class="callout">
+  <strong>Why this design won:</strong> &gt;90% accuracy on normal force and shear direction, computationally cheap on-device, and dramatically cheaper than buying a commercial fingertip force unit.
 </div>
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Normal Mapping 2" style="width: 500px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/Normal Force Mapping1.png' | relative_url }}" alt="Normal force mapping plot 1">
+    <figcaption>Normal force calibration</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Normal Force Mapping2.png' | relative_url }}" alt="Normal force mapping plot 2">
+    <figcaption>Normal force fit</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Shear Mapping.png' | relative_url }}" alt="Shear direction mapping">
+    <figcaption>Shear direction mapping</figcaption>
+  </figure>
 </div>
 
+<p class="section-label">Stack</p>
+## Tools & techniques
 
-
-Obtaining the z-output (ie normal force) was simple and was very accurate with either approach.
-
----
-## Shear Force Mapping
-
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Shear Mapping.png' | relative_url }}" alt="Shear Mapping" style="width: 500px; border-radius: 10px;">
-</div>
-
-To establish the shear direction output, I first obtained the average 2D vectors that the raw sensor output  gave for shear in each of the 4 directions.  I then used linear algebra (pseudo-inverse matrices) to map these raw data vectors to the desired unit direction vectors. 
-
----
-
-## Forethought
-
-For this problem, I believe that my solution was accurate, consistent, and repeatabile. Simply put, I was able to test the force sending system and it provided consistently accurate results. 
-
-Another key reason for this being an optimal solution was that it was computationally light. In fact, the reason that I opted for linear algebraic mapping was that a simple matrix multiplication was required to give the directional output.
-
----
+| Area | What I used |
+|------|-------------|
+| Sensing | MLX90393 tri-axis magnetometer, magnet-in-elastomer fingertip |
+| Math | Linear algebra, pseudoinverse mapping, k-means repeatability checks |
+| Software | Python analysis, PlatformIO embedded firmware, real-time acquisition |

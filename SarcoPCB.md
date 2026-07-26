@@ -1,138 +1,107 @@
 ---
 layout: project
-title: Motor Control PCB
-heading: Motor Control PCB
+title: BLDC Motor Control PCB
+heading: BLDC Motor Control PCB
 permalink: /SarcoPCB/
 cover: /docs/assets/MotorControlPCB.png
-eyebrow: PCB · Motor Control
-summary: Altium-designed BLDC motor driver board with STM32, SPI, I2C, and CAN — layout through bring-up.
+eyebrow: Sarcomere Dynamics · Electrical Engineering Intern
+role: Electrical Engineering Intern · Sarcomere Dynamics
+timeline: Sep 2024 — Dec 2024 · Vancouver, BC
+summary: Multi-layer Altium motor-control PCB for a BLDC actuator — STM32F412, SPI motor driver, I2C magnetometer positioning, and CAN for a multi-ECU robot arm.
 tags:
   - Altium
-  - STM32
+  - STM32F412
+  - BLDC
   - CAN
-  - SPI
+metrics:
+  - value: "STM32"
+    label: "F412 MCU + USB prog"
+  - value: "SPI / I2C / CAN"
+    label: "On-board buses"
+  - value: "~0.75A"
+    label: "Motor trace capacity"
 ---
 
-# Motor Control PCB
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faulhaber **BLDC** from magnetometer-based position feedback, regulate power from a single 5 V input, and talk to sibling boards on a robot arm over **CAN**.
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Assembled motor control PCB">
+    <figcaption>Assembled motor control board</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="PCB front render">
+    <figcaption>Front layout</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/pcbBack.png' | relative_url }}" alt="PCB back render">
+    <figcaption>Back layout</figcaption>
+  </figure>
 </div>
 
-I designed a **Motor Control PCB** on Altium Designer to allow for the control of a DC Brushless motor based on input data from a Magnetometer.
+<p class="section-label">Architecture</p>
+## What I designed
 
----
+- **STM32F412** — multiple SPI / I2C / CAN peripherals plus USB for programming
+- **Motor driver (SPI)** — drives the BLDC coils; phase outputs and Hall inputs placed at the board edge for clean enclosure wiring
+- **3D magnetometer (I2C)** — angle / rotor-position sensing as a complement (or alternative) to Hall inputs, depending on motor orientation relative to the board
+- **CAN transceiver** — hierarchical communication between multiple motor ECUs on the arm
+- **Linear regulator** — 5 V board input → 3.3 V @ up to 0.5 A for the MCU and logic rail / power plane
 
-## Key Features
-- STM32F412 Microcontroller to control the motor driver via SPI
-- communicating with a magnetometer for motor's linear positioning via I2C
-- internal voltage regulation (with a Linear Voltage Regulator) to allow for single power input
-- implemented CAN communication (via transceiver hardware) for hierarchical system communication between multiple Motor Control Circuits
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **Communication** | I2C, SPI, CAN Hardware                            |
-| **Electrical**    | Multi-Layer PCB Design, Sensor Integration |
-
----
-
-## Schematic
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Top Level.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/Top Level.png' | relative_url }}" alt="Top-level schematic block">
+    <figcaption>Top-level schematic</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/STM32.png' | relative_url }}" alt="STM32 schematic block">
+    <figcaption>STM32 block</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" alt="Motor driver schematic">
+    <figcaption>Motor driver</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" alt="Magnetometer schematic">
+    <figcaption>Magnetometer</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" alt="CAN transceiver schematic">
+    <figcaption>CAN interface</figcaption>
+  </figure>
 </div>
 
+<p class="section-label">Layout</p>
+## PCB decisions
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/STM32.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+- Board sized for a tight mechanical enclosure; connectors clustered so wiring exits cleanly from one edge
+- Motor phase traces ~**0.7 mm** (~0.75 A) with matched STM32→driver control lengths
+- CAN Tx/Rx length-matched where practical; dense routing with deliberate workarounds on a small outline
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/TopLayer.png' | relative_url }}" alt="PCB top copper layer">
+    <figcaption>Top copper</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Bottom Layer.png' | relative_url }}" alt="PCB bottom copper layer">
+    <figcaption>Bottom copper</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/pcbBack2.png' | relative_url }}" alt="Alternate PCB back view">
+    <figcaption>Assembly / back detail</figcaption>
+  </figure>
 </div>
 
-choice of microcontroller
-- due to communication reqs
-- multiple SPI, I2C, and CAN for communication with external devices and sensors
-- USB for programming of the stm32
+<p class="section-label">Skills</p>
+## Tools & techniques
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
-
-motor driver
-- drove maxon/faulhaber bldc motor
-
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
-
-magnetometer:
-- opted for a 3d Magnetic sensor which was good for angle sensing
-- complement to hall effect inputs: reduced wiring if wanted to use it singularly
-- depending on the orientation of the motor to the board, we could get input signals for the motor rotor position from the sensor
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
-
-can communication:
-- for coherent inter-communication between multiple ecu's on the robot arm
-- allowed for scalability in design
-
-
----
-## PCB
-
-
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="Force Sensor 1" style="width: 300px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/pcbBack.png' | relative_url }}" alt="Force Sensor 2" style="width: 300px; border-radius: 10px;">
-</div>
-
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/pcbBack2.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
-</div>
-
-
----
-## Layers
-
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-  <img src="{{ '/docs/assets/TopLayer.png' | relative_url }}" alt="Force Sensor 1" style="width: 300px; border-radius: 10px;">
-  <img src="{{ '/docs/assets/Bottom Layer.png' | relative_url }}" alt="Force Sensor 2" style="width: 300px; border-radius: 10px;">
-</div>
-
-
----
-
-## PCB Choices and Why
-
-incorporation of a linear regulation:
-- allowed for 5V input into the board
-- used lin reg to bring down 5V input to 3.3 w max 0.5A current draw
-    - connected this to power plane and drew power for stm32 etc from that
-
-placement of driver/stm32:
-- components placed where they are mainly due to wiring constrains
-- the entire PCB was to be inside an enclosing
-- since i wanted minimal wiring coming out of the sides of the pcb  i placed the motor driver on the bottom
-- where the driver’s a b c outputs into the coils could be wired easily out of the pcb
-- also the hall inputs have been placed near the bottom where they can be wired in easily
-
-
-trace widths:
-- trace width for the motor outputs is around 0.7mm (good for about 0.75A)
-
-routing:
-- routing was pretty tight and done with some workarounds
-- most traces were not too long because the pcb itself was quite small
-- for the inputs from the stm32 to the driver, the traces were made to be of the same length
-- also tried to make things like the can_Tx and can_Rx traces similar lengths
-
-
-
----
+| Area | What I used |
+|------|-------------|
+| CAD | Altium Designer, multi-layer PCB |
+| MCU / buses | STM32F412, SPI, I2C, CAN, USB DFU/programming |
+| Power | On-board LDO, power-plane strategy |
+| Motion | BLDC driver integration, Hall + magnetometer sensing |

@@ -1,62 +1,60 @@
 ---
 layout: project
-title: Machine Learning Robot Detective
-heading: ML Robot Detective
+title: Machine Learning Detective Robot
+heading: ML Detective Robot
 permalink: /MLrobot/
 cover: /docs/assets/MLRobot.png
-eyebrow: ML · Robotics
-summary: Vision-driven robot that classifies and acts on what it sees — embedded ML meets mechanical systems.
+eyebrow: Personal / Course Project · ML + Robotics
+role: Perception · ROS · simulation
+timeline: UBC Engineering Physics
+summary: ROS/Gazebo autonomous car that reads visual clues with a CNN — character recognition above 98% accuracy, wired into the robot through publisher/subscriber control.
 tags:
+  - CNN
+  - ROS
   - OpenCV
-  - ML
-  - Robotics
+  - Gazebo
+metrics:
+  - value: ">98%"
+    label: "Character recognition"
+  - value: "ROS"
+    label: "Pub/sub robot bridge"
+  - value: "Gazebo"
+    label: "Full sim stack"
 ---
 
-# Machine Learning Robot Detective
+<p class="section-label">Context</p>
+## The problem
 
-## Project Overview
+Train an autonomous “detective” robot car in simulation that can **see clues, read characters, and act on rules** — not just follow a painted line. The stack had to connect a vision model to a live Gazebo robot through ROS.
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="MarioKart1" style="width: 500px; border-radius: 10px;">
+<figure>
+  <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="Machine learning detective robot in simulation">
+  <figcaption>Detective robot in the Gazebo environment</figcaption>
+</figure>
+
+<p class="section-label">System</p>
+## What I built
+
+- **CNN character recognition** trained and tuned to **>98% accuracy** for reading on-course clues
+- **Computer vision pipeline** (OpenCV + TensorFlow) feeding decisions to the autonomy stack
+- **ROS publisher/subscriber** interfaces so Gazebo sensor streams and AI outputs stayed synchronized
+- **Rule-abiding autonomy** in sim: detect → classify → act, rather than open-loop motion
+
+<div class="callout">
+  <strong>Why recruiters care:</strong> this is the perception + systems glue — dataset realism, model accuracy, and a clean ROS bridge into robot control — not just a notebook model.
 </div>
 
+<p class="section-label">Hard parts</p>
+## Challenges
 
-A **robot car simulated in ROS** and trained to **detect and read clues** in a Gazebo simulation
+- Collecting / synthesizing training data that matched what the robot actually saw in real time in Gazebo
+- Keeping latency and topic timing sane so recognition results arrived while they were still actionable
 
----
+<p class="section-label">Skills</p>
+## Tools & techniques
 
-## Key Features
-- multi-sensor input
-- a global location tracking scheme
-- internal PID control
-
----
-
-## Skills Applied
-
-| **Category**    | **Skills**                                                                 |
-|------------------|---------------------------------------------------------------------------|
-| **ML Tools**     | CNNs, Tensorflow, OpenCV                            |
-| **Software**     | Python, Linux, OpenVC, ROS |
-
----
-
-## Project Workings
-
-- Employed Convolution Neural Networks and Computer Vision to train an autonomous rule-abiding car in Gazebo sim.
-
-- Trained and tuned a CNN to achieve Character Recognition with more than 98% accuracy.
-
-- Utilized ROS Publisher/Subscriber Framework to create communication protocols between Gazebo and AI Model.
-
----
-
-## Challenges Faced
-- Data collection to mimic the real-time data 
-
-
----
-
-## Lessons Learned
-
----
+| Area | What I used |
+|------|-------------|
+| ML | CNNs, TensorFlow, OpenCV |
+| Robotics | ROS pub/sub, Gazebo simulation |
+| Software | Python, Linux |

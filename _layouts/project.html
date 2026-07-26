@@ -16,6 +16,13 @@ layout: default
       {% if page.summary %}
       <p class="lede">{{ page.summary }}</p>
       {% endif %}
+      {% if page.role or page.timeline %}
+      <p class="project-meta">
+        {% if page.role %}<span>{{ page.role }}</span>{% endif %}
+        {% if page.role and page.timeline %}<span class="dot" aria-hidden="true">·</span>{% endif %}
+        {% if page.timeline %}<span>{{ page.timeline }}</span>{% endif %}
+      </p>
+      {% endif %}
       {% if page.tags %}
       <ul class="tag-row" aria-label="Skills">
         {% for tag in page.tags %}
@@ -25,6 +32,19 @@ layout: default
       {% endif %}
     </div>
   </header>
+
+  {% if page.metrics %}
+  <div class="container">
+    <ul class="metric-strip" aria-label="Key results">
+      {% for m in page.metrics %}
+      <li>
+        <strong>{{ m.value }}</strong>
+        <span>{{ m.label }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 
   <div class="container project-body prose">
     {{ content }}
