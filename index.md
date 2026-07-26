@@ -2,12 +2,12 @@
 layout: home
 title: Hardware Engineer
 body_class: is-home
-description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Engineering Intern at Arlo. PCB design, embedded systems, robotics, and power electronics.
+description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics Hardware Intern at Kardium. PCB design, embedded systems, robotics, and power electronics.
 ---
 
 <section class="hero" id="top">
   <div class="hero__media" aria-hidden="true">
-    <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="">
+    <img src="{{ '/docs/assets/TopLayer.png' | relative_url }}" alt="">
   </div>
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="hero__grid" aria-hidden="true"></div>
@@ -16,8 +16,8 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
     <p class="eyebrow reveal">5th Year Engineering Physics · UBC · Hardware</p>
     <h1 class="reveal reveal-delay-1">Anubhav Saini</h1>
     <p class="lede reveal reveal-delay-2">
-      Hardware Engineering Intern at Arlo. I take systems from architecture and schematic
-      through layout, bring-up, and measured validation — power, sensing, motor control, and test.
+      Electronics Hardware Intern at Kardium. I take systems from architecture and schematic
+      through layout, bring-up, and measured validation — medical PCBs, power, sensing, and test.
     </p>
     <div class="btn-row reveal reveal-delay-3">
       <a class="btn btn--primary" href="#work">View work</a>
@@ -26,11 +26,11 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
     <div class="hero__meta reveal reveal-delay-3">
       <div>
         Currently
-        <strong>Hardware Eng Intern · Arlo</strong>
+        <strong>Electronics HW Intern · Kardium</strong>
       </div>
       <div>
         Previously
-        <strong>Sarcomere · Microchip · Cloverdale</strong>
+        <strong>Arlo · Sarcomere</strong>
       </div>
       <div>
         Graduating
@@ -45,35 +45,52 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
     <div class="section__head reveal">
       <p class="eyebrow">Selected work</p>
       <h2>Projects with measurable impact</h2>
-      <p class="lede">Consumer camera power systems, force sensing, motor-control PCBs, and mixed-signal test — click through for architecture, boards, and results.</p>
+      <p class="lede">Medical-grade PCBs, consumer camera power-ORing, force sensing, and motor control — click through for architecture, boards, and results.</p>
     </div>
 
     <div class="project-mosaic">
-      <a class="project-tile project-tile--featured reveal" href="{{ '/ArloCamera/' | relative_url }}">
+      <a class="project-tile project-tile--featured reveal" href="{{ '/Kardium/' | relative_url }}">
         <div class="project-tile__media">
-          <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo camera power circuitry">
+          <img src="{{ '/docs/assets/TopLayer.png' | relative_url }}" alt="Multi-layer PCB layout work">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">01 / Arlo Technologies</span>
-          <h3>Solar Camera Power &amp; HW Validation</h3>
-          <p>Led power architecture for a new solar-powered camera, cut PIR yield loss from 30% to &lt;1%, and expanded ALS test coverage to 100%.</p>
+          <span class="project-tile__index">01 / Kardium Inc.</span>
+          <h3>Medical-Grade PCB Design</h3>
+          <p>2nd-gen high-volume 6-layer production PCB, 1500V+ flex routing, and 100% validation coverage on a 12-layer medical board.</p>
           <ul class="tag-row">
-            <li>Power</li>
-            <li>RF Debug</li>
-            <li>Validation</li>
+            <li>Medical PCB</li>
+            <li>HIPOT</li>
+            <li>IPC Class 3</li>
           </ul>
           <span class="project-tile__cta">Open project</span>
         </div>
       </a>
 
-      <a class="project-tile project-tile--flip reveal" href="{{ '/SarcoSensor/' | relative_url }}">
+      <a class="project-tile project-tile--flip reveal" href="{{ '/ArloCamera/' | relative_url }}">
+        <div class="project-tile__media">
+          <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
+        </div>
+        <div class="project-tile__body">
+          <span class="project-tile__index">02 / Arlo Technologies</span>
+          <h3>Power-ORing Switch</h3>
+          <p>Discrete FW + HW Power-ORing switch at 98% efficiency — charges from the best available source with transistor/diode HV input logic.</p>
+          <ul class="tag-row">
+            <li>Power-ORing</li>
+            <li>MOSFET</li>
+            <li>98% eff.</li>
+          </ul>
+          <span class="project-tile__cta">Open project</span>
+        </div>
+      </a>
+
+      <a class="project-tile reveal" href="{{ '/SarcoSensor/' | relative_url }}">
         <div class="project-tile__media">
           <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">02 / Sarcomere Dynamics</span>
+          <span class="project-tile__index">03 / Sarcomere Dynamics</span>
           <h3>Fingertip Magnetic Force Sensor</h3>
-          <p>Built a magnet + MLX90393 force pipeline that outputs normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
+          <p>Magnet + MLX90393 force pipeline for normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
           <ul class="tag-row">
             <li>Sensors</li>
             <li>Firmware</li>
@@ -83,44 +100,27 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
         </div>
       </a>
 
-      <a class="project-tile reveal" href="{{ '/SarcoPCB/' | relative_url }}">
-        <div class="project-tile__media">
-          <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Motor control PCB">
-        </div>
-        <div class="project-tile__body">
-          <span class="project-tile__index">03 / Sarcomere Dynamics</span>
-          <h3>BLDC Motor Control PCB</h3>
-          <p>Altium multi-layer board with STM32F412, motor driver, magnetometer, and CAN — designed for a scalable robot-arm ECU network.</p>
-          <ul class="tag-row">
-            <li>Altium</li>
-            <li>STM32</li>
-            <li>CAN</li>
-          </ul>
-          <span class="project-tile__cta">Open project</span>
-        </div>
-      </a>
-
       <div class="project-grid-2">
+        <a class="project-tile reveal" href="{{ '/SarcoPCB/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Motor control PCB">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">04 / Sarcomere Dynamics</span>
+            <h3>BLDC Motor Control PCB</h3>
+            <p>Altium multi-layer board with STM32F412, motor driver, magnetometer, and CAN for a scalable robot-arm ECU network.</p>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+
         <a class="project-tile reveal" href="{{ '/MetalMario/' | relative_url }}">
           <div class="project-tile__media">
             <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="Metal Mario autonomous robot car">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">04 / Robotics</span>
+            <span class="project-tile__index">05 / Robotics</span>
             <h3>Metal Mario</h3>
-            <p>STM32 autonomous race car with IMU + encoder localization (&gt;85% accuracy) and PID path following — fastest lap by 4 seconds.</p>
-            <span class="project-tile__cta">Open project</span>
-          </div>
-        </a>
-
-        <a class="project-tile reveal" href="{{ '/MLrobot/' | relative_url }}">
-          <div class="project-tile__media">
-            <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="Machine learning robot detective">
-          </div>
-          <div class="project-tile__body">
-            <span class="project-tile__index">05 / ML + Robotics</span>
-            <h3>ML Detective Robot</h3>
-            <p>ROS/Gazebo autonomous car with CNN character recognition at &gt;98% accuracy and publisher/subscriber control loops.</p>
+            <p>STM32 autonomous race car with IMU + encoder localization and PID path following — fastest lap by 4 seconds.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -134,7 +134,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
           <div class="project-tile__body">
             <span class="project-tile__index">06 / Microchip</span>
             <h3>SERDES Multithreaded Test</h3>
-            <p>Python + firmware characterization flow that cut SERDES I3C pad test time by &gt;40% and power by 15% across VT corners.</p>
+            <p>Python + firmware characterization flow that cut SERDES I3C pad test time by &gt;40% and power by 15%.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
@@ -165,16 +165,16 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
       <h2>Built for the hardware loop</h2>
       <p>
         I'm a 5th-year Engineering Physics student at UBC (graduating May 2027), specializing in electrical engineering and robotics.
-        Right now I'm a Hardware Engineering Intern at Arlo Technologies in Vancouver.
+        Right now I'm an Electronics Hardware Intern at <strong>Kardium</strong> in Burnaby.
       </p>
       <p class="muted">
-        Across Arlo, Sarcomere Dynamics, Microchip, and Cloverdale Robotics I've owned power architecture,
+        Previously at Arlo and Sarcomere Dynamics (and earlier Microchip), I've owned power-ORing architectures,
         sensor firmware, motor-control PCBs, and mixed-signal characterization — always with hard numbers attached.
       </p>
       <dl class="skill-bands">
         <div class="skill-band">
           <dt>Hardware</dt>
-          <dd>PCB design (Altium), power management, sensor systems, STM32, ADC / UART / I2C / SPI / CAN</dd>
+          <dd>PCB design (Altium), medical / HV layout, power management, sensor systems, STM32, ADC / UART / I2C / SPI / CAN</dd>
         </div>
         <div class="skill-band">
           <dt>Software</dt>
@@ -182,7 +182,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Hardware Eng
         </div>
         <div class="skill-band">
           <dt>Interests</dt>
-          <dd>Robotics · Aerospace · Automotive · Consumer electronics · Edge AI</dd>
+          <dd>Medical devices · Robotics · Aerospace · Automotive · Consumer electronics</dd>
         </div>
       </dl>
     </div>

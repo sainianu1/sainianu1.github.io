@@ -33,20 +33,18 @@ layout: default
     </div>
   </header>
 
-  {% if page.metrics %}
-  <div class="container">
-    <ul class="metric-strip" aria-label="Key results">
+  <div class="container project-body prose">
+    {% if page.metrics %}
+    <ul class="metric-strip metric-strip--in-body" aria-label="Key results">
       {% for m in page.metrics %}
       <li>
-        <strong>{{ m.value }}</strong>
-        <span>{{ m.label }}</span>
+        <strong>{{ m.value | escape }}</strong>
+        <span>{{ m.label | escape }}</span>
       </li>
       {% endfor %}
     </ul>
-  </div>
-  {% endif %}
+    {% endif %}
 
-  <div class="container project-body prose">
     {{ content }}
   </div>
 

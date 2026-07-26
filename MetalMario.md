@@ -14,9 +14,9 @@ tags:
   - IMU
   - Analog Design
 metrics:
-  - value: ">85%"
+  - value: "85%+"
     label: "Localization accuracy"
-  - value: "−4s"
+  - value: "4s faster"
     label: "Fastest lap margin"
   - value: "1.5 ft"
     label: "Ramp jump survived"

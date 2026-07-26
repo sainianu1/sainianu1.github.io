@@ -14,11 +14,11 @@ tags:
   - SERDES
   - Mixed-Signal
 metrics:
-  - value: ">40%"
+  - value: "40%+"
     label: "Faster test time"
-  - value: "−15%"
+  - value: "15% less"
     label: "Power via VT regularization"
-  - value: "5 × VT"
+  - value: "5 VT"
     label: "Corners fully swept"
 ---
 

@@ -14,9 +14,9 @@ tags:
   - Python
   - Linear Algebra
 metrics:
-  - value: ">90%"
+  - value: "90%+"
     label: "Force / shear accuracy"
-  - value: "5–10×"
+  - value: "5-10x"
     label: "Cheaper than off-the-shelf"
   - value: "O(1)"
     label: "Matrix multiply at runtime"

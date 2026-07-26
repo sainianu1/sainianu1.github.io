@@ -763,34 +763,50 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .metric-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
-  margin: -0.25rem 0 1.25rem;
+  margin: 0 0 2rem;
   padding: 0;
   list-style: none;
 }
 
-.metric-strip li {
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--line);
-  background: linear-gradient(160deg, rgba(193, 127, 74, 0.12), rgba(18, 24, 33, 0.9));
+.prose .metric-strip--in-body {
+  list-style: none;
+  padding-left: 0;
 }
 
-.metric-strip strong {
+.prose .metric-strip--in-body > li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line-dark);
+  background: rgba(193, 127, 74, 0.08);
+  color: inherit;
+}
+
+.prose .metric-strip--in-body strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   letter-spacing: -0.03em;
-  color: var(--copper-bright);
-  margin-bottom: 0.2rem;
+  color: #9a5f30;
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
 }
 
-.metric-strip span {
+.prose .metric-strip--in-body span {
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mist);
+  color: #5c6b7a;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .metric-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 .back-link {
@@ -807,11 +823,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 .back-link:hover { color: var(--copper-bright); }
 
 .project-body {
-  margin-top: -1rem;
+  margin-top: 1.75rem;
   padding: clamp(2rem, 4vw, 3rem);
   background: var(--paper-2);
   color: var(--text-on-light);
   border: 1px solid var(--line-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.project-body > .metric-strip:first-child + .section-label,
+.project-body > .metric-strip:first-child + p.section-label {
+  margin-top: 0.25rem;
 }
 
 .project-nav {
@@ -841,13 +864,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #314152;
 }
 
-.prose ul {
+.prose ul:not(.metric-strip):not(.tag-row) {
   list-style: disc;
   padding-left: 1.2rem;
   margin: 0 0 1.25rem;
 }
 
-.prose li { margin-bottom: 0.35rem; }
+.prose ul:not(.metric-strip):not(.tag-row) > li { margin-bottom: 0.35rem; }
 
 .prose strong { color: var(--text-on-light); }
 

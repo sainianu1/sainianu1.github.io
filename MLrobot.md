@@ -14,7 +14,7 @@ tags:
   - OpenCV
   - Gazebo
 metrics:
-  - value: ">98%"
+  - value: "98%+"
     label: "Character recognition"
   - value: "ROS"
     label: "Pub/sub robot bridge"
