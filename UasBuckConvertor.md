@@ -1,7 +1,15 @@
 ---
-layout: default
-title: UAS Buck Convertor
+layout: project
+title: UAS Buck Converter
+heading: Buck Converter Circuit
 permalink: /UasBuckConvertor/
+cover: /docs/assets/UASBuck.png
+eyebrow: Power Electronics
+summary: Designed, simulated, and built a buck converter — from schematic through measured regulation.
+tags:
+  - Buck
+  - Simulation
+  - Power
 ---
 
 # UAS Buck Convertor: 60V -> 5V

@@ -1,3 +1,28 @@
-theme: jekyll-theme-tactile
-permalink: pretty
+title: Anubhav Saini
+description: Hardware engineer portfolio — PCB design, embedded systems, robotics, and power electronics.
+author: Anubhav Saini
+email: sainianubhav01@gmail.com
+linkedin: https://www.linkedin.com/in/anubhavsainiubc/
+github_username: sainianu1
+url: "https://sainianu1.github.io"
 baseurl: ""
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - Resume/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .git/
+  - .DS_Store
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"

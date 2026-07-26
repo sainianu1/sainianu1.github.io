@@ -1,7 +1,15 @@
 ---
-layout: default
+layout: project
 title: UAS Antenna Tracker
+heading: UAS Antenna Tracker
 permalink: /UASantenna/
+cover: /docs/assets/UasAntenna.png
+eyebrow: RF · Systems
+summary: Antenna tracking system for high-bandwidth video downlink from an unmanned aircraft.
+tags:
+  - RF
+  - Tracking
+  - Systems
 ---
 
 # UAS: Antenna Tracking System

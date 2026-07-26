@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="project-page">
+  <header class="project-hero">
+    <div class="project-hero__bg" aria-hidden="true">
+      {% if page.cover %}
+      <img src="{{ page.cover | relative_url }}" alt="">
+      {% endif %}
+      <div class="project-hero__veil"></div>
+    </div>
+    <div class="container project-hero__content">
+      <a class="back-link" href="{{ '/' | relative_url }}#work">← All projects</a>
+      <p class="eyebrow">{{ page.eyebrow | default: 'Project' }}</p>
+      <h1>{{ page.heading | default: page.title }}</h1>
+      {% if page.summary %}
+      <p class="lede">{{ page.summary }}</p>
+      {% endif %}
+      {% if page.tags %}
+      <ul class="tag-row" aria-label="Skills">
+        {% for tag in page.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="container project-body prose">
+    {{ content }}
+  </div>
+
+  <nav class="container project-nav" aria-label="Project navigation">
+    <a href="{{ '/' | relative_url }}#work" class="btn btn--ghost">Back to work</a>
+    <a href="{{ '/' | relative_url }}#contact" class="btn btn--primary">Get in touch</a>
+  </nav>
+</article>

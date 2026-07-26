@@ -1,7 +1,16 @@
 ---
-layout: default
-title: Sarcomere Dynamics Magnetic Force Sensor
+layout: project
+title: Fingertip Magnetic Force Sensor
+heading: Fingertip Magnetic Force Sensor
 permalink: /SarcoSensor/
+cover: /docs/assets/force%20sensor4.png
+eyebrow: Sensing · Embedded
+summary: Mapped normal force and shear from a tri-axis magnetometer inside a soft fingertip — high accuracy, low cost.
+tags:
+  - Sensors
+  - Python
+  - Firmware
+  - Linear Algebra
 ---
 
 # Fingertip Magnetic Force Sensor

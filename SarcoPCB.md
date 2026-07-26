@@ -1,7 +1,16 @@
 ---
-layout: default
-title: Sarcomere Dynamics Motor Control PCB
+layout: project
+title: Motor Control PCB
+heading: Motor Control PCB
 permalink: /SarcoPCB/
+cover: /docs/assets/MotorControlPCB.png
+eyebrow: PCB · Motor Control
+summary: Altium-designed BLDC motor driver board with STM32, SPI, I2C, and CAN — layout through bring-up.
+tags:
+  - Altium
+  - STM32
+  - CAN
+  - SPI
 ---
 
 # Motor Control PCB

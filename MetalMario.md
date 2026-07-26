@@ -1,7 +1,16 @@
 ---
-layout: default
-title: Metal Mario
+layout: project
+title: Metal Mario Autonomous Robot Car
+heading: Metal Mario
 permalink: /MetalMario/
+cover: /docs/assets/MarioKart.png
+eyebrow: Robotics · Controls
+summary: Autonomous robot car with IMU fusion, rotary encoding, and PID control on a Mario Kart course.
+tags:
+  - PID
+  - IMU
+  - C/C++
+  - Embedded
 ---
 
 # Metal Mario Autonomous Robot Car

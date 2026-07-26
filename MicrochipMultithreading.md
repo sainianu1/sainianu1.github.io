@@ -1,7 +1,16 @@
 ---
-layout: default
+layout: project
 title: Multithreaded Test Routine
+heading: Multithreaded Test Routine
 permalink: /MicrochipMultithread/
+cover: /docs/assets/MicrochipLab.png
+eyebrow: Test Engineering · Firmware
+summary: Python + firmware test flow that cut SERDES pad validation time by more than 40%.
+tags:
+  - Python
+  - Firmware
+  - SERDES
+  - Multithreading
 ---
 
 # Multithreaded Test Routine

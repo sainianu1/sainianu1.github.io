@@ -1,7 +1,16 @@
 ---
-layout: default
+layout: project
 title: Arlo Camera Power Circuitry Design
+heading: Arlo Camera Power Circuitry
 permalink: /ArloCamera/
+cover: /docs/assets/USB_PowerCircuitry.png
+eyebrow: Industry · Power Electronics
+summary: Power architecture for a solar-powered security camera — supply switching, battery charging, and validation under real load.
+tags:
+  - Power
+  - MOSFETs
+  - Battery
+  - LTSpice
 ---
 
 # Arlo Camera Power Circuitry Design

@@ -1,7 +1,15 @@
 ---
-layout: default
+layout: project
 title: Machine Learning Robot Detective
+heading: ML Robot Detective
 permalink: /MLrobot/
+cover: /docs/assets/MLRobot.png
+eyebrow: ML · Robotics
+summary: Vision-driven robot that classifies and acts on what it sees — embedded ML meets mechanical systems.
+tags:
+  - OpenCV
+  - ML
+  - Robotics
 ---
 
 # Machine Learning Robot Detective
