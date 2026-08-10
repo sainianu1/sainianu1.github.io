@@ -7,46 +7,118 @@ cover: /docs/assets/TopLayer.png
 eyebrow: Kardium Inc. · Electronics Hardware Intern
 role: Electronics Hardware Intern · Kardium Inc.
 timeline: Jan 2026 — Aug 2026 · Burnaby, BC
-summary: High-volume medical PCB redesign, 1500V+ flex routing, and end-to-end validation of a 12-layer board — HIPOT strength, IPC Class 3, and 100% diagnostic coverage.
+summary: End-to-end ownership of Kardium’s highest-volume 6-layer production PCB — fab-rule prework, mixed HV/LV layout, system integration interfaces, and a dedicated flash-chip test jig — plus flex routing and full-board validation elsewhere on the program.
 tags:
   - Medical PCB
-  - 6 / 12 / 14 Layer
-  - Flex
   - HIPOT
+  - IPC Class 3
+  - Test Jig
 metrics:
   - value: "6-layer"
-    label: "High-volume production PCB"
-  - value: "1500V+"
-    label: "Flex signal routing"
-  - value: "100%"
-    label: "12-layer test coverage"
+    label: "Highest-volume production PCB"
+  - value: "IPC Class 3"
+    label: "New-vendor design rules"
+  - value: "E2E"
+    label: "Rules → layout → test jig"
 ---
 
 <p class="section-label">Context</p>
 ## The problem
 
-At Kardium I’m working on **safety-critical, medical-grade electronics** — production PCBs that carry both high-voltage and low-voltage signals, flex assemblies with extreme clearance constraints, and multi-board systems that need rigorous bring-up before they can ship.
+Kardium’s catheter handle board sits between the multi-use **RF/PF ablation generators** and disposable **electrode capsules**. It has to carry high-voltage ablation energy and low-voltage sense/drive safely, survive medical HV compliance, stay manufacturable at high volume under **IPC Class 3**, and fit an extreme mechanical envelope — then prove out on the bench before production.
 
-<p class="section-label">Impact</p>
-## What I’m delivering
-
-- Designed the **2nd generation of Kardium’s highest-volume production PCB** — a **6-layer** board carrying HV and LV signals — **increasing HIPOT withstand strength** for medical HV safety compliance
-- Re-defined PCB design rules and fabrication drawings; updated the 6-layer design to a new vendor’s specs while holding **IPC Class 3**, cutting production cost on a safety-critical high-volume board
-- Laid out next-gen **medical-grade flex PCBs**, routing **1500V+ signals** within strict safety clearances for short-term cost reduction and drop-in integration
-- Led **end-to-end validation of a 12-layer medical-grade PCB**: authored and executed **25+ tests across 5 diagnostic suites** (Power, Signal Integrity, Thermal, ADC, Isolation) for **100% test coverage**
-- Built custom **10× / 100× coaxial probes** for high-fidelity SI and isolation measurements
-- Debugged multiple **14-layer boards** inside a **10+ board system** via high-speed signal analysis and precision rework
+I owned the **2nd-generation, highest-volume 6-layer production PCB** end to end: vendor design-rule prework, full layout, interface definition into the system, and a companion flash test jig for bring-up.
 
 <div class="callout">
-  <strong>Focus:</strong> medical HV safety, Class 3 manufacturability, and measurement-driven bring-up — not just schematic capture.
+  Resume bullets stay at impact (HIPOT strength, new vendor, cost). This page is the hardware-engineer walkthrough of how that board was shipped.
 </div>
+
+<p class="section-label">Impact</p>
+## What a recruiter should know
+
+- Designed the **2nd generation of Kardium’s highest-volume production PCB** — a **6-layer** board carrying mixed **HV and LV** signals — increasing **HIPOT withstand strength** for medical HV safety compliance
+- Re-defined PCB design rules and fabrication drawings for a **new fab vendor** while holding **IPC Class 3**, cutting production cost on the safety-critical high-volume board
+- Built the **flash-chip test jig** used to verify SPI comms into the handle board before capsules ship with the multi-use generator system
+- Also on the internship: next-gen **1500V+ medical flex**, **100%** coverage validation on a **12-layer** board, and multi-board debug in a **10+ board** system
+
+<p class="section-label">Deep dive</p>
+## Highest-volume 6-layer handle PCB
+
+### System role
+The board is the interconnect inside one-time-use electrode capsules that mate to Kardium’s multi-use RF/PF ablation system:
+
+- Routes **RF and pulsed-field (PF) ablation** signals from the generators to the RF/PF electrodes
+- Returns **resistance and temperature sense** signals for closed-loop / monitoring paths
+- Hosts a **flash memory** so each disposable capsule can carry identity / configuration data for the reusable generator stack
+- Channel count: **32 × 8 signal nets** plus dedicated flash (SPI) signals — dense mixed-signal fanout under a hard size constraint
+
+High-voltage ablation energy and low-voltage sense/drive share the same small board, so creepage/clearance, HIPOT strength, and layer assignment were first-class design drivers — not afterthoughts.
+
+### 1 · Prework — design rules before copper
+Before touching the redesign layout, I set up the full design-rule and fab-spec package for the **new vendor** (stackup was already approved). That meant mining both the **incumbent and new fabrication houses’ capability documents** and locking every applicable rule into the CAD / fab package, including:
+
+- Track-to-pad and related **spacings**
+- Hole-to-hole and other **clearances**
+- **NPTH solder-mask expansions** and mask openings
+- **Hole-size tolerances** and related drill specs
+- Broader fab drawing updates so the board stayed **IPC Class 3** while matching the new house’s process window
+
+That prework is what made the vendor move a cost win instead of a quality risk: rules, drawings, and layout all pointed at the same manufacturable envelope.
+
+### 2 · Layout — 6-layer mixed HV / LV under hard constraints
+I then laid out the **entire 6-layer board**. Constraints that shaped the design:
+
+- **No signal copper on top/bottom** — outer layers reserved (mechanical / contact / keep-out driven), so the ablation, sense, and flash nets had to be solved on the inner layers
+- Extreme **physical sizing** from the capsule / handle mechanical envelope
+- Coexistence of **high-voltage ablation** paths with **low-voltage sense and drive** on the same stackup, with HIPOT withstand strength as an explicit outcome of the 2nd-gen redesign
+- Dense breakout for **256 signal nets (32×8)** plus flash, without violating Class 3 / vendor rules set in prework
+
+### 3 · Integration interfaces
+Two mechanical-electrical interfaces define how the board sits in the product:
+
+| Side | Connection | Role |
+|------|------------|------|
+| Generator / handle | **Pogo pins → exposed gold pads** | Multi-use RF/PF generators mate to the capsule board for powering ablation + sense + flash access |
+| Electrode | **Solder-bond pads → ribbon cables** | Ablation and sense nets leave the board toward the RF/PF electrodes |
+
+The flash device on the board is what makes the disposable capsule model work: many one-time capsules (board + electrode wiring) against one multi-use generator system, each capsule identifiable over SPI when docked on the pogo interface.
+
+### 4 · Bring-up — 4-layer flash test jig
+After the production layout, I designed a second PCB — a **4-layer test jig** dedicated to exercising the flash chip on the handle board:
+
+- **Controlled-impedance SPI** path matched to the production board so flash comms under test reflected real capsule behavior
+- **Arduino Nano Every** as the host controller
+- **ADG3304** logic-level translator between MCU and flash I/O levels
+- On-board **button + LEDs** for operator control and status
+- Its own **pogo-pin array** mating to the same gold-pad interface used by the generators — so the jig plugs into the 6-layer board the same way the system does
+
+That closed the loop: rules → production layout → system interfaces → a purpose-built fixture for flash bring-up and SPI confidence before capsules move with the ablation system.
+
+<p class="section-label">Also on this internship</p>
+## Broader Kardium impact
+
+### Medical-grade flex
+- Layout for next-generation **medical flex PCBs**
+- Routed **1500V+ signals** within strict safety clearances
+- Aimed at short-term cost reduction and rapid drop-in integration into the current production system
+
+### 12-layer validation campaign
+- End-to-end validation of a **12-layer medical-grade PCB**
+- Authored and executed **25+ tests across 5 diagnostic suites**: Power, Signal Integrity, Thermal, ADC, Isolation
+- **100% test coverage** across the planned suite
+- Built custom **10× / 100× coaxial probes** for high-fidelity SI and isolation measurements
+
+### Multi-board debug
+- Debugged multiple **14-layer boards** inside a **10+ board system**
+- Methods: high-speed signal analysis and precision rework
 
 <p class="section-label">Skills</p>
 ## Tools & techniques
 
 | Area | What I used |
 |------|-------------|
-| PCB | 6 / 12 / 14-layer design, medical flex, IPC Class 3, fab documentation |
-| HV / safety | HIPOT withstand, 1500V+ clearances, isolation testing |
-| Validation | Power, SI, thermal, ADC, isolation suites; custom coax probes |
-| Debug | High-speed signal analysis, precision rework on multi-board systems |
+| PCB prework | Vendor capability digests, design rules, fab drawings, IPC Class 3 |
+| Production layout | 6-layer mixed HV/LV, inner-layer routing constraints, dense channel fanout |
+| Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
+| Test hardware | 4-layer flash jig, controlled-impedance SPI, Arduino Nano Every, ADG3304 |
+| Also | Medical flex (1500V+), 12-layer validation suites, multi-board SI debug |

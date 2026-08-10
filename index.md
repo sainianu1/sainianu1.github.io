@@ -56,7 +56,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         <div class="project-tile__body">
           <span class="project-tile__index">01 / Kardium Inc.</span>
           <h3>Medical-Grade PCB Design</h3>
-          <p>2nd-gen high-volume 6-layer production PCB, 1500V+ flex routing, and 100% validation coverage on a 12-layer medical board.</p>
+          <p>End-to-end 2nd-gen 6-layer production PCB — fab rules, mixed HV/LV layout, system interfaces, and flash test jig — plus flex and 12-layer validation.</p>
           <ul class="tag-row">
             <li>Medical PCB</li>
             <li>HIPOT</li>
@@ -127,26 +127,26 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
       </div>
 
       <div class="project-grid-2">
+        <a class="project-tile reveal" href="{{ '/SolarExpress/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/UASBuck.png' | relative_url }}" alt="DC power electronics hardware">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">06 / Personal</span>
+            <h3>Solar Express</h3>
+            <p>600W panel-level DC power optimizer — GaN buck-boost, 99%+ simulated efficiency, and stability-proven control design.</p>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+
         <a class="project-tile reveal" href="{{ '/MicrochipMultithread/' | relative_url }}">
           <div class="project-tile__media">
             <img src="{{ '/docs/assets/MicrochipLab.png' | relative_url }}" alt="Multithreaded test routine lab setup">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">06 / Microchip</span>
+            <span class="project-tile__index">07 / Microchip</span>
             <h3>SERDES Multithreaded Test</h3>
             <p>Python + firmware characterization flow that cut SERDES I3C pad test time by &gt;40% and power by 15%.</p>
-            <span class="project-tile__cta">Open project</span>
-          </div>
-        </a>
-
-        <a class="project-tile reveal" href="{{ '/UasBuckConvertor/' | relative_url }}">
-          <div class="project-tile__media">
-            <img src="{{ '/docs/assets/UASBuck.png' | relative_url }}" alt="Buck converter circuit">
-          </div>
-          <div class="project-tile__body">
-            <span class="project-tile__index">07 / UBC UAS</span>
-            <h3>60V → 5V Buck Converter</h3>
-            <p>Central power stage for uncrewed aircraft — TPS54560-based Altium design stepping 60V down to 5V / 5A.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
