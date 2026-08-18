@@ -527,6 +527,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .project-tile--flip .project-tile__media { order: 2; }
 .project-tile--flip .project-tile__body { order: 1; }
 
+.project-tile--diagram .project-tile__media {
+  background: #071422;
+}
+
+.project-tile--diagram .project-tile__media img {
+  object-fit: contain;
+  filter: none;
+}
+
 .project-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -940,6 +949,23 @@ ul { margin: 0; padding: 0; list-style: none; }
 .prose figure img {
   width: 100%;
   margin: 0;
+}
+
+.prose .figure-diagram img {
+  background: #071422;
+}
+
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0 1.5rem;
+  background: var(--ink);
+  color: var(--mist);
+  border: 1px solid var(--line-dark);
+  border-radius: 2px;
 }
 
 .prose figcaption {

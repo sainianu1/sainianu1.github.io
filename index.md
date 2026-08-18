@@ -45,7 +45,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
     <div class="section__head reveal">
       <p class="eyebrow">Selected work</p>
       <h2>Projects with measurable impact</h2>
-      <p class="lede">Medical-grade PCBs, consumer camera power-ORing, force sensing, and motor control — click through for architecture, boards, and results.</p>
+      <p class="lede">Medical-grade PCBs, panel-level power electronics, consumer camera power-ORing, and sensing — click through for architecture, boards, and results.</p>
     </div>
 
     <div class="project-mosaic">
@@ -66,12 +66,29 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         </div>
       </a>
 
-      <a class="project-tile project-tile--flip reveal" href="{{ '/ArloCamera/' | relative_url }}">
+      <a class="project-tile project-tile--flip project-tile--diagram reveal" href="{{ '/SolarExpress/' | relative_url }}">
+        <div class="project-tile__media">
+          <img src="{{ '/docs/assets/solar-express-system-diagram.png' | relative_url }}" alt="Solar Express panel-level DC power optimizer system diagram">
+        </div>
+        <div class="project-tile__body">
+          <span class="project-tile__index">02 / Personal</span>
+          <h3>Solar Express</h3>
+          <p>600W panel-level DC power optimizer — 4-switch GaN buck-boost, 99%+ pass-through efficiency, and NEC 690.12 rapid shutdown.</p>
+          <ul class="tag-row">
+            <li>GaN</li>
+            <li>Buck-Boost</li>
+            <li>MPPT</li>
+          </ul>
+          <span class="project-tile__cta">Open project</span>
+        </div>
+      </a>
+
+      <a class="project-tile reveal" href="{{ '/ArloCamera/' | relative_url }}">
         <div class="project-tile__media">
           <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">02 / Arlo Technologies</span>
+          <span class="project-tile__index">03 / Arlo Technologies</span>
           <h3>Power-ORing Switch</h3>
           <p>Discrete FW + HW Power-ORing switch at 98% efficiency — charges from the best available source with transistor/diode HV input logic.</p>
           <ul class="tag-row">
@@ -83,58 +100,41 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         </div>
       </a>
 
-      <a class="project-tile reveal" href="{{ '/SarcoSensor/' | relative_url }}">
-        <div class="project-tile__media">
-          <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
-        </div>
-        <div class="project-tile__body">
-          <span class="project-tile__index">03 / Sarcomere Dynamics</span>
-          <h3>Fingertip Magnetic Force Sensor</h3>
-          <p>Magnet + MLX90393 force pipeline for normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
-          <ul class="tag-row">
-            <li>Sensors</li>
-            <li>Firmware</li>
-            <li>Python</li>
-          </ul>
-          <span class="project-tile__cta">Open project</span>
-        </div>
-      </a>
-
       <div class="project-grid-2">
+        <a class="project-tile reveal" href="{{ '/SarcoSensor/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">04 / Sarcomere Dynamics</span>
+            <h3>Fingertip Magnetic Force Sensor</h3>
+            <p>Magnet + MLX90393 force pipeline for normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+
         <a class="project-tile reveal" href="{{ '/SarcoPCB/' | relative_url }}">
           <div class="project-tile__media">
             <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Motor control PCB">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">04 / Sarcomere Dynamics</span>
+            <span class="project-tile__index">05 / Sarcomere Dynamics</span>
             <h3>BLDC Motor Control PCB</h3>
             <p>Altium multi-layer board with STM32F412, motor driver, magnetometer, and CAN for a scalable robot-arm ECU network.</p>
-            <span class="project-tile__cta">Open project</span>
-          </div>
-        </a>
-
-        <a class="project-tile reveal" href="{{ '/MetalMario/' | relative_url }}">
-          <div class="project-tile__media">
-            <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="Metal Mario autonomous robot car">
-          </div>
-          <div class="project-tile__body">
-            <span class="project-tile__index">05 / Robotics</span>
-            <h3>Metal Mario</h3>
-            <p>STM32 autonomous race car with IMU + encoder localization and PID path following — fastest lap by 4 seconds.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
       </div>
 
       <div class="project-grid-2">
-        <a class="project-tile reveal" href="{{ '/SolarExpress/' | relative_url }}">
+        <a class="project-tile reveal" href="{{ '/MetalMario/' | relative_url }}">
           <div class="project-tile__media">
-            <img src="{{ '/docs/assets/UASBuck.png' | relative_url }}" alt="DC power electronics hardware">
+            <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="Metal Mario autonomous robot car">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">06 / Personal</span>
-            <h3>Solar Express</h3>
-            <p>600W panel-level DC power optimizer — GaN buck-boost, 99%+ simulated efficiency, and stability-proven control design.</p>
+            <span class="project-tile__index">06 / Robotics</span>
+            <h3>Metal Mario</h3>
+            <p>STM32 autonomous race car with IMU + encoder localization and PID path following — fastest lap by 4 seconds.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
