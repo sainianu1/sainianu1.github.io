@@ -51,7 +51,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
     <div class="project-mosaic">
       <a class="project-tile project-tile--featured reveal" href="{{ '/Kardium/' | relative_url }}">
         <div class="project-tile__media">
-          <img src="{{ '/docs/assets/TopLayer.png' | relative_url }}" alt="Multi-layer PCB layout work">
+          <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Kardium Cronus Handle Board Gen 2">
         </div>
         <div class="project-tile__body">
           <span class="project-tile__index">01 / Kardium Inc.</span>

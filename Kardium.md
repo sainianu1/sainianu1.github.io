@@ -3,7 +3,7 @@ layout: project
 title: Kardium — Medical-Grade PCB Design & Validation
 heading: Medical-Grade PCB Design
 permalink: /Kardium/
-cover: /docs/assets/TopLayer.png
+cover: /docs/assets/Kardium3D_Top.png
 eyebrow: Kardium Inc. · Electronics Hardware Intern
 role: Electronics Hardware Intern · Kardium Inc.
 timeline: Jan 2026 — Aug 2026 · Burnaby, BC
@@ -28,6 +28,17 @@ metrics:
 Kardium’s catheter handle board sits between the multi-use **RF/PF ablation generators** and disposable **electrode capsules**. It has to carry high-voltage ablation energy and low-voltage sense/drive safely, survive medical HV compliance, stay manufacturable at high volume under **IPC Class 3**, and fit an extreme mechanical envelope — then prove out on the bench before production.
 
 I owned the **2nd-generation, highest-volume 6-layer production PCB** end to end: vendor design-rule prework, full layout, interface definition into the system, and a companion flash test jig for bring-up.
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, top side">
+    <figcaption>Cronus Handle Board Gen 2 — top</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/Kardium3D_Bottom.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, bottom side with Kardium silkscreen">
+    <figcaption>Cronus Handle Board Gen 2 — bottom</figcaption>
+  </figure>
+</div>
 
 <div class="callout">
   Resume bullets stay at impact (HIPOT strength, new vendor, cost). This page is the hardware-engineer walkthrough of how that board was shipped.
@@ -72,6 +83,11 @@ I then laid out the **entire 6-layer board**. Constraints that shaped the design
 - Extreme **physical sizing** from the capsule / handle mechanical envelope
 - Coexistence of **high-voltage ablation** paths with **low-voltage sense and drive** on the same stackup, with HIPOT withstand strength as an explicit outcome of the 2nd-gen redesign
 - Dense breakout for **256 signal nets (32×8)** plus flash, without violating Class 3 / vendor rules set in prework
+
+<figure>
+  <img src="{{ '/docs/assets/Kardium2D.png' | relative_url }}" alt="6-layer CAD layout of the Cronus handle PCB showing dense mixed-signal routing">
+  <figcaption>6-layer CAD — mixed HV/LV inner-layer routing</figcaption>
+</figure>
 
 ### 3 · Integration interfaces
 Two mechanical-electrical interfaces define how the board sits in the product:

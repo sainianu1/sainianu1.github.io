@@ -71,6 +71,15 @@ Used transistor/diode array logic to build a **discrete high-voltage input syste
   </figure>
 </div>
 
+<p class="section-label">Also on this internship</p>
+## Broader Arlo impact (resume-level wins)
+
+These are called out on the resume; the Power-ORing switch above is the featured deep dive.
+
+- **Led R&D** for a new solar-powered security camera — power architecture, competitive benchmarking, and battery/power validation
+- Root-caused Wi-Fi / motion-sensor interference, cutting related **yield loss from 30% to under 1%**
+- Grew key sensor hardware test coverage **from 60% to 100%** for wireless coexistence
+
 <p class="section-label">Skills</p>
 ## Tools & techniques
 
@@ -79,3 +88,4 @@ Used transistor/diode array logic to build a **discrete high-voltage input syste
 | Power | Power-ORing, MOSFET switching, diode-array logic, discrete HV input |
 | Control | Firmware source selection + auxiliary hardware fail-safes |
 | Validation | Efficiency measurement, multi-source charge-path bring-up, LTSpice |
+| Debug | RF coexistence / PIR yield root-cause |

@@ -3,12 +3,6 @@ layout: default
 ---
 <article class="project-page">
   <header class="project-hero">
-    <div class="project-hero__bg" aria-hidden="true">
-      {% if page.cover %}
-      <img src="{{ page.cover | relative_url }}" alt="">
-      {% endif %}
-      <div class="project-hero__veil"></div>
-    </div>
     <div class="container project-hero__content">
       <a class="back-link" href="{{ '/' | relative_url }}#work">← All projects</a>
       <p class="eyebrow">{{ page.eyebrow | default: 'Project' }}</p>
