@@ -7,36 +7,36 @@ cover: /docs/assets/USB_PowerCircuitry.png
 eyebrow: Arlo Technologies · Hardware Engineering Intern
 role: Hardware Engineering Intern · Arlo Technologies
 timeline: May 2025 — Dec 2025 · Vancouver, BC
-summary: Cost-effective Power-ORing switch with integrated firmware and auxiliary hardware control — 98% efficient charging from the best available source for Arlo’s solar-capable camera.
+summary: Cost-effective Power-ORing switch with firmware and fallback hardware control so a solar-capable camera charges from the best of a power supply, external solar panel, or embedded solar path — MOSFET/diode analog control, validated in LTSpice and on the PCB at >98% efficiency.
 tags:
   - Power-ORing
   - MOSFET
   - Firmware + HW
-  - HV Input
+  - LTSpice
 metrics:
-  - value: "98%"
+  - value: ">98%"
     label: "Power-ORing efficiency"
   - value: "FW + HW"
-    label: "Integrated control"
-  - value: "Discrete HV"
-    label: "Transistor / diode array"
+    label: "Firmware + fallback hardware"
+  - value: "Analog OR"
+    label: "MOSFET / diode-array control"
 ---
 
 <p class="section-label">Context</p>
 ## The problem
 
-Arlo’s camera needed to charge from the **best available power source** among USB-C, external supply, and an embedded solar path — without expensive integrated ideal-diode controllers, and without back-feeding or inefficient handoffs between rails.
+At Arlo I designed a cost-effective **Power-ORing switch** with integrated firmware and **fallback hardware control** so a solar-capable camera could charge from the **best available source** among a **power supply**, an **external solar panel**, and the **embedded solar path**. All of this without expensive integrated ideal-diode or power-mux ICs, and without back-feeding or inefficient rail handoffs.
 
 <p class="section-label">Impact</p>
 ## What I delivered
 
 <div class="callout">
-  Designed a cost-effective <strong>Power-ORing Switch</strong> (integrated FW + auxiliary HW control) with <strong>98% efficiency</strong> to charge Arlo’s camera from the best available power source; applied transistor/diode array logic to create a discrete HV input system.
+  MOSFET and diode-array analog control, validated in <strong>LTSpice</strong> and on the actual PCB, at <strong>&gt;98% Power-ORing efficiency</strong>. Hardware handled plug-in and dead-battery recovery; firmware chose the preferred input when multiple sources were present.
 </div>
 
-- Selected a discrete MOSFET / diode-array approach instead of a costly integrated power-mux, keeping the BOM lean while meeting efficiency targets
-- Combined **firmware selection** of the preferred input with **auxiliary hardware control** for safe defaults and dead-battery recovery paths
-- Validated switching behavior and charging efficiency across the multi-input architecture used on the solar-capable camera program
+- Implemented **smart MOSFET and diode-array logic** as an analog control system instead of a costly integrated power-mux or ideal-diode IC
+- Combined **firmware** source selection with **fallback hardware control** for plug-in and dead-battery recovery
+- Validated switching behavior and charging efficiency first in **LTSpice**, then on the **actual PCB**
 
 <div class="figure-grid">
   <figure>
@@ -53,16 +53,16 @@ Arlo’s camera needed to charge from the **best available power source** among 
 ## How the Power-ORing works
 
 ### Control split
-- **Hardware-controlled paths** handle plug-in and dead-battery corner cases so the pack can always recover
-- **Firmware** chooses the higher / preferred input when multiple sources are present
+- **Hardware-controlled paths** handle plug-in and dead-battery recovery so the pack can always come up
+- **Firmware** chooses the preferred input when multiple sources are present
 
-### Operating modes
-- **Default (dead battery):** USB‑C switch (Q1+Q2) ON and embedded SP switch (Q4+Q5) ON — hardware controlled
-- **USB‑C present:** USB‑C path ON, embedded SP path OFF — hardware controlled on plug-in
-- **Best-source selection:** firmware picks between USB‑C and embedded solar when both are available
+### Sources
+- Power supply
+- External solar panel
+- Embedded solar path
 
-### Discrete HV input
-Used transistor/diode array logic to build a **discrete high-voltage input system** that ORs sources safely — prioritizing efficiency, reverse-current blocking, and cost over an integrated ideal-diode IC.
+### Discrete analog OR
+Used MOSFET and diode-array logic to build an **analog control system** that ORs sources safely — prioritizing efficiency, reverse-current blocking, and cost over an integrated ideal-diode or power-mux IC.
 
 <div class="figure-grid">
   <figure>
@@ -85,7 +85,7 @@ These are called out on the resume; the Power-ORing switch above is the featured
 
 | Area | What I used |
 |------|-------------|
-| Power | Power-ORing, MOSFET switching, diode-array logic, discrete HV input |
-| Control | Firmware source selection + auxiliary hardware fail-safes |
-| Validation | Efficiency measurement, multi-source charge-path bring-up, LTSpice |
+| Power | Power-ORing, MOSFET + diode-array analog control, discrete source OR |
+| Control | Firmware preferred-input selection + fallback hardware (plug-in / dead-battery) |
+| Validation | LTSpice, then PCB bring-up; switching behavior and charging efficiency |
 | Debug | RF coexistence / PIR yield root-cause |

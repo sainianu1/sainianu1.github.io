@@ -56,7 +56,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         <div class="project-tile__body">
           <span class="project-tile__index">01 / Kardium Inc.</span>
           <h3>Medical-Grade PCB Design</h3>
-          <p>End-to-end 2nd-gen 6-layer production PCB — fab rules, mixed HV/LV layout, system interfaces, and flash test jig — plus flex and 12-layer validation.</p>
+          <p>2nd-gen 6-layer production PCB — DFM vendor transition, 16HV + 16LV across 8 channels plus flash, HIPOT, and a matched-impedance flash/SPI test jig.</p>
           <ul class="tag-row">
             <li>Medical PCB</li>
             <li>HIPOT</li>
@@ -90,11 +90,11 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         <div class="project-tile__body">
           <span class="project-tile__index">03 / Arlo Technologies</span>
           <h3>Power-ORing Switch</h3>
-          <p>Discrete FW + HW Power-ORing switch at 98% efficiency — charges from the best available source with transistor/diode HV input logic.</p>
+          <p>Cost-effective Power-ORing with firmware and fallback hardware — power supply, external solar, and embedded solar; MOSFET/diode analog control at &gt;98% efficiency.</p>
           <ul class="tag-row">
             <li>Power-ORing</li>
             <li>MOSFET</li>
-            <li>98% eff.</li>
+            <li>&gt;98% eff.</li>
           </ul>
           <span class="project-tile__cta">Open project</span>
         </div>
@@ -108,7 +108,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
           <div class="project-tile__body">
             <span class="project-tile__index">04 / Sarcomere Dynamics</span>
             <h3>Fingertip Magnetic Force Sensor</h3>
-            <p>Magnet + MLX90393 force pipeline for normal force and shear direction at &gt;90% accuracy — 5–10× cheaper than off-the-shelf.</p>
+            <p>Magnet + MLX90393 fingertip sensor — K-means-verified Bx/By/Bz mapping, pseudoinverse shear direction, &gt;90% accuracy, 5–10× cheaper than catalog.</p>
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>

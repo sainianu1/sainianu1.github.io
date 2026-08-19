@@ -7,7 +7,7 @@ cover: /docs/assets/force sensor4.png
 eyebrow: Sarcomere Dynamics · Electrical Engineering Intern
 role: Electrical Engineering Intern · Sarcomere Dynamics
 timeline: Sep 2024 — Dec 2024 · Vancouver, BC
-summary: In-house magnet-based fingertip force sensor — normal force and shear direction from a tri-axis magnetometer, more than 90% accurate and 5–10× cheaper than catalog alternatives.
+summary: In-house magnet + MLX90393 fingertip force sensor — K-means-verified Bx/By/Bz mapping, pseudoinverse shear direction as a single matrix multiply, >90% accuracy and 5–10× cheaper than catalog units.
 tags:
   - MLX90393
   - Firmware
@@ -25,7 +25,7 @@ metrics:
 <p class="section-label">Context</p>
 ## The problem
 
-At Sarcomere Dynamics I owned firmware and signal mapping for a **fingertip force sensor**: a permanent magnet seated in a soft rubber tip above a tri-axis magnetic sensor (**MLX90393**). Compression moves and tilts the magnet, changing the field vector.
+At Sarcomere Dynamics I owned firmware and signal mapping for an in-house **fingertip force sensor**: a permanent magnet seated in a soft rubber tip above a tri-axis **MLX90393**. Compression moved and tilted the magnet, changing the field vector; I mapped raw **Bx/By/Bz** to **normal force** and **shear direction** (+x / −x / +y / −y).
 
 The product needed:
 
@@ -52,14 +52,14 @@ The product needed:
 <p class="section-label">Approach</p>
 ## What I built
 
-### 1. Prove the data is repeatable
-Collected raw Bx/By/Bz across systematically increasing forces and four shear directions (plus pure normal). Treated each condition as a state (e.g. 4 N in +x) and validated separability with **k-means clustering** before trusting any mapping.
+### 1. Prove the states are separable
+Collected raw **Bx/By/Bz** across systematically increasing forces and four shear directions (plus pure normal). I first confirmed that force/shear states were separable using **K-means clustering** before trusting any mapping.
 
 ### 2. Normal force
 Mapped force from **z-magnitude** or **xyz-magnitude**. Both tracked applied load cleanly once repeatability was established.
 
 ### 3. Shear direction
-Averaged the 2D (x, y) field vectors for each shear class, then used a **pseudoinverse** to learn a linear map from raw vectors → unit direction vectors. Runtime cost collapses to a single matrix multiply — ideal for firmware.
+Used a **pseudoinverse** to learn a linear map from the **2D field** to **unit shear direction**, so runtime collapsed to a **single matrix multiply**. The mapping reached **>90%** accuracy, and the design was **5–10×** cheaper than catalog fingertip force sensors.
 
 <div class="callout">
   <strong>Why this design won:</strong> &gt;90% accuracy on normal force and shear direction, computationally cheap on-device, and dramatically cheaper than buying a commercial fingertip force unit.

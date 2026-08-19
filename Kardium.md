@@ -7,7 +7,7 @@ cover: /docs/assets/Kardium3D_Top.png
 eyebrow: Kardium Inc. · Electronics Hardware Intern
 role: Electronics Hardware Intern · Kardium Inc.
 timeline: Jan 2026 — Aug 2026 · Burnaby, BC
-summary: End-to-end ownership of Kardium’s highest-volume 6-layer production PCB — fab-rule prework, mixed HV/LV layout, system integration interfaces, and a dedicated flash-chip test jig — plus flex routing and full-board validation elsewhere on the program.
+summary: Designed the 2nd generation of Kardium’s highest-volume 6-layer production PCB — HV RF/PF ablation plus LV sense/drive, DFM vendor transition, 16HV + 16LV across 8 channels and flash under IPC Class 3 — and a matched-impedance 4-layer flash/SPI test jig.
 tags:
   - Medical PCB
   - HIPOT
@@ -16,10 +16,10 @@ tags:
 metrics:
   - value: "6-layer"
     label: "Highest-volume production PCB"
-  - value: "IPC Class 3"
-    label: "New-vendor design rules"
-  - value: "E2E"
-    label: "Rules → layout → test jig"
+  - value: "16HV + 16LV"
+    label: "8 channels + flash, IPC Class 3"
+  - value: "4-layer"
+    label: "Matched-Z flash/SPI test jig"
 ---
 
 <p class="section-label">Context</p>
@@ -27,7 +27,7 @@ metrics:
 
 Kardium’s catheter handle board sits between the multi-use **RF/PF ablation generators** and disposable **electrode capsules**. It has to carry high-voltage ablation energy and low-voltage sense/drive safely, survive medical HV compliance, stay manufacturable at high volume under **IPC Class 3**, and fit an extreme mechanical envelope — then prove out on the bench before production.
 
-I owned the **2nd-generation, highest-volume 6-layer production PCB** end to end: vendor design-rule prework, full layout, interface definition into the system, and a companion flash test jig for bring-up.
+At Kardium I designed the **2nd generation of their highest-volume production PCB**: a **6-layer** board carrying high-voltage **RF/PF ablation** signals plus low-voltage sense/drive paths for **resistance and temperature**. I owned the **vendor transition for DFM**, then laid out the full board under extreme size constraints, and designed a companion **4-layer flash/SPI test jig** so bring-up would be representative of the real product.
 
 <div class="figure-grid">
   <figure>
@@ -47,9 +47,10 @@ I owned the **2nd-generation, highest-volume 6-layer production PCB** end to end
 <p class="section-label">Impact</p>
 ## What a recruiter should know
 
-- Designed the **2nd generation of Kardium’s highest-volume production PCB** — a **6-layer** board carrying mixed **HV and LV** signals — increasing **HIPOT withstand strength** for medical HV safety compliance
-- Re-defined PCB design rules and fabrication drawings for a **new fab vendor** while holding **IPC Class 3**, cutting production cost on the safety-critical high-volume board
-- Built the **flash-chip test jig** used to verify SPI comms into the handle board before capsules ship with the multi-use generator system
+- Designed the **2nd generation of Kardium’s highest-volume production PCB** — a **6-layer** board carrying **HV RF/PF ablation** plus **LV sense/drive** for resistance and temperature
+- Owned the **vendor transition for DFM**: compared both fab houses’ capability and fabrication documents (spacings, clearances, expansions, hole tolerances), then laid out the full board under extreme size constraints
+- Routed **16HV + 16LV signals each for 8 channels** as well as **flash**, holding **IPC Class 3** — increasing **HIPOT withstand** for medical HV safety compliance and cutting production cost on this safety-critical board
+- Designed a companion **4-layer flash/SPI test jig** (Arduino Nano Every, ADG3304, pogo-pin interface) that preserved the same **controlled impedance** as the production board so bring-up and comms tests matched the real product
 - Also on the internship: next-gen **1500V+ medical flex**, **100%** coverage validation on a **12-layer** board, and multi-board debug in a **10+ board** system
 
 <p class="section-label">Deep dive</p>
@@ -61,12 +62,12 @@ The board is the interconnect inside one-time-use electrode capsules that mate t
 - Routes **RF and pulsed-field (PF) ablation** signals from the generators to the RF/PF electrodes
 - Returns **resistance and temperature sense** signals for closed-loop / monitoring paths
 - Hosts a **flash memory** so each disposable capsule can carry identity / configuration data for the reusable generator stack
-- Channel count: **32 × 8 signal nets** plus dedicated flash (SPI) signals — dense mixed-signal fanout under a hard size constraint
+- Channel count: **16HV + 16LV signals each for 8 channels**, plus dedicated flash (SPI) — dense mixed-signal fanout under a hard size constraint
 
 High-voltage ablation energy and low-voltage sense/drive share the same small board, so creepage/clearance, HIPOT strength, and layer assignment were first-class design drivers — not afterthoughts.
 
-### 1 · Prework — design rules before copper
-Before touching the redesign layout, I set up the full design-rule and fab-spec package for the **new vendor** (stackup was already approved). That meant mining both the **incumbent and new fabrication houses’ capability documents** and locking every applicable rule into the CAD / fab package, including:
+### 1 · Prework — vendor transition for DFM
+Before touching the redesign layout, I owned the **vendor transition for DFM** (stackup was already approved). That meant comparing both **fab houses’ capability and fabrication documents** and locking every applicable rule into the CAD / fab package, including:
 
 - Track-to-pad and related **spacings**
 - Hole-to-hole and other **clearances**
@@ -82,7 +83,7 @@ I then laid out the **entire 6-layer board**. Constraints that shaped the design
 - **No signal copper on top/bottom** — outer layers reserved (mechanical / contact / keep-out driven), so the ablation, sense, and flash nets had to be solved on the inner layers
 - Extreme **physical sizing** from the capsule / handle mechanical envelope
 - Coexistence of **high-voltage ablation** paths with **low-voltage sense and drive** on the same stackup, with HIPOT withstand strength as an explicit outcome of the 2nd-gen redesign
-- Dense breakout for **256 signal nets (32×8)** plus flash, without violating Class 3 / vendor rules set in prework
+- Dense breakout for **16HV + 16LV signals each for 8 channels** plus flash, without violating Class 3 / vendor rules set in prework
 
 <figure>
   <img src="{{ '/docs/assets/Kardium2D.png' | relative_url }}" alt="6-layer CAD layout of the Cronus handle PCB showing dense mixed-signal routing">
@@ -99,16 +100,16 @@ Two mechanical-electrical interfaces define how the board sits in the product:
 
 The flash device on the board is what makes the disposable capsule model work: many one-time capsules (board + electrode wiring) against one multi-use generator system, each capsule identifiable over SPI when docked on the pogo interface.
 
-### 4 · Bring-up — 4-layer flash test jig
-After the production layout, I designed a second PCB — a **4-layer test jig** dedicated to exercising the flash chip on the handle board:
+### 4 · Bring-up — 4-layer flash/SPI test jig
+After the production layout, I designed a companion **4-layer flash/SPI test jig** so bring-up and communication tests would be representative of the real product:
 
-- **Controlled-impedance SPI** path matched to the production board so flash comms under test reflected real capsule behavior
+- **Controlled-impedance SPI** path preserved to the same impedance as the production board
 - **Arduino Nano Every** as the host controller
 - **ADG3304** logic-level translator between MCU and flash I/O levels
 - On-board **button + LEDs** for operator control and status
-- Its own **pogo-pin array** mating to the same gold-pad interface used by the generators — so the jig plugs into the 6-layer board the same way the system does
+- **Pogo-pin interface** mating to the same gold-pad array used by the generators — so the jig plugs into the 6-layer board the same way the system does
 
-That closed the loop: rules → production layout → system interfaces → a purpose-built fixture for flash bring-up and SPI confidence before capsules move with the ablation system.
+That closed the loop: DFM vendor transition → production layout → system interfaces → a purpose-built fixture for flash bring-up and SPI confidence before capsules move with the ablation system.
 
 <p class="section-label">Also on this internship</p>
 ## Broader Kardium impact
@@ -133,8 +134,8 @@ That closed the loop: rules → production layout → system interfaces → a pu
 
 | Area | What I used |
 |------|-------------|
-| PCB prework | Vendor capability digests, design rules, fab drawings, IPC Class 3 |
-| Production layout | 6-layer mixed HV/LV, inner-layer routing constraints, dense channel fanout |
+| PCB prework | DFM vendor transition, fab capability/docs comparison, spacings / clearances / expansions / hole tolerances, IPC Class 3 |
+| Production layout | 6-layer mixed HV/LV, 16HV + 16LV × 8 channels + flash, extreme size constraints |
 | Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
 | Test hardware | 4-layer flash jig, controlled-impedance SPI, Arduino Nano Every, ADG3304 |
 | Also | Medical flex (1500V+), 12-layer validation suites, multi-board SI debug |
