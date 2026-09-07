@@ -270,7 +270,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: relative;
   min-height: 100svh;
   display: grid;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   isolation: isolate;
 }
@@ -324,6 +324,107 @@ ul { margin: 0; padding: 0; list-style: none; }
   max-width: 40rem;
 }
 
+.hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.7fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: end;
+  padding: calc(var(--header-h) + 3.5rem) 0 4rem;
+}
+
+.hero__intro {
+  max-width: 38rem;
+}
+
+.hero-timeline {
+  padding: 1.25rem 1.35rem 1.35rem 1.5rem;
+  border: 1px solid var(--line);
+  background: rgba(10, 15, 20, 0.62);
+  backdrop-filter: blur(12px);
+}
+
+.hero-timeline__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin: 0 0 1.1rem;
+}
+
+.hero-timeline ol {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 0.85rem;
+  list-style: none;
+}
+
+.hero-timeline ol::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 1px;
+  background: rgba(193, 127, 74, 0.35);
+}
+
+.hero-timeline li {
+  position: relative;
+  padding: 0 0 1.15rem 1.1rem;
+}
+
+.hero-timeline li:last-child { padding-bottom: 0; }
+
+.hero-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.72rem;
+  top: 0.35rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 1px solid var(--copper);
+  background: var(--ink);
+}
+
+.hero-timeline li.is-now::before {
+  background: var(--copper);
+  box-shadow: 0 0 0 4px rgba(193, 127, 74, 0.18);
+}
+
+.hero-timeline a {
+  display: grid;
+  gap: 0.15rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-timeline a:hover .hero-timeline__who {
+  color: var(--copper-bright);
+}
+
+.hero-timeline__when {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-timeline__who {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.hero-timeline__what {
+  font-size: 0.85rem;
+  color: var(--mist);
+}
+
 .hero h1 {
   font-size: clamp(3rem, 8vw, 5.4rem);
   font-weight: 800;
@@ -360,6 +461,73 @@ ul { margin: 0; padding: 0; list-style: none; }
   letter-spacing: 0;
   font-family: var(--font-body);
   font-size: 0.95rem;
+}
+
+.section--tight {
+  padding-top: 1.5rem;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.project-tile--stack {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.project-tile--stack .project-tile__media {
+  aspect-ratio: 16 / 11;
+  min-height: 0;
+}
+
+.work-group {
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-group:first-of-type {
+  margin-top: 0;
+}
+
+.work-group__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  align-items: baseline;
+  margin-bottom: 1.25rem;
+}
+
+.work-group__co {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.2rem;
+}
+
+.work-group__role {
+  margin: 0;
+  color: var(--mist);
+  font-size: 0.95rem;
+}
+
+.work-group__when {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin: 0;
+}
+
+.work-group__grid {
+  display: grid;
+  gap: 1.25rem;
 }
 
 /* Reveal motion */
@@ -1013,6 +1181,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
+  .hero__layout,
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
   .project-tile,
   .project-tile--featured,
   .project-tile--flip {
@@ -1062,8 +1235,13 @@ ul { margin: 0; padding: 0; list-style: none; }
     font-size: 1rem;
   }
 
-  .hero__content {
+  .hero__content,
+  .hero__layout {
     padding-bottom: 3rem;
+  }
+
+  .hero-timeline {
+    max-width: 28rem;
   }
 
   .skill-band {

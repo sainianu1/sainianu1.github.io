@@ -3,7 +3,7 @@ layout: project
 title: Kardium — System-Level RF Switch Validation
 heading: System-Level RF Switch Validation
 permalink: /KardiumTesting/
-cover: /docs/assets/rfs-thermal-system.jpg
+cover: /docs/assets/rfs-cardcage.jpg
 eyebrow: Kardium Inc. · Electronics Hardware Intern
 role: Electronics Hardware Intern · Kardium Inc.
 timeline: 3-month campaign · 2026 · Burnaby, BC
@@ -32,12 +32,12 @@ Nobody handed me a finished protocol. Over a **three-month** campaign I decided 
 
 <div class="figure-grid">
   <figure>
-    <img src="{{ '/docs/assets/rfs-thermal-system.jpg' | relative_url }}" alt="FLIR thermal capture of the RF Switch in the card cage with rows of closed relays warming">
-    <figcaption>Worst-case thermal — card cage, max relays closed</figcaption>
+    <img src="{{ '/docs/assets/rfs-board-top.jpg' | relative_url }}" alt="Top-down photo of the OneBox RF Switch with the Kardium SOM installed over the relay field">
+    <figcaption>RF Switch + OneBox SOM — relay field, test points, live rails</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/rfs-thermal-board.jpg' | relative_url }}" alt="FLIR close-up of the RF Switch PCB showing power and SOM hotspots">
-    <figcaption>Board-level IR — supplies, SOM, closed relays</figcaption>
+    <img src="{{ '/docs/assets/rfs-cardcage.jpg' | relative_url }}" alt="RF Switch card standing in the metal card cage with converters and adjacent boards visible">
+    <figcaption>In the card cage — the system the tests were written against</figcaption>
   </figure>
 </div>
 
@@ -64,7 +64,7 @@ Every workbook followed the same contract so another engineer could pick it up:
 | Decide | Map the failure mode (sag, brownout, bounce, coupling, heat) to the rail, IC, or relay that would show it |
 | Plan | Goal, equipment, definitions, probing reference, required rework, FW/commands, procedure |
 | Limits | Pass/fail from datasheets, converter capacitive-load ratings, pull-in/dropout vs. temperature, and worst-case current |
-| Bench | Card cage + SOM, DMM / LCR / programmable load / programmable PS, 4-ch scopes, IR camera, ground-spring probing so “ringing” was the board’s, not the fixture’s |
+| Bench | Card cage + SOM, DMM / LCR / programmable load / programmable PS, 4-ch scopes, IR camera, microscope inspection, ground-spring probing so “ringing” was the board’s, not the fixture’s |
 | Conclude | Observations first, then explicit Pass / Fail / Tentative — including when the right answer was “this mode is not in the design” |
 
 <p class="section-label">Deep dive</p>
@@ -147,6 +147,21 @@ Shifts are real and in the expected direction — and **not large enough to inve
 That is the kind of conclusion firmware and system-monitor owners can actually use.
 
 **8.1 System thermal.** Same worst-case relay set as 1.6; IR at 5 and 10 minutes. Hottest areas are **converters, SOM, and closed relays**. **Peak &lt; 40 °C** on the card. **Pass.**
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/rfs-thermal-system.jpg' | relative_url }}" alt="FLIR thermal capture of the RF Switch in the card cage with rows of closed relays warming">
+    <figcaption>Worst-case IR — card cage, max relays closed</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/rfs-thermal-board.jpg' | relative_url }}" alt="FLIR close-up of the RF Switch PCB showing power and SOM hotspots">
+    <figcaption>Board-level IR — supplies, SOM, closed relays</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/rfs-inspect.jpg' | relative_url }}" alt="Microscope view of a surface-mount IC during board inspection">
+    <figcaption>Component-level inspection during rework and bring-up</figcaption>
+  </figure>
+</div>
 
 **Isolator SI / CMTI / default-state (ISO776x / ISO772x class).** Propagation delay, skew, CMTI between SOM and RFS grounds, and fail-safe default outputs were **written into the framework**. They were still waiting on firmware hooks and a CMTI source at the end of my campaign — the plans shipped with the rest of the suite so the next owner did not start from zero.
 
