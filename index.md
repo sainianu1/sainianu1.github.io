@@ -45,7 +45,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
     <div class="section__head reveal">
       <p class="eyebrow">Selected work</p>
       <h2>Projects with measurable impact</h2>
-      <p class="lede">Medical-grade PCBs, panel-level power electronics, consumer camera power-ORing, and sensing — click through for architecture, boards, and results.</p>
+      <p class="lede">Medical-grade PCBs, system-level validation, panel-level power electronics, consumer camera power-ORing, and sensing — click through for architecture, boards, and results.</p>
     </div>
 
     <div class="project-mosaic">
@@ -66,12 +66,29 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         </div>
       </a>
 
-      <a class="project-tile project-tile--flip project-tile--diagram reveal" href="{{ '/SolarExpress/' | relative_url }}">
+      <a class="project-tile project-tile--flip reveal" href="{{ '/KardiumTesting/' | relative_url }}">
+        <div class="project-tile__media">
+          <img src="{{ '/docs/assets/rfs-thermal-system.jpg' | relative_url }}" alt="FLIR thermal capture of the Kardium RF Switch under worst-case relay load">
+        </div>
+        <div class="project-tile__body">
+          <span class="project-tile__index">02 / Kardium Inc.</span>
+          <h3>System-Level RF Switch Validation</h3>
+          <p>Owned the full test loop on the OneBox RF Switch — 17 tests across 8 suites — then left the framework that the rest of the 11+ board ecosystem still uses.</p>
+          <ul class="tag-row">
+            <li>Power</li>
+            <li>SI</li>
+            <li>Relays</li>
+          </ul>
+          <span class="project-tile__cta">Open project</span>
+        </div>
+      </a>
+
+      <a class="project-tile project-tile--diagram reveal" href="{{ '/SolarExpress/' | relative_url }}">
         <div class="project-tile__media">
           <img src="{{ '/docs/assets/solar-express-system-diagram.png' | relative_url }}" alt="Solar Express panel-level DC power optimizer system diagram">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">02 / Personal</span>
+          <span class="project-tile__index">03 / Personal</span>
           <h3>Solar Express</h3>
           <p>600W panel-level DC power optimizer — 4-switch GaN buck-boost, 99%+ pass-through efficiency, and NEC 690.12 rapid shutdown.</p>
           <ul class="tag-row">
@@ -88,7 +105,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
           <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
         </div>
         <div class="project-tile__body">
-          <span class="project-tile__index">03 / Arlo Technologies</span>
+          <span class="project-tile__index">04 / Arlo Technologies</span>
           <h3>Power-ORing Switch</h3>
           <p>Cost-effective Power-ORing with firmware and fallback hardware — power supply, external solar, and embedded solar; MOSFET/diode analog control at &gt;98% efficiency.</p>
           <ul class="tag-row">
@@ -106,7 +123,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">04 / Sarcomere Dynamics</span>
+            <span class="project-tile__index">05 / Sarcomere Dynamics</span>
             <h3>Fingertip Magnetic Force Sensor</h3>
             <p>Magnet + MLX90393 fingertip sensor — K-means-verified Bx/By/Bz mapping, pseudoinverse shear direction, &gt;90% accuracy, 5–10× cheaper than catalog.</p>
             <span class="project-tile__cta">Open project</span>
@@ -118,7 +135,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Motor control PCB">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">05 / Sarcomere Dynamics</span>
+            <span class="project-tile__index">06 / Sarcomere Dynamics</span>
             <h3>BLDC Motor Control PCB</h3>
             <p>Altium multi-layer board with STM32F412, motor driver, magnetometer, and CAN for a scalable robot-arm ECU network.</p>
             <span class="project-tile__cta">Open project</span>
@@ -132,7 +149,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <img src="{{ '/docs/assets/MarioKart.png' | relative_url }}" alt="Metal Mario autonomous robot car">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">06 / Robotics</span>
+            <span class="project-tile__index">07 / Robotics</span>
             <h3>Metal Mario</h3>
             <p>STM32 autonomous race car with IMU + encoder localization and PID path following — fastest lap by 4 seconds.</p>
             <span class="project-tile__cta">Open project</span>
@@ -144,7 +161,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <img src="{{ '/docs/assets/MicrochipLab.png' | relative_url }}" alt="Multithreaded test routine lab setup">
           </div>
           <div class="project-tile__body">
-            <span class="project-tile__index">07 / Microchip</span>
+            <span class="project-tile__index">08 / Microchip</span>
             <h3>SERDES Multithreaded Test</h3>
             <p>Python + firmware characterization flow that cut SERDES I3C pad test time by &gt;40% and power by 15%.</p>
             <span class="project-tile__cta">Open project</span>

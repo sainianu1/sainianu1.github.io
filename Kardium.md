@@ -51,7 +51,7 @@ At Kardium I designed the **2nd generation of their highest-volume production PC
 - Owned the **vendor transition for DFM**: compared both fab houses’ capability and fabrication documents (spacings, clearances, expansions, hole tolerances), then laid out the full board under extreme size constraints
 - Routed **16HV + 16LV signals each for 8 channels** as well as **flash**, holding **IPC Class 3** — increasing **HIPOT withstand** for medical HV safety compliance and cutting production cost on this safety-critical board
 - Designed a companion **4-layer flash/SPI test jig** (Arduino Nano Every, ADG3304, pogo-pin interface) that preserved the same **controlled impedance** as the production board so bring-up and comms tests matched the real product
-- Also on the internship: next-gen **1500V+ medical flex**, **100%** coverage validation on a **12-layer** board, and multi-board debug in a **10+ board** system
+- Also on the internship: next-gen **1500V+ medical flex**, a full **system-level RF Switch validation campaign** (see [that write-up]({{ '/KardiumTesting/' | relative_url }})), and multi-board debug in a **10+ board** system
 
 <p class="section-label">Deep dive</p>
 ## Highest-volume 6-layer handle PCB
@@ -119,11 +119,10 @@ That closed the loop: DFM vendor transition → production layout → system int
 - Routed **1500V+ signals** within strict safety clearances
 - Aimed at short-term cost reduction and rapid drop-in integration into the current production system
 
-### 12-layer validation campaign
-- End-to-end validation of a **12-layer medical-grade PCB**
-- Authored and executed **25+ tests across 5 diagnostic suites**: Power, Signal Integrity, Thermal, ADC, Isolation
-- **100% test coverage** across the planned suite
-- Built custom **10× / 100× coaxial probes** for high-fidelity SI and isolation measurements
+### System-level RF Switch validation
+The OneBox RF Switch campaign is its own project: I owned **what to test, the plans, the bench work, the pass/fail, and the reports**. That framework is what later cards in the cage were tested against.
+
+→ [System-Level RF Switch Validation]({{ '/KardiumTesting/' | relative_url }})
 
 ### Multi-board debug
 - Debugged multiple **14-layer boards** inside a **10+ board system**
@@ -138,4 +137,4 @@ That closed the loop: DFM vendor transition → production layout → system int
 | Production layout | 6-layer mixed HV/LV, 16HV + 16LV × 8 channels + flash, extreme size constraints |
 | Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
 | Test hardware | 4-layer flash jig, controlled-impedance SPI, Arduino Nano Every, ADG3304 |
-| Also | Medical flex (1500V+), 12-layer validation suites, multi-board SI debug |
+| Also | Medical flex (1500V+), RF Switch system validation, multi-board SI debug |
