@@ -465,11 +465,17 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .section--tight {
   padding-top: 1.5rem;
+  scroll-margin-top: calc(var(--header-h) + 1.25rem);
 }
 
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.highlight-stack {
+  display: grid;
   gap: 1.25rem;
 }
 
