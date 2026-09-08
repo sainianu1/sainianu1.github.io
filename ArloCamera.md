@@ -36,7 +36,13 @@ At Arlo I designed a cost-effective **Power-ORing switch** with integrated firmw
 
 - Implemented **smart MOSFET and diode-array logic** as an analog control system instead of a costly integrated power-mux or ideal-diode IC
 - Combined **firmware** source selection with **fallback hardware control** for plug-in and dead-battery recovery
+- Utilized **diode-ORing on PMOS gate inputs** to allow a shutdown signal to arrive from one of multiple sources for robust control
 - Validated switching behavior and charging efficiency first in **LTSpice**, then on the **actual PCB**
+
+<figure class="figure-diagram">
+  <img src="{{ '/docs/assets/arlo-power-oring-ltspice.png' | relative_url }}" alt="LTSpice simulation of the front-end power-path: dual PMOS back-to-back switches from embedded solar and USB into VIN_CHG">
+  <figcaption>LTSpice — front-end power source circuitry (PMOS path + multi-source gate shutdown)</figcaption>
+</figure>
 
 <div class="figure-grid">
   <figure>
@@ -51,6 +57,11 @@ At Arlo I designed a cost-effective **Power-ORing switch** with integrated firmw
 
 <p class="section-label">Design</p>
 ## How the Power-ORing works
+
+<figure class="figure-diagram">
+  <img src="{{ '/docs/assets/arlo-solana-system-diagram.png' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
+  <figcaption>System-level diagram — sources, USB-C / embed-SP switches, charger, and pack</figcaption>
+</figure>
 
 ### Control split
 - **Hardware-controlled paths** handle plug-in and dead-battery recovery so the pack can always come up
