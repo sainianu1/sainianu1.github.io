@@ -30,10 +30,10 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
       <p class="hero-timeline__label">Path</p>
       <ol>
         <li class="is-now">
-          <a href="#work">
+          <a href="#kardium">
             <span class="hero-timeline__when">2026</span>
             <span class="hero-timeline__who">Kardium</span>
-            <span class="hero-timeline__what">Electronics HW Intern · Burnaby</span>
+            <span class="hero-timeline__what">Electronics Hardware Engineering Intern</span>
           </a>
         </li>
         <li>
@@ -64,85 +64,39 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
 
 <section class="section section--ink" id="work">
   <div class="container">
-    <div class="section__head reveal">
-      <p class="eyebrow">Highlighted</p>
-      <h2>Three boards that define the loop</h2>
-      <p class="lede">Production medical PCB, consumer camera power, and a robot-arm motor controller — the work I want a recruiter to open first.</p>
-    </div>
-
-    <div class="highlight-grid">
-      <a class="project-tile project-tile--stack reveal" href="{{ '/Kardium/' | relative_url }}">
-        <div class="project-tile__media">
-          <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Kardium Cronus Handle Board Gen 2">
-        </div>
-        <div class="project-tile__body">
-          <span class="project-tile__index">01 / Kardium</span>
-          <h3>Medical-Grade PCB Design</h3>
-          <p>2nd-gen 6-layer production board — DFM vendor transition, 16HV + 16LV across 8 channels plus flash, HIPOT, matched-Z flash jig.</p>
-          <ul class="tag-row">
-            <li>Medical PCB</li>
-            <li>HIPOT</li>
-            <li>IPC Class 3</li>
-          </ul>
-          <span class="project-tile__cta">Open project</span>
-        </div>
-      </a>
-
-      <a class="project-tile project-tile--stack reveal" href="{{ '/ArloCamera/' | relative_url }}" id="arlo">
-        <div class="project-tile__media">
-          <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
-        </div>
-        <div class="project-tile__body">
-          <span class="project-tile__index">02 / Arlo</span>
-          <h3>Power-ORing Switch</h3>
-          <p>Firmware plus fallback hardware so the camera picks supply, external solar, or embedded solar — MOSFET/diode analog control at &gt;98% efficiency.</p>
-          <ul class="tag-row">
-            <li>Power-ORing</li>
-            <li>MOSFET</li>
-            <li>&gt;98% eff.</li>
-          </ul>
-          <span class="project-tile__cta">Open project</span>
-        </div>
-      </a>
-
-      <a class="project-tile project-tile--stack reveal" href="{{ '/SarcoPCB/' | relative_url }}" id="sarcomere">
-        <div class="project-tile__media">
-          <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="BLDC motor control PCB">
-        </div>
-        <div class="project-tile__body">
-          <span class="project-tile__index">03 / Sarcomere</span>
-          <h3>BLDC Motor Control PCB</h3>
-          <p>Altium multi-layer ECU — STM32F412, motor driver, magnetometer, and CAN for a scalable robot-arm network.</p>
-          <ul class="tag-row">
-            <li>Altium</li>
-            <li>STM32</li>
-            <li>CAN</li>
-          </ul>
-          <span class="project-tile__cta">Open project</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--ink section--tight" id="experience">
-  <div class="container">
-    <div class="section__head reveal">
-      <p class="eyebrow">By internship</p>
-      <h2>The rest of the bench work</h2>
-      <p class="lede">Same companies as the timeline — validation, sensing, and characterization that sat beside the three highlights.</p>
+    <div class="section__head reveal" id="experience">
+      <p class="eyebrow">Work</p>
+      <h2>By internship</h2>
+      <p class="lede">Each internship is its own block. The three highlighted boards lead their company; the rest of that internship follows underneath.</p>
     </div>
 
     <article class="work-group reveal" id="kardium">
       <header class="work-group__head">
         <div>
           <p class="work-group__co">Kardium Inc.</p>
-          <p class="work-group__role">Electronics Hardware Intern</p>
+          <p class="work-group__role">Electronics Hardware Engineering Intern</p>
         </div>
-        <p class="work-group__when">Jan — Aug 2026 · Burnaby</p>
+        <p class="work-group__when">Jan — Aug 2026</p>
       </header>
       <div class="work-group__grid">
-        <a class="project-tile reveal" href="{{ '/KardiumTesting/' | relative_url }}">
+        <a class="project-tile project-tile--featured reveal" href="{{ '/Kardium/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Kardium Cronus Handle Board Gen 2">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">Highlighted · 01 / Kardium</span>
+            <h3>Medical-Grade PCB Design</h3>
+            <p>2nd-gen 6-layer production board — DFM vendor transition, 16HV + 16LV across 8 channels plus flash, HIPOT, and a matched-impedance flash/SPI test jig.</p>
+            <ul class="tag-row">
+              <li>Medical PCB</li>
+              <li>HIPOT</li>
+              <li>IPC Class 3</li>
+            </ul>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+
+        <a class="project-tile project-tile--flip reveal" href="{{ '/KardiumTesting/' | relative_url }}">
           <div class="project-tile__media">
             <img src="{{ '/docs/assets/rfs-cardcage.jpg' | relative_url }}" alt="OneBox RF Switch in the card cage with SOM installed">
           </div>
@@ -158,19 +112,82 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <span class="project-tile__cta">Open project</span>
           </div>
         </a>
+
+        <a class="project-tile reveal" href="{{ '/Amplink/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/PMIC1.jpg' | relative_url }}" alt="PMIC programming bench">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">Also / Kardium</span>
+            <h3>AmPLink · PMIC Programming System</h3>
+            <p>USB production programmer for processor/SOM flash and a TPS65400 I2C bench — chip-type detect (FT4232H vs FT2232H), R2R board-ID via ADS7142, and fail-safe DS4520 hold so rails stay off until the mapped image programs.</p>
+            <ul class="tag-row">
+              <li>PMIC</li>
+              <li>PMBus</li>
+              <li>FTDI</li>
+              <li>I2C / SPI</li>
+            </ul>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
       </div>
     </article>
 
-    <article class="work-group reveal">
+    <article class="work-group reveal" id="arlo">
+      <header class="work-group__head">
+        <div>
+          <p class="work-group__co">Arlo Technologies</p>
+          <p class="work-group__role">Hardware Engineering Intern</p>
+        </div>
+        <p class="work-group__when">May — Dec 2025</p>
+      </header>
+      <div class="work-group__grid">
+        <a class="project-tile project-tile--featured project-tile--diagram reveal" href="{{ '/ArloCamera/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">Highlighted · 02 / Arlo</span>
+            <h3>Power-ORing Switch</h3>
+            <p>Firmware plus fallback hardware so the camera picks supply, external solar, or embedded solar — MOSFET/diode analog control at &gt;98% efficiency.</p>
+            <ul class="tag-row">
+              <li>Power-ORing</li>
+              <li>MOSFET</li>
+              <li>&gt;98% eff.</li>
+            </ul>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <article class="work-group reveal" id="sarcomere">
       <header class="work-group__head">
         <div>
           <p class="work-group__co">Sarcomere Dynamics</p>
           <p class="work-group__role">Electrical Engineering Intern</p>
         </div>
-        <p class="work-group__when">Sep — Dec 2024 · Vancouver</p>
+        <p class="work-group__when">Sep — Dec 2024</p>
       </header>
       <div class="work-group__grid">
-        <a class="project-tile reveal" href="{{ '/SarcoSensor/' | relative_url }}">
+        <a class="project-tile project-tile--featured reveal" href="{{ '/SarcoPCB/' | relative_url }}">
+          <div class="project-tile__media">
+            <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="BLDC motor control PCB">
+          </div>
+          <div class="project-tile__body">
+            <span class="project-tile__index">Highlighted · 03 / Sarcomere</span>
+            <h3>BLDC Motor Control PCB</h3>
+            <p>Altium multi-layer ECU — STM32F412, motor driver, magnetometer, and CAN for a scalable robot-arm network.</p>
+            <ul class="tag-row">
+              <li>Altium</li>
+              <li>STM32</li>
+              <li>CAN</li>
+            </ul>
+            <span class="project-tile__cta">Open project</span>
+          </div>
+        </a>
+
+        <a class="project-tile project-tile--flip reveal" href="{{ '/SarcoSensor/' | relative_url }}">
           <div class="project-tile__media">
             <img src="{{ '/docs/assets/force sensor4.png' | relative_url }}" alt="Fingertip magnetic force sensor">
           </div>
@@ -195,7 +212,7 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
           <p class="work-group__co">Microchip Technology</p>
           <p class="work-group__role">Product Engineering Intern</p>
         </div>
-        <p class="work-group__when">May — Aug 2024 · Burnaby</p>
+        <p class="work-group__when">May — Aug 2024</p>
       </header>
       <div class="work-group__grid">
         <a class="project-tile reveal" href="{{ '/MicrochipMultithread/' | relative_url }}">
@@ -257,6 +274,25 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
             <li>STM32</li>
             <li>PID</li>
             <li>Localization</li>
+          </ul>
+          <span class="project-tile__cta">Open project</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="personal-follow">
+      <a class="project-tile project-tile--flip reveal" href="{{ '/MLrobot/' | relative_url }}">
+        <div class="project-tile__media">
+          <img src="{{ '/docs/assets/MLRobot.png' | relative_url }}" alt="Machine learning detective robot in simulation">
+        </div>
+        <div class="project-tile__body">
+          <span class="project-tile__index">Personal</span>
+          <h3>ML Detective Robot</h3>
+          <p>ROS/Gazebo autonomous car that reads visual clues with a CNN — character recognition above 98%, wired into the robot through publisher/subscriber control.</p>
+          <ul class="tag-row">
+            <li>CNN</li>
+            <li>ROS</li>
+            <li>Gazebo</li>
           </ul>
           <span class="project-tile__cta">Open project</span>
         </div>

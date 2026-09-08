@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="t d">
+  <title id="t">AmPLink / PMIC programmer architecture</title>
+  <desc id="d">USB host to FTDI detect, then either AmPLink SPI flash path or I2C bench to ADS7142, DS4520, and TPS65400.</desc>
+  <rect width="960" height="420" fill="#0a0f14"/>
+  <text x="36" y="42" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="13" letter-spacing="2">DETECT BY CHIP TYPE · NOT PRODUCT NAME</text>
+
+  <rect x="36" y="68" width="160" height="72" fill="#121821" stroke="#c17f4a" stroke-width="1.2"/>
+  <text x="116" y="98" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="16" font-weight="700">Host PC</text>
+  <text x="116" y="120" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">two binaries</text>
+
+  <path d="M196 104 H250" stroke="#c17f4a" stroke-width="1.5"/>
+  <polygon points="250,100 262,104 250,108" fill="#c17f4a"/>
+
+  <rect x="262" y="68" width="200" height="72" fill="#121821" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+  <text x="362" y="98" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="16" font-weight="700">FTDI D2XX</text>
+  <text x="362" y="120" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">FT4232H vs FT2232H</text>
+
+  <path d="M362 140 V176" stroke="#c17f4a" stroke-width="1.5"/>
+  <path d="M200 176 H524" stroke="#c17f4a" stroke-width="1.5"/>
+  <path d="M200 176 V198" stroke="#c17f4a" stroke-width="1.5"/>
+  <path d="M524 176 V198" stroke="#c17f4a" stroke-width="1.5"/>
+
+  <rect x="36" y="198" width="328" height="88" fill="#121821" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+  <text x="52" y="226" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="11">FT4232H</text>
+  <text x="52" y="250" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="18" font-weight="700">AmPLink · PROC / SOM</text>
+  <text x="52" y="272" fill="#8b97a5" font-family="ui-sans-serif, sans-serif" font-size="13">GPIO + SPI mux + I2C ch0 · flash + clock</text>
+
+  <rect x="396" y="198" width="528" height="88" fill="#121821" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+  <text x="412" y="226" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="11">FT2232H</text>
+  <text x="412" y="250" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="18" font-weight="700">I2C bench · channel B</text>
+  <text x="412" y="272" fill="#8b97a5" font-family="ui-sans-serif, sans-serif" font-size="13">PMBus + board ID + enable interlock</text>
+
+  <rect x="396" y="314" width="160" height="72" fill="#1b2430" stroke="rgba(255,255,255,0.12)"/>
+  <text x="476" y="344" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="14" font-weight="700">ADS7142</text>
+  <text x="476" y="364" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">0x1F · R2R ID</text>
+
+  <rect x="572" y="314" width="160" height="72" fill="#1b2430" stroke="rgba(255,255,255,0.12)"/>
+  <text x="652" y="344" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="14" font-weight="700">DS4520</text>
+  <text x="652" y="364" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">0x50 · hold / release</text>
+
+  <rect x="748" y="314" width="176" height="72" fill="#1b2430" stroke="#c17f4a"/>
+  <text x="836" y="344" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="14" font-weight="700">TPS65400</text>
+  <text x="836" y="364" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">0x6A · four bucks</text>
+
+  <path d="M476 286 V314" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+  <path d="M652 286 V314" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+  <path d="M836 286 V314" stroke="#c17f4a" stroke-width="1.2"/>
+</svg>

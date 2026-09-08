@@ -487,6 +487,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: 2.75rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header-h) + 1.25rem);
 }
 
 .work-group:first-of-type {
@@ -528,6 +529,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .work-group__grid {
   display: grid;
   gap: 1.25rem;
+}
+
+.personal-follow {
+  margin-top: 1.25rem;
 }
 
 /* Reveal motion */

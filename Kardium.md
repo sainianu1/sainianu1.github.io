@@ -124,6 +124,11 @@ The OneBox RF Switch campaign is its own project: I owned **what to test, the pl
 
 → [System-Level RF Switch Validation]({{ '/KardiumTesting/' | relative_url }})
 
+### AmPLink / PMIC programmer
+Turned the inherited AmPLink flash tool into a **two-fixture production programmer**: same scripts on FT4232H and an FT2232H PMBus bench, ADC board-ID, and a DS4520 interlock that keeps rails off until the mapped image burns.
+
+→ [PMIC Programming System]({{ '/Amplink/' | relative_url }})
+
 ### Multi-board debug
 - Debugged multiple **14-layer boards** inside a **10+ board system**
 - Methods: high-speed signal analysis and precision rework
@@ -137,4 +142,4 @@ The OneBox RF Switch campaign is its own project: I owned **what to test, the pl
 | Production layout | 6-layer mixed HV/LV, 16HV + 16LV × 8 channels + flash, extreme size constraints |
 | Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
 | Test hardware | 4-layer flash jig, controlled-impedance SPI, Arduino Nano Every, ADG3304 |
-| Also | Medical flex (1500V+), RF Switch system validation, multi-board SI debug |
+| Also | Medical flex (1500V+), RF Switch system validation, AmPLink PMIC programmer, multi-board SI debug |
