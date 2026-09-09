@@ -28,6 +28,35 @@
     });
   }
 
+  const expandableImages = document.querySelectorAll(".image-expand");
+
+  if (expandableImages.length && typeof HTMLDialogElement !== "undefined") {
+    const lightbox = document.createElement("dialog");
+    lightbox.className = "image-lightbox";
+    lightbox.setAttribute("aria-label", "Expanded schematic");
+    lightbox.innerHTML =
+      '<button class="image-lightbox__close" type="button" aria-label="Close expanded image">×</button><img alt="">';
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector("img");
+    const closeButton = lightbox.querySelector(".image-lightbox__close");
+
+    expandableImages.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const thumbnail = link.querySelector("img");
+        lightboxImage.src = link.href;
+        lightboxImage.alt = thumbnail?.alt || "Expanded schematic";
+        lightbox.showModal();
+      });
+    });
+
+    closeButton.addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  }
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const reveals = document.querySelectorAll(".reveal");
 

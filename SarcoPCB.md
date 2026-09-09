@@ -29,10 +29,6 @@ Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faul
 
 <div class="figure-grid">
   <figure>
-    <img src="{{ '/docs/assets/MotorControlPCB.png' | relative_url }}" alt="Assembled motor control PCB">
-    <figcaption>Assembled motor control board</figcaption>
-  </figure>
-  <figure>
     <img src="{{ '/docs/assets/pcbFront.png' | relative_url }}" alt="PCB front render">
     <figcaption>Front layout</figcaption>
   </figure>
@@ -53,24 +49,34 @@ Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faul
 
 <div class="figure-grid">
   <figure>
-    <img src="{{ '/docs/assets/Top Level.png' | relative_url }}" alt="Top-level schematic block">
-    <figcaption>Top-level schematic</figcaption>
+    <a class="image-expand" href="{{ '/docs/assets/Top Level.png' | relative_url }}" aria-label="Expand top-level schematic">
+      <img src="{{ '/docs/assets/Top Level.png' | relative_url }}" alt="Top-level schematic block">
+    </a>
+    <figcaption>Top-level schematic · Click to expand</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/STM32.png' | relative_url }}" alt="STM32 schematic block">
-    <figcaption>STM32 block</figcaption>
+    <a class="image-expand" href="{{ '/docs/assets/STM32.png' | relative_url }}" aria-label="Expand STM32 schematic">
+      <img src="{{ '/docs/assets/STM32.png' | relative_url }}" alt="STM32 schematic block">
+    </a>
+    <figcaption>STM32 block · Click to expand</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" alt="Motor driver schematic">
-    <figcaption>Motor driver</figcaption>
+    <a class="image-expand" href="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" aria-label="Expand motor driver schematic">
+      <img src="{{ '/docs/assets/Driver_Schematic.png' | relative_url }}" alt="Motor driver schematic">
+    </a>
+    <figcaption>Motor driver · Click to expand</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" alt="Magnetometer schematic">
-    <figcaption>Magnetometer</figcaption>
+    <a class="image-expand" href="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" aria-label="Expand magnetometer schematic">
+      <img src="{{ '/docs/assets/Mag_Schematic.png' | relative_url }}" alt="Magnetometer schematic">
+    </a>
+    <figcaption>Magnetometer · Click to expand</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" alt="CAN transceiver schematic">
-    <figcaption>CAN interface</figcaption>
+    <a class="image-expand" href="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" aria-label="Expand CAN transceiver schematic">
+      <img src="{{ '/docs/assets/CAN_Schematic.png' | relative_url }}" alt="CAN transceiver schematic">
+    </a>
+    <figcaption>CAN interface · Click to expand</figcaption>
   </figure>
 </div>
 
@@ -79,7 +85,10 @@ Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faul
 
 - Board sized for a tight mechanical enclosure; connectors clustered so wiring exits cleanly from one edge
 - Motor phase traces ~**0.7 mm** (~0.75 A) with matched STM32→driver control lengths
+- USB D+ / D− routed as a **90 Ω differential pair** with matched trace lengths to preserve signal integrity
+- SPI traces designed for **50 Ω impedance**, with **25 Ω series resistors** at the driver outputs to match the source impedance to the transmission line
 - CAN Tx/Rx length-matched where practical; dense routing with deliberate workarounds on a small outline
+- Test points added throughout the board to make bring-up and fault isolation easier
 
 <div class="figure-grid">
   <figure>
@@ -95,6 +104,11 @@ Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faul
     <figcaption>Assembly / back detail</figcaption>
   </figure>
 </div>
+
+<p class="section-label">Reflection</p>
+## What I would do differently
+
+I would increase the spacing between the high-speed SPI traces and the board edge. Keeping that clearance at approximately **4–5× the dielectric height** would better contain the electromagnetic fields within the board and reduce edge-coupled EMI.
 
 <p class="section-label">Skills</p>
 ## Tools & techniques
