@@ -86,7 +86,22 @@ After the Spice model, I brought up the **actual PCB**, walked the same edge and
 
 These are called out on the resume; the Power-ORing switch above is the featured deep dive.
 
-- **Led R&D** for a new solar-powered security camera — power architecture, competitive benchmarking, and battery/power validation
+**Led R&D** of a new solar-powered security camera with an embedded solar panel. This started with research on solar panels and testing the capabilities of Arlo’s existing solar tech. I also conducted competitive benchmarking by taking apart solar-embedded cameras designed by competitors, and building up their charging tree from the bare PCB.
+
+With this research and other tests, I defined the **system architecture** — configuration of multiple power inputs, finding boost / charger / fuel-gauge ICs — as well as outlining the required firmware, including the **MPPT** algorithm.
+
+I validated the design through comprehensive **voltage, power, efficiency, and battery charge/discharge cycle** testing.
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/arlo-rd-outdoor-cart.jpg' | relative_url }}" alt="Outdoor solar-camera R&D: laptop on a cart next to a white utility cart with panels, cameras, and power stations">
+    <figcaption>Outdoor validation — existing Arlo solar tech on the cart</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/arlo-rd-solar-rig.jpg' | relative_url }}" alt="Custom wooden solar-panel test rig on a white cart with multiple panels and Arlo cameras">
+    <figcaption>Panel / camera test rig used for competitive and embed-solar work</figcaption>
+  </figure>
+</div>
 
 <figure class="figure-diagram">
   <img src="{{ '/docs/assets/arlo-solana-system-diagram.svg' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">

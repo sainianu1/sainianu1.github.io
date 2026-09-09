@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 900" role="img" aria-labelledby="t d">
   <title id="t">Solana Solar/PA charging logic</title>
-  <desc id="d">SOLANA BLOCK DIAGRAM  external solar and wall adaptor OR into USB-C, embed solar through boost, dual PMOS switches into charger, system, fuel gauge, and 4-cell pack.</desc>
+  <desc id="d">SOLANA BLOCK DIAGRAM: external solar and wall adaptor OR into USB-C, embed solar through boost, dual PMOS switches into charger, system, fuel gauge, and 4-cell pack.</desc>
   <rect width="1480" height="900" fill="#071422"/>
 
   <text x="28" y="36" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="14" letter-spacing="1.2">Solana Solar/PA charging logic</text>
