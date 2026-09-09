@@ -34,20 +34,10 @@ At Kardium I designed the **2nd generation of their highest-volume production PC
   <figcaption>Cronus Handle Board Gen 2 — top-side CAD view</figcaption>
 </figure>
 
-<div class="figure-grid">
-  <figure>
-    <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, top side">
-    <figcaption>Cronus Handle Board Gen 2 — top</figcaption>
-  </figure>
-  <figure>
-    <img src="{{ '/docs/assets/Kardium3D_Bottom.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, bottom side with Kardium silkscreen">
-    <figcaption>Cronus Handle Board Gen 2 — bottom</figcaption>
-  </figure>
-</div>
-
-<div class="callout">
-  Resume bullets stay at impact (HIPOT strength, new vendor, cost). This page is the hardware-engineer walkthrough of how that board was shipped.
-</div>
+<figure>
+  <img src="{{ '/docs/assets/Kardium3D_Bottom.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, bottom side with Kardium silkscreen">
+  <figcaption>Cronus Handle Board Gen 2 — bottom</figcaption>
+</figure>
 
 <p class="section-label">Impact</p>
 ## What a recruiter should know
