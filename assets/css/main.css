@@ -1130,8 +1130,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin: 0;
 }
 
+.prose .figure-diagram {
+  max-width: min(100%, 920px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .prose .figure-diagram img {
   background: #071422;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .prose pre {
