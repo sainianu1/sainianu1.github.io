@@ -18,8 +18,8 @@ metrics:
     label: "F412 MCU + USB prog"
   - value: "SPI / I2C / CAN"
     label: "On-board buses"
-  - value: "~0.75A"
-    label: "Motor trace capacity"
+  - value: "Single 5 V input"
+    label: "LDO-derived analog rail"
 ---
 
 <p class="section-label">Context</p>
@@ -84,9 +84,9 @@ Sarcomere needed a compact **motor-control ECU** that could drive a Maxon / Faul
 ## PCB decisions
 
 - Board sized for a tight mechanical enclosure; connectors clustered so wiring exits cleanly from one edge
-- Motor phase traces ~**0.7 mm** (~0.75 A) with matched STM32→driver control lengths
+- Motor phase traces calculated at ~**0.7 mm wide** for efficient power delivery; the wider copper reduces resistance, voltage drop, and heat generation
 - USB D+ / D− routed as a **90 Ω differential pair** with matched trace lengths to preserve signal integrity
-- SPI traces designed for **50 Ω impedance**, with **25 Ω series resistors** at the driver outputs to match the source impedance to the transmission line
+- STM32-to-driver SPI traces length-matched to reduce timing skew and designed for **50 Ω impedance**, with **25 Ω series resistors** at the driver outputs to match the source impedance to the transmission line
 - CAN Tx/Rx length-matched where practical; dense routing with deliberate workarounds on a small outline
 - Test points added throughout the board to make bring-up and fault isolation easier
 
