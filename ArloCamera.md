@@ -39,45 +39,62 @@ At Arlo I designed a cost-effective **Power-ORing switch** with integrated firmw
 - Utilized **diode-ORing on PMOS gate inputs** to allow a shutdown signal to arrive from one of multiple sources for robust control
 - Validated switching behavior and charging efficiency first in **LTSpice**, then on the **actual PCB**
 
-<figure class="figure-diagram">
-  <img src="{{ '/docs/assets/arlo-power-oring-ltspice.png' | relative_url }}" alt="LTSpice simulation of the front-end power-path: dual PMOS back-to-back switches from embedded solar and USB into VIN_CHG">
-  <figcaption>LTSpice — front-end power source circuitry (PMOS path + multi-source gate shutdown)</figcaption>
-</figure>
-
 <div class="figure-grid">
   <figure>
-    <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Power-ORing and multi-source switching circuitry">
-    <figcaption>Power-ORing / multi-source switch</figcaption>
+    <img src="{{ '/docs/assets/arlo-power-oring-bringup.jpg' | relative_url }}" alt="Bench bring-up of the Power-ORing path: N6705B, labeled Solar and Battery meters, and proto boards on the ESD mat">
+    <figcaption>PCB bring-up — USB-C / solar / battery rails on the bench</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Embedded solar panel power path">
-    <figcaption>Embedded solar path context</figcaption>
+    <img src="{{ '/docs/assets/arlo-power-oring-bench.jpg' | relative_url }}" alt="Wider lab shot of the Power-ORing fixture with scope, power analyzer, and labeled Solar meter">
+    <figcaption>Corner-case validation on the live fixture</figcaption>
   </figure>
 </div>
 
 <p class="section-label">Design</p>
 ## How the Power-ORing works
 
+Two parallel power branches feed the charger IC:
+
+- **USB-C** — a wall adapter or an **external solar panel**
+- **Embedded solar** — the panel built onto the camera itself
+
+Each branch reaches `VIN_CHG` through a **back-to-back PMOS** pair. That topology blocks the body-diode path, so current cannot sneak the wrong way through a single FET. Bidirectional blocking is what makes the OR safe: no reverse current into a weaker source, no back-feed into the battery, and real **power multiplexing** without an ideal-diode or mux IC.
+
+The embedded panel is, by design, the weaker charger. Hardware has to treat a USB-C plug-in as a preemption, not a negotiation.
+
+### Plug-in detect, in hardware
+External solar is recognized the instant it lands on the connector: **15 kΩ on CC1/CC2**. A wall adapter is recognized the same way, from the manufacturer’s CC band. A dedicated control leg then **opens the embedded-solar PMOS path** as soon as USB-C voltage crosses a threshold — because the embed rail charges at a lower voltage, it must drop out the moment a stronger source is present.
+
+Firmware can still disconnect **either or both** inputs from the charger, using the MPPT algorithm and measured input power. That is the preferred-source loop when the MCU is alive.
+
+### Dead-battery and analog source select
+The hardware contract was plug-ins and **dead-battery recovery**: the pack has to come up even if firmware is not running. I went further and made the analog front-end **choose the higher-power input by itself**, with no firmware, from the voltages sitting on the two source rails.
+
+That only works if the control graph is right first — which node is allowed to shut which switch, and where each MOSFET’s gate, source, and drain actually sit. The gate map is the design. Once that was explicit, the FETs could be wired for clean handoff instead of fight-or-float.
+
+Where several sources needed to pull a PMOS into cutoff, I **diode-ORed the gate inputs**. Those were logic-level shutdowns, not load current, so the diode drop did not show up as a power loss — it just guaranteed the gate could be held above threshold from more than one place.
+
 <figure class="figure-diagram">
-  <img src="{{ '/docs/assets/arlo-solana-system-diagram.png' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
-  <figcaption>System-level diagram — sources, USB-C / embed-SP switches, charger, and pack</figcaption>
+  <img src="{{ '/docs/assets/arlo-power-oring-ltspice.png' | relative_url }}" alt="LTSpice simulation of the front-end power-path: dual PMOS back-to-back switches from embedded solar and USB into VIN_CHG">
+  <figcaption>LTSpice — both PMOS branches into VIN_CHG, with multi-source gate shutdown</figcaption>
 </figure>
-
-### Control split
-- **Hardware-controlled paths** handle plug-in and dead-battery recovery so the pack can always come up
-- **Firmware** chooses the preferred input when multiple sources are present
-
-### Sources
-- Power supply
-- External solar panel
-- Embedded solar path
-
-### Discrete analog OR
-Used MOSFET and diode-array logic to build an **analog control system** that ORs sources safely — prioritizing efficiency, reverse-current blocking, and cost over an integrated ideal-diode or power-mux IC.
 
 <div class="figure-grid">
   <figure>
-    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="GPIO and ADC protection around the power path">
+    <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Power-ORing and multi-source switching circuitry">
+    <figcaption>USB-C Power-ORing branch</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Embedded solar panel power path">
+    <figcaption>Embedded solar branch</figcaption>
+  </figure>
+</div>
+
+After the Spice model, I brought up the **actual PCB**, walked the same edge and corner cases the sim predicted, and shipped an application-specific alternative to a PMIC or power multiplexer.
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="GPIO and ADC protection around the power / sense path">
     <figcaption>Protection around the power / sense path</figcaption>
   </figure>
 </div>
@@ -88,6 +105,12 @@ Used MOSFET and diode-array logic to build an **analog control system** that ORs
 These are called out on the resume; the Power-ORing switch above is the featured deep dive.
 
 - **Led R&D** for a new solar-powered security camera — power architecture, competitive benchmarking, and battery/power validation
+
+<figure class="figure-diagram">
+  <img src="{{ '/docs/assets/arlo-solana-system-diagram.png' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
+  <figcaption>System-level architecture from that R&amp;D — sources, switches, charger, and pack</figcaption>
+</figure>
+
 - Root-caused Wi-Fi / motion-sensor interference, cutting related **yield loss from 30% to under 1%**
 - Grew key sensor hardware test coverage **from 60% to 100%** for wireless coexistence
 
@@ -96,7 +119,8 @@ These are called out on the resume; the Power-ORing switch above is the featured
 
 | Area | What I used |
 |------|-------------|
-| Power | Power-ORing, MOSFET + diode-array analog control, discrete source OR |
-| Control | Firmware preferred-input selection + fallback hardware (plug-in / dead-battery) |
-| Validation | LTSpice, then PCB bring-up; switching behavior and charging efficiency |
+| Power | Back-to-back PMOS Power-ORing, reverse-current block, discrete mux vs. PMIC |
+| Control | CC plug-in detect, analog higher-source select, FW MPPT disconnect, dead-battery recovery |
+| Analog | Diode-ORed PMOS gate shutdowns; gate / source / drain map before layout |
+| Validation | LTSpice, then PCB bring-up across edge and corner cases |
 | Debug | RF coexistence / PIR yield root-cause |
