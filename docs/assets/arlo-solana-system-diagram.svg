@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 900" role="img" aria-labelledby="t d">
+  <title id="t">Solana Solar/PA charging logic</title>
+  <desc id="d">SOLANA BLOCK DIAGRAM  external solar and wall adaptor OR into USB-C, embed solar through boost, dual PMOS switches into charger, system, fuel gauge, and 4-cell pack.</desc>
+  <rect width="1480" height="900" fill="#071422"/>
+
+  <text x="28" y="36" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="14" letter-spacing="1.2">Solana Solar/PA charging logic</text>
+  <rect x="560" y="14" width="360" height="34" fill="#3d3420" stroke="#e6c35c" stroke-width="1.2"/>
+  <text x="740" y="37" text-anchor="middle" fill="#f6e7b0" font-family="ui-monospace, monospace" font-size="15" font-weight="700" letter-spacing="1.6">SOLANA BLOCK DIAGRAM</text>
+
+  <!-- External solar -->
+  <text x="133" y="78" text-anchor="middle" fill="#7cb88a" font-family="ui-monospace, monospace" font-size="12">Z=15kohm</text>
+  <rect x="28" y="86" width="210" height="96" fill="#3d3420" stroke="#d4b45a" stroke-width="1.4"/>
+  <text x="133" y="114" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">External Solar Panel</text>
+  <text x="133" y="138" text-anchor="middle" fill="#c9c3a8" font-family="ui-monospace, monospace" font-size="12">8.5 Voc, 6.9 Vmpp</text>
+  <text x="133" y="158" text-anchor="middle" fill="#c9c3a8" font-family="ui-monospace, monospace" font-size="12">0.56A Impp</text>
+
+  <!-- Wall adaptor -->
+  <text x="133" y="214" text-anchor="middle" fill="#7cb88a" font-family="ui-monospace, monospace" font-size="12">Z=No imp.</text>
+  <rect x="28" y="222" width="210" height="88" fill="#152433" stroke="#5b8fb8" stroke-width="1.4"/>
+  <text x="133" y="256" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">Wall Adaptor</text>
+  <text x="133" y="282" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">5V/2A or 6.6V/1A</text>
+
+  <!-- OR into USB-C -->
+  <path d="M238 134 H268 V200 H238" fill="none" stroke="#e8eef4" stroke-width="1.6"/>
+  <path d="M238 266 H268 V200" fill="none" stroke="#e8eef4" stroke-width="1.6"/>
+  <circle cx="286" cy="200" r="18" fill="#121821" stroke="#e8eef4" stroke-width="1.4"/>
+  <text x="286" y="205" text-anchor="middle" fill="#f2f4f6" font-family="ui-monospace, monospace" font-size="12" font-weight="700">OR</text>
+  <path d="M304 200 H328" stroke="#e8eef4" stroke-width="1.6"/>
+  <polygon points="328,196 340,200 328,204" fill="#e8eef4"/>
+
+  <rect x="340" y="172" width="118" height="56" fill="#121821" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+  <text x="399" y="206" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="14" font-weight="700">USB-C Conn.</text>
+
+  <!-- Vin1 power -->
+  <path d="M458 200 H610" stroke="#e8eef4" stroke-width="1.8"/>
+  <text x="500" y="192" fill="#e8eef4" font-family="ui-monospace, monospace" font-size="12">Vin1</text>
+  <polygon points="610,196 622,200 610,204" fill="#e8eef4"/>
+
+  <rect x="622" y="164" width="200" height="72" fill="#121821" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
+  <text x="722" y="194" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">USB-C SWITCH</text>
+  <text x="722" y="216" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">(Q1+Q2)</text>
+
+  <!-- Voltage divider / HW_EM_SP from Vin1 -->
+  <path d="M488 200 V108 H508" stroke="#6ea8d6" stroke-width="1.4"/>
+  <polygon points="508,104 520,108 508,112" fill="#6ea8d6"/>
+  <rect x="524" y="88" width="150" height="40" fill="#3d3420" stroke="#e6c35c" stroke-width="1.2"/>
+  <text x="599" y="114" text-anchor="middle" fill="#f6e7b0" font-family="Syne, sans-serif" font-size="13" font-weight="700">Voltage divider</text>
+  <path d="M674 108 H698" stroke="#6ea8d6" stroke-width="1.4"/>
+  <rect x="698" y="70" width="122" height="36" fill="#3d3420" stroke="#e6c35c" stroke-width="1.2"/>
+  <text x="759" y="93" text-anchor="middle" fill="#f6e7b0" font-family="ui-monospace, monospace" font-size="12" font-weight="700">HW_EM_SP</text>
+  <path d="M820 88 H846 V360" stroke="#6ea8d6" stroke-width="1.3" stroke-dasharray="4 3"/>
+
+  <rect x="654" y="250" width="136" height="36" fill="#1d3224" stroke="#7cb88a" stroke-width="1.2"/>
+  <text x="722" y="273" text-anchor="middle" fill="#c8efd2" font-family="ui-monospace, monospace" font-size="12" font-weight="700">P2_5_FW_Ctrl</text>
+  <path d="M722 250 V236" stroke="#6ea8d6" stroke-width="1.4"/>
+  <polygon points="718,236 722,226 726,236" fill="#6ea8d6"/>
+
+  <path d="M488 200 V338" stroke="#6ea8d6" stroke-width="1.3"/>
+  <text x="28" y="348" fill="#6ea8d6" font-family="ui-monospace, monospace" font-size="11">Vin1_ADC to MCU (make sure divider voltage max &lt;3.3V)</text>
+
+  <!-- Embed solar -->
+  <rect x="28" y="400" width="230" height="118" fill="#3d3420" stroke="#d4b45a" stroke-width="1.4"/>
+  <text x="143" y="428" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">Embed Solar Panel</text>
+  <text x="143" y="454" text-anchor="middle" fill="#c9c3a8" font-family="ui-monospace, monospace" font-size="11">1-5S4P: 3.5 Voc, 2.6 Vmpp, 0.35A Impp</text>
+  <text x="143" y="474" text-anchor="middle" fill="#c9c3a8" font-family="ui-monospace, monospace" font-size="11">2-4S5P: 3.3 Voc, 2.8 Vmpp, 0.32A Impp</text>
+
+  <path d="M258 459 H292" stroke="#e06c6c" stroke-width="1.8"/>
+  <text x="268" y="450" fill="#e06c6c" font-family="ui-monospace, monospace" font-size="12">Vin2</text>
+  <polygon points="292,455 304,459 292,463" fill="#e06c6c"/>
+
+  <rect x="304" y="420" width="250" height="78" fill="#121821" stroke="#e06c6c" stroke-width="1.4"/>
+  <text x="429" y="448" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="14" font-weight="700">Boost con. TLV61070A</text>
+  <text x="429" y="468" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">SOT23-6</text>
+  <text x="429" y="486" text-anchor="middle" fill="#e06c6c" font-family="ui-monospace, monospace" font-size="12">Set Vout = 4.515V</text>
+
+  <path d="M554 459 H610" stroke="#e06c6c" stroke-width="1.8"/>
+  <polygon points="610,455 622,459 610,463" fill="#e06c6c"/>
+
+  <rect x="622" y="424" width="228" height="72" fill="#121821" stroke="#e06c6c" stroke-width="1.4"/>
+  <text x="736" y="454" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">EMBED SP SWITCH</text>
+  <text x="736" y="476" text-anchor="middle" fill="#e06c6c" font-family="ui-monospace, monospace" font-size="12">(Q4+Q5)</text>
+
+  <path d="M846 360 V390 H736 V424" stroke="#6ea8d6" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <polygon points="732,424 736,434 740,424" fill="#6ea8d6"/>
+
+  <rect x="668" y="512" width="136" height="36" fill="#1d3224" stroke="#7cb88a" stroke-width="1.2"/>
+  <text x="736" y="535" text-anchor="middle" fill="#c8efd2" font-family="ui-monospace, monospace" font-size="12" font-weight="700">P2_4_FW_Ctrl</text>
+  <path d="M736 512 V496" stroke="#6ea8d6" stroke-width="1.4"/>
+  <polygon points="732,496 736,486 740,496" fill="#6ea8d6"/>
+
+  <path d="M280 459 V560" stroke="#6ea8d6" stroke-width="1.3"/>
+  <text x="40" y="576" fill="#6ea8d6" font-family="ui-monospace, monospace" font-size="11">Vin2_ADC to MCU</text>
+  <text x="40" y="592" fill="#6ea8d6" font-family="ui-monospace, monospace" font-size="11">(make sure divider voltage max &lt;3.3V)</text>
+
+  <!-- Merge to charger -->
+  <path d="M850 200 H888 V340 H850" fill="none" stroke="#e8eef4" stroke-width="1.6"/>
+  <path d="M850 460 H888 V340" fill="none" stroke="#e06c6c" stroke-width="1.8"/>
+  <text x="896" y="332" fill="#f2f4f6" font-family="ui-monospace, monospace" font-size="12">Vin_chg</text>
+  <text x="896" y="348" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">4.5-5.6V</text>
+  <path d="M888 340 H980" stroke="#e8eef4" stroke-width="1.8"/>
+  <polygon points="980,336 992,340 980,344" fill="#e8eef4"/>
+
+  <rect x="992" y="300" width="220" height="80" rx="10" fill="#1b2430" stroke="rgba(255,255,255,0.22)" stroke-width="1.4"/>
+  <text x="1102" y="334" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">Charger</text>
+  <text x="1102" y="358" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">BQ25892RTWT</text>
+
+  <path d="M1102 300 V248" stroke="#e8eef4" stroke-width="1.6"/>
+  <polygon points="1098,248 1102,238 1106,248" fill="#e8eef4"/>
+  <rect x="992" y="168" width="220" height="70" rx="10" fill="#1b2430" stroke="rgba(255,255,255,0.22)" stroke-width="1.4"/>
+  <text x="1102" y="198" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">SYSTEM (swallow)</text>
+  <text x="1102" y="220" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">charger SYS output</text>
+
+  <path d="M1102 380 V430" stroke="#e8eef4" stroke-width="1.6"/>
+  <text x="1110" y="414" fill="#e8eef4" font-family="ui-monospace, monospace" font-size="12">Ichg</text>
+  <polygon points="1098,430 1102,440 1106,430" fill="#e8eef4"/>
+  <rect x="992" y="440" width="220" height="70" rx="10" fill="#1b2430" stroke="rgba(255,255,255,0.22)" stroke-width="1.4"/>
+  <text x="1102" y="470" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">FG BQ27426YZFR</text>
+  <text x="1102" y="492" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">fuel gauge</text>
+
+  <path d="M1102 510 V548" stroke="#e8eef4" stroke-width="1.6"/>
+  <polygon points="1098,548 1102,558 1106,548" fill="#e8eef4"/>
+  <rect x="968" y="558" width="268" height="88" rx="10" fill="#1b2430" stroke="#c17f4a" stroke-width="1.4"/>
+  <text x="1102" y="588" text-anchor="middle" fill="#f2f4f6" font-family="Syne, sans-serif" font-size="15" font-weight="700">Battery</text>
+  <text x="1102" y="610" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">4 Battery Pack</text>
+  <text x="1102" y="628" text-anchor="middle" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="12">3.69V/18.6AhPack, 68.634Wh</text>
+
+  <!-- Boost note + load-regulation sketch -->
+  <rect x="28" y="620" width="900" height="252" fill="#0d1520" stroke="rgba(255,255,255,0.10)"/>
+  <text x="48" y="650" fill="#c17f4a" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1">Note for Boost converter (refer to curve below):</text>
+  <text x="48" y="676" fill="#c9d2dc" font-family="ui-sans-serif, sans-serif" font-size="14">Boost Vout need to be set around 4.515V to charge the battery from Embed SP.</text>
+  <text x="48" y="698" fill="#c9d2dc" font-family="ui-sans-serif, sans-serif" font-size="14">We know from the curve 2.7V Vin2 can give Vout 5V up to 1A.</text>
+  <text x="48" y="720" fill="#c9d2dc" font-family="ui-sans-serif, sans-serif" font-size="14">So expect 1.3V&lt;Vin2&lt;2V can give Vout 4.515V up to 0.4A.</text>
+
+  <text x="700" y="650" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="11">Figure 6-2. Load Regulation</text>
+  <path d="M560 840 H900 M580 740 V850" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <text x="548" y="748" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="10">Output Voltage (V)</text>
+  <text x="820" y="868" fill="#8b97a5" font-family="ui-monospace, monospace" font-size="10">Output Current (A)</text>
+  <path d="M580 768 C640 768, 720 772, 780 790 C820 802, 860 824, 888 840" fill="none" stroke="#6ea8d6" stroke-width="1.6"/>
+  <path d="M580 776 C650 776, 740 784, 820 812 C850 824, 870 836, 888 844" fill="none" stroke="#7cb88a" stroke-width="1.6"/>
+  <path d="M580 788 C660 790, 750 808, 830 836" fill="none" stroke="#e6c35c" stroke-width="1.6"/>
+  <path d="M580 804 C650 812, 720 828, 780 848" fill="none" stroke="#e06c6c" stroke-width="1.6"/>
+  <text x="900" y="768" fill="#6ea8d6" font-family="ui-monospace, monospace" font-size="10">Vin = 3.7V</text>
+  <text x="900" y="786" fill="#7cb88a" font-family="ui-monospace, monospace" font-size="10">Vin = 3.3V</text>
+  <text x="900" y="804" fill="#e6c35c" font-family="ui-monospace, monospace" font-size="10">Vin = 2.7V</text>
+  <text x="900" y="822" fill="#e06c6c" font-family="ui-monospace, monospace" font-size="10">Vin = 1.8V</text>
+</svg>

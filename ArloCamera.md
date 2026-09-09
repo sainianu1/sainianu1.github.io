@@ -3,7 +3,7 @@ layout: project
 title: Arlo Power-ORing Switch
 heading: Power-ORing Switch
 permalink: /ArloCamera/
-cover: /docs/assets/USB_PowerCircuitry.png
+cover: /docs/assets/arlo-power-oring-bringup.jpg
 eyebrow: Arlo Technologies · Hardware Engineering Intern
 role: Hardware Engineering Intern · Arlo Technologies
 timeline: May 2025 — Dec 2025 · Vancouver, BC
@@ -79,25 +79,7 @@ Where several sources needed to pull a PMOS into cutoff, I **diode-ORed the gate
   <figcaption>LTSpice — both PMOS branches into VIN_CHG, with multi-source gate shutdown</figcaption>
 </figure>
 
-<div class="figure-grid">
-  <figure>
-    <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Power-ORing and multi-source switching circuitry">
-    <figcaption>USB-C Power-ORing branch</figcaption>
-  </figure>
-  <figure>
-    <img src="{{ '/docs/assets/EmbedSPCircuitry.png' | relative_url }}" alt="Embedded solar panel power path">
-    <figcaption>Embedded solar branch</figcaption>
-  </figure>
-</div>
-
 After the Spice model, I brought up the **actual PCB**, walked the same edge and corner cases the sim predicted, and shipped an application-specific alternative to a PMIC or power multiplexer.
-
-<div class="figure-grid">
-  <figure>
-    <img src="{{ '/docs/assets/USB_PowerADCProtection.png' | relative_url }}" alt="GPIO and ADC protection around the power / sense path">
-    <figcaption>Protection around the power / sense path</figcaption>
-  </figure>
-</div>
 
 <p class="section-label">Also on this internship</p>
 ## Broader Arlo impact (resume-level wins)
@@ -107,7 +89,7 @@ These are called out on the resume; the Power-ORing switch above is the featured
 - **Led R&D** for a new solar-powered security camera — power architecture, competitive benchmarking, and battery/power validation
 
 <figure class="figure-diagram">
-  <img src="{{ '/docs/assets/arlo-solana-system-diagram.png' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
+  <img src="{{ '/docs/assets/arlo-solana-system-diagram.svg' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
   <figcaption>System-level architecture from that R&amp;D — sources, switches, charger, and pack</figcaption>
 </figure>
 

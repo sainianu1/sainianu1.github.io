@@ -88,9 +88,9 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         </div>
       </a>
 
-      <a class="project-tile project-tile--flip project-tile--diagram reveal" href="{{ '/ArloCamera/' | relative_url }}">
+      <a class="project-tile project-tile--flip reveal" href="{{ '/ArloCamera/' | relative_url }}">
         <div class="project-tile__media">
-          <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
+          <img src="{{ '/docs/assets/arlo-power-oring-bringup.jpg' | relative_url }}" alt="Arlo Power-ORing switch live test bench">
         </div>
         <div class="project-tile__body">
           <span class="project-tile__index">02 / Arlo</span>
@@ -188,9 +188,9 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
         <p class="work-group__when">May — Dec 2025</p>
       </header>
       <div class="work-group__grid">
-        <a class="project-tile project-tile--diagram reveal" href="{{ '/ArloCamera/' | relative_url }}">
+        <a class="project-tile reveal" href="{{ '/ArloCamera/' | relative_url }}">
           <div class="project-tile__media">
-            <img src="{{ '/docs/assets/USB_PowerCircuitry.png' | relative_url }}" alt="Arlo Power-ORing switch circuitry">
+            <img src="{{ '/docs/assets/arlo-power-oring-bringup.jpg' | relative_url }}" alt="Arlo Power-ORing switch live test bench">
           </div>
           <div class="project-tile__body">
             <span class="project-tile__index">Also / Arlo</span>
