@@ -29,6 +29,11 @@ Kardium’s catheter handle board sits between the multi-use **RF/PF ablation ge
 
 At Kardium I designed the **2nd generation of their highest-volume production PCB**: a **6-layer** board carrying high-voltage **RF/PF ablation** signals plus low-voltage sense/drive paths for **resistance and temperature**. I owned the **vendor transition for DFM**, then laid out the full board under extreme size constraints. I also took a companion **4-layer flash/SPI test jig** from component selection, schematic capture, and layout through bare-board bring-up and functional verification.
 
+<figure>
+  <img src="{{ '/docs/assets/KardiumHandleBoardGen2_Top.png' | relative_url }}" alt="Top-side CAD view of the Cronus Handle Board Gen 2">
+  <figcaption>Cronus Handle Board Gen 2 — top-side CAD view</figcaption>
+</figure>
+
 <div class="figure-grid">
   <figure>
     <img src="{{ '/docs/assets/Kardium3D_Top.png' | relative_url }}" alt="3D render of the Cronus Handle Board Gen 2, top side">
@@ -106,10 +111,55 @@ After the production layout, I developed a companion **4-layer flash/SPI test ji
 
 - Selected the components and defined the electrical architecture
 - Captured the **schematic** and completed the **4-layer PCB layout**
-- Brought up the manufactured jig from a **bare-board state**
+- Assembled and brought up the manufactured jig from a **bare-board state**, populating the pogo pins, ICs, and 0402 resistors and capacitors
 - Verified that the completed fixture programmed and communicated with the handle board as intended
 
 The fixture accommodates two test configurations: direct access to the **standalone handle PCB**, and insertion into the **fully assembled catheter system** for final-assembly testing.
+
+#### Electrical design
+The jig was more than a physical breakout:
+
+- Routed the **SPI traces with controlled impedance** to match the production handle board and preserve representative signal integrity
+- Used an **ADG3304** logic-level translator between the Arduino Nano Every and the flash I/O voltage domain
+- Added **ESD protection diodes** at the external pogo-pin interface
+- Implemented hardware **switch debouncing** for reliable operator input
+- Added on-board **button and LED** control/status circuitry
+- Matched the generator’s **pogo-pin interface** to the same gold-pad array on the handle board
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_3D_Top.png' | relative_url }}" alt="Top-side Altium 3D view of the Kardium handle-board flash test jig">
+    <figcaption>Top-side 3D view — Arduino host and pogo interface</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_3D_Bottom.png' | relative_url }}" alt="Bottom-side Altium 3D view of the Kardium handle-board flash test jig">
+    <figcaption>Bottom-side 3D view — operator interface circuitry</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_Layout.png' | relative_url }}" alt="Altium PCB layout view of the four-layer Kardium handle-board flash test jig">
+    <figcaption>4-layer PCB layout — SPI routing and board interfaces</figcaption>
+  </figure>
+</div>
+
+Selected schematic pages show the protected pogo interface, bidirectional level translation, and controller/status circuitry:
+
+<figure>
+  <img src="{{ '/docs/assets/KardiumTestJig_Schematic_PogoESD.png' | relative_url }}" alt="Kardium test jig schematic showing the pogo-pin SPI interface and ESD protection">
+  <figcaption>Pogo-pin SPI interface with ESD protection</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/docs/assets/KardiumTestJig_Schematic_LevelTranslator.png' | relative_url }}" alt="Kardium test jig schematic showing ADG3304 SPI logic-level translation">
+  <figcaption>ADG3304 bidirectional SPI logic-level translation</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/docs/assets/KardiumTestJig_Schematic_Controller.png' | relative_url }}" alt="Kardium test jig schematic showing the Arduino controller, switch debounce, LEDs, and power circuitry">
+  <figcaption>Arduino host, power, debounced switch, and status LEDs</figcaption>
+</figure>
+
+#### Assembly and bring-up
+I then populated the manufactured bare PCB with the **pogo pins, ICs, and 0402 passives**, brought up each circuit block, and verified the complete programming and communication path before integrating the board into the fixture.
 
 <div class="figure-grid">
   <figure>
@@ -129,14 +179,6 @@ The fixture accommodates two test configurations: direct access to the **standal
     <figcaption>Fixture testing the handle board inside the assembled catheter</figcaption>
   </figure>
 </div>
-
-Key implementation details:
-
-- **Controlled-impedance SPI** path preserved to the same impedance as the production board
-- **Arduino Nano Every** as the host controller
-- **ADG3304** logic-level translator between MCU and flash I/O levels
-- On-board **button + LEDs** for operator control and status
-- **Pogo-pin interface** mating to the same gold-pad array used by the generators — so the jig plugs into the 6-layer board the same way the system does
 
 That closed the loop from component selection and PCB design through manufactured hardware, board bring-up, and representative testing at both the board and assembled-system levels.
 
@@ -170,5 +212,5 @@ USB production programmer for power boards — I2C PMIC images, analog board ide
 | PCB prework | DFM vendor transition, fab capability/docs comparison, spacings / clearances / expansions / hole tolerances, IPC Class 3 |
 | Production layout | 6-layer mixed HV/LV, 16HV + 16LV × 8 channels + flash, extreme size constraints |
 | Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
-| Test hardware | Component selection, schematic, 4-layer layout, bare-board bring-up, controlled-impedance SPI, Arduino Nano Every, ADG3304, dual-configuration fixture |
+| Test hardware | Component selection, schematic, 4-layer layout, bare-board assembly/bring-up, controlled-impedance SPI, ESD protection, switch debouncing, Arduino Nano Every, ADG3304, dual-configuration fixture |
 | Also | Medical flex (1500V+), RF Switch system validation, AmPLink PMIC programmer, multi-board SI debug |
