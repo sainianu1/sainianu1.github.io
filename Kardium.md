@@ -7,7 +7,7 @@ cover: /docs/assets/Kardium3D_Top.png
 eyebrow: Kardium Inc. · Electronics Hardware Intern
 role: Electronics Hardware Intern · Kardium Inc.
 timeline: Jan 2026 — Aug 2026 · Burnaby, BC
-summary: Designed the 2nd generation of Kardium’s highest-volume 6-layer production PCB — HV RF/PF ablation plus LV sense/drive, DFM vendor transition, 16HV + 16LV across 8 channels and flash under IPC Class 3 — and a matched-impedance 4-layer flash/SPI test jig.
+summary: Designed the 2nd generation of Kardium’s highest-volume 6-layer production PCB — HV RF/PF ablation plus LV sense/drive, DFM vendor transition, 16HV + 16LV across 8 channels and flash under IPC Class 3 — and owned a matched-impedance 4-layer flash/SPI test jig from component selection through bring-up.
 tags:
   - Medical PCB
   - HIPOT
@@ -19,7 +19,7 @@ metrics:
   - value: "16HV + 16LV"
     label: "8 channels + flash, IPC Class 3"
   - value: "4-layer"
-    label: "Matched-Z flash/SPI test jig"
+    label: "End-to-end flash/SPI test jig"
 ---
 
 <p class="section-label">Context</p>
@@ -27,7 +27,7 @@ metrics:
 
 Kardium’s catheter handle board sits between the multi-use **RF/PF ablation generators** and disposable **electrode capsules**. It has to carry high-voltage ablation energy and low-voltage sense/drive safely, survive medical HV compliance, stay manufacturable at high volume under **IPC Class 3**, and fit an extreme mechanical envelope — then prove out on the bench before production.
 
-At Kardium I designed the **2nd generation of their highest-volume production PCB**: a **6-layer** board carrying high-voltage **RF/PF ablation** signals plus low-voltage sense/drive paths for **resistance and temperature**. I owned the **vendor transition for DFM**, then laid out the full board under extreme size constraints, and designed a companion **4-layer flash/SPI test jig** so bring-up would be representative of the real product.
+At Kardium I designed the **2nd generation of their highest-volume production PCB**: a **6-layer** board carrying high-voltage **RF/PF ablation** signals plus low-voltage sense/drive paths for **resistance and temperature**. I owned the **vendor transition for DFM**, then laid out the full board under extreme size constraints. I also took a companion **4-layer flash/SPI test jig** from component selection, schematic capture, and layout through bare-board bring-up and functional verification.
 
 <div class="figure-grid">
   <figure>
@@ -50,7 +50,8 @@ At Kardium I designed the **2nd generation of their highest-volume production PC
 - Designed the **2nd generation of Kardium’s highest-volume production PCB** — a **6-layer** board carrying **HV RF/PF ablation** plus **LV sense/drive** for resistance and temperature
 - Owned the **vendor transition for DFM**: compared both fab houses’ capability and fabrication documents (spacings, clearances, expansions, hole tolerances), then laid out the full board under extreme size constraints
 - Routed **16HV + 16LV signals each for 8 channels** as well as **flash**, holding **IPC Class 3** — increasing **HIPOT withstand** for medical HV safety compliance and cutting production cost on this safety-critical board
-- Designed a companion **4-layer flash/SPI test jig** (Arduino Nano Every, ADG3304, pogo-pin interface) that preserved the same **controlled impedance** as the production board so bring-up and comms tests matched the real product
+- Owned a companion **4-layer flash/SPI test jig end to end** — component selection, schematic, layout, bare-board bring-up, and functional verification — with an Arduino Nano Every, ADG3304, and a controlled-impedance pogo-pin interface
+- Built the fixture to test the **handle PCB by itself** and to dock with the **fully assembled catheter system**, supporting both board-level development and final-assembly testing
 - Also on the internship: next-gen **1500V+ medical flex**, a full **system-level RF Switch validation campaign** (see [that write-up]({{ '/KardiumTesting/' | relative_url }})), and multi-board debug in a **10+ board** system
 
 <p class="section-label">Deep dive</p>
@@ -100,8 +101,36 @@ Two mechanical-electrical interfaces define how the board sits in the product:
 
 The flash device on the board is what makes the disposable capsule model work: many one-time capsules (board + electrode wiring) against one multi-use generator system, each capsule identifiable over SPI when docked on the pogo interface.
 
-### 4 · Bring-up — 4-layer flash/SPI test jig
-After the production layout, I designed a companion **4-layer flash/SPI test jig** so bring-up and communication tests would be representative of the real product:
+### 4 · End-to-end ownership — 4-layer flash/SPI test jig
+After the production layout, I developed a companion **4-layer flash/SPI test jig** so bring-up and communication tests would be representative of the real product. I owned the complete electrical design cycle:
+
+- Selected the components and defined the electrical architecture
+- Captured the **schematic** and completed the **4-layer PCB layout**
+- Brought up the manufactured jig from a **bare-board state**
+- Verified that the completed fixture programmed and communicated with the handle board as intended
+
+The fixture accommodates two test configurations: direct access to the **standalone handle PCB**, and insertion into the **fully assembled catheter system** for final-assembly testing.
+
+<div class="figure-grid">
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_Controller.png' | relative_url }}" alt="Top side of the Kardium flash test jig with Arduino Nano Every and pogo-pin interface">
+    <figcaption>Controller side — Arduino host and pogo-pin interface</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_DUT.png' | relative_url }}" alt="Device-under-test side of the Kardium flash test jig PCB">
+    <figcaption>DUT side — handle-board contact and operator control</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_Fixture.png' | relative_url }}" alt="Completed Kardium test jig mounted in its mechanical fixture">
+    <figcaption>Completed jig in the dual-configuration fixture</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/docs/assets/KardiumTestJig_Catheter.png' | relative_url }}" alt="Kardium test jig inserted into a fully assembled catheter handle">
+    <figcaption>Fixture testing the handle board inside the assembled catheter</figcaption>
+  </figure>
+</div>
+
+Key implementation details:
 
 - **Controlled-impedance SPI** path preserved to the same impedance as the production board
 - **Arduino Nano Every** as the host controller
@@ -109,7 +138,7 @@ After the production layout, I designed a companion **4-layer flash/SPI test jig
 - On-board **button + LEDs** for operator control and status
 - **Pogo-pin interface** mating to the same gold-pad array used by the generators — so the jig plugs into the 6-layer board the same way the system does
 
-That closed the loop: DFM vendor transition → production layout → system interfaces → a purpose-built fixture for flash bring-up and SPI confidence before capsules move with the ablation system.
+That closed the loop from component selection and PCB design through manufactured hardware, board bring-up, and representative testing at both the board and assembled-system levels.
 
 <p class="section-label">Also on this internship</p>
 ## Broader Kardium impact
@@ -141,5 +170,5 @@ USB production programmer for power boards — I2C PMIC images, analog board ide
 | PCB prework | DFM vendor transition, fab capability/docs comparison, spacings / clearances / expansions / hole tolerances, IPC Class 3 |
 | Production layout | 6-layer mixed HV/LV, 16HV + 16LV × 8 channels + flash, extreme size constraints |
 | Integration | Pogo / gold-pad generator interface, solder-bond ribbon to electrodes, capsule flash |
-| Test hardware | 4-layer flash jig, controlled-impedance SPI, Arduino Nano Every, ADG3304 |
+| Test hardware | Component selection, schematic, 4-layer layout, bare-board bring-up, controlled-impedance SPI, Arduino Nano Every, ADG3304, dual-configuration fixture |
 | Also | Medical flex (1500V+), RF Switch system validation, AmPLink PMIC programmer, multi-board SI debug |
