@@ -125,7 +125,7 @@ The OneBox RF Switch campaign is its own project: I owned **what to test, the pl
 → [System-Level RF Switch Validation]({{ '/KardiumTesting/' | relative_url }})
 
 ### AmPLink / PMIC programmer
-Turned the inherited AmPLink flash tool into a **two-fixture production programmer**: same scripts on FT4232H and an FT2232H PMBus bench, ADC board-ID, and a DS4520 interlock that keeps rails off until the mapped image burns.
+USB production programmer for power boards — I2C PMIC images, analog board identity, and a hardware interlock so the rails stayed off until the right config was written.
 
 → [PMIC Programming System]({{ '/Amplink/' | relative_url }})
 

@@ -166,12 +166,13 @@ description: Anubhav Saini — 5th-year Engineering Physics at UBC. Electronics 
           <div class="project-tile__body">
             <span class="project-tile__index">Also / Kardium</span>
             <h3>AmPLink · PMIC Programming System</h3>
-            <p>USB production programmer for processor/SOM flash and a TPS65400 I2C bench — chip-type detect (FT4232H vs FT2232H), R2R board-ID via ADS7142, and fail-safe DS4520 hold so rails stay off until the mapped image programs.</p>
+            <p>USB production programmer for power boards — I2C PMIC images, analog board identity, and a hardware interlock so the rails stayed off until the right config was written.</p>
             <ul class="tag-row">
               <li>PMIC</li>
               <li>PMBus</li>
               <li>FTDI</li>
-              <li>I2C / SPI</li>
+              <li>I2C/SPI</li>
+              <li>Production test</li>
             </ul>
             <span class="project-tile__cta">Open project</span>
           </div>
