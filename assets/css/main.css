@@ -1145,6 +1145,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   object-fit: contain;
 }
 
+.prose .figure-diagram--paper {
+  max-width: min(100%, 1100px);
+}
+
+.prose .figure-diagram--paper img {
+  background: #e8e8e8;
+}
+
 .prose pre {
   font-family: var(--font-mono);
   font-size: 0.72rem;
