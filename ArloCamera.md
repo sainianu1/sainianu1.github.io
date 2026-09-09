@@ -104,7 +104,7 @@ I validated the design through comprehensive **voltage, power, efficiency, and b
 </div>
 
 <figure class="figure-diagram">
-  <img src="{{ '/docs/assets/arlo-solana-system-diagram.svg' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
+  <img src="{{ '/docs/assets/arlo-solana-block-diagram.png' | relative_url }}" alt="System diagram: external solar and wall adapter ORed at USB-C, embedded solar through a boost, both switched into VIN_CHG, charger, system, and 4-cell pack">
   <figcaption>System-level architecture from that R&amp;D — sources, switches, charger, and pack</figcaption>
 </figure>
 
