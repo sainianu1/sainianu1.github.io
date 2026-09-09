@@ -1131,12 +1131,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .prose .figure-diagram {
-  max-width: min(100%, 920px);
+  max-width: min(100%, 960px);
   margin-left: auto;
   margin-right: auto;
 }
 
-.prose .figure-diagram img {
+.prose .figure-diagram img,
+.prose .figure-diagram svg {
   background: #071422;
   display: block;
   width: 100%;
